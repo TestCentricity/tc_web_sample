@@ -7,32 +7,33 @@ end
 
 
 Given(/^I am (?:on|viewing) the ([^\"]*) page$/) do |page_name|
+  # find and load the specified target page
   target_page = page_dispatcher(page_name)
   target_page.load_page if target_page
-  PageManager.current_page = target_page
 end
 
 
 Given(/^I (?:go|navigate) to the ([^\"]*) page$/) do |page_name|
+  # find and navigate to the specified target page
   target_page = page_dispatcher(page_name)
   target_page.navigate_to if target_page
   target_page.verify_page_exists
-  PageManager.current_page = target_page
 end
 
 
-Then(/^I expect to see the ([^\"]*) page$/) do |page_name|
+Then(/^I should see the ([^\"]*) page$/) do |page_name|
+  # find and verify that the specified target page is loaded
   target_page = page_dispatcher(page_name)
   target_page.verify_page_exists if target_page
-  PageManager.current_page = target_page
 end
 
 
 Then(/^I expect the ([^\"]*) page to be correctly displayed$/) do |page_name|
+  # find and verify that the specified target page is loaded
   target_page = page_dispatcher(page_name)
   target_page.verify_page_exists
+  # verify that target page is correctly displayed
   target_page.verify_page_ui
-  PageManager.current_page = target_page
 end
 
 
@@ -57,14 +58,23 @@ end
 
 
 When(/^I refresh the current page$/) do
-  Browsers.refresh_browser
+  Browsers.refresh_browser unless Environ.driver == :appium
+end
+
+
+When(/^I navigate back$/) do
+  Browsers.navigate_back
+end
+
+
+When(/^I navigate forward$/) do
+  Browsers.navigate_forward
 end
 
 
 When(/^I set device orientation to ([^\"]*)$/) do |orientation|
   Browsers.set_device_orientation(orientation.downcase.to_sym)
 end
-
 
 
 def page_dispatcher(page_name)
