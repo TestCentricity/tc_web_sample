@@ -1,8 +1,8 @@
-# Localization file for US English. Add more files in this directory for other languages/locales.
+# Localization file for U.S. English language. Add more files in this directory for other languages/locales.
 
 
 en-US:
-  errors:
-    failure:
-      page_not_found: "The page you were looking for doesn't exist (404)"
-  warnings:
+  search_results:
+    search_nearby: "Search nearby airports"
+    nearby_search_error: "Flights may be available at nearby airports."
+    no_flights_found: "There are no flights that match your search criteria"

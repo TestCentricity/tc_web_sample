@@ -114,7 +114,6 @@ Feature: Search for Flights using the Flight Booking Home page
       | Detroit | PHX         | next month        | 2 seniors          | Economy           | No       |
 
 
-
   Scenario Outline: No results returned for search with invalid criteria
     Given I am on the Flight Booking Home page
     When I select a search type of Round Trip

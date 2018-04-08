@@ -1,0 +1,8 @@
+# Localization file for French language. Add more files in this directory for other languages/locales.
+
+
+fr:
+  search_results:
+    search_nearby: "Rechercher les aéroports à proximité"
+    nearby_search_error: "Des vols peuvent être disponibles dans les aéroports à proximité."
+    no_flights_found: "Aucun vol ne correspond à vos critères de recherche"

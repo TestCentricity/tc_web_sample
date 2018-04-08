@@ -17,7 +17,7 @@ Capybara.default_max_wait_time = 20
 
 # set the default locale and auto load all translations from features/support/locales/*.rb,yml.
 I18n.load_path += Dir['features/support/locales/*.{rb,yml}']
-I18n.default_locale  = ENV['LOCALE'] || 'en'
+I18n.default_locale  = ENV['LOCALE'] || 'en-US'
 Faker::Config.locale = ENV['LOCALE'] || 'en-US'
 
 # instantiate all data objects

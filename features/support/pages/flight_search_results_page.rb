@@ -11,7 +11,8 @@ class FlightSearchResultsPage < GenericPortalPage
               return_date_field:      'input#ReturnDateForEditSearch'
   list        :flight_results_list,   'ul#flight-result-list-revised'
   table       :fare_calendar_table,   'table.fare-calendar-price-month'
-  label       :error_message_label,   'div#gridNearByError > h2'
+  labels      error_message_label:    'div#gridNearByError > h2',
+              nearby_error_message:   'p#nearbysearcherrormsg'
   button      :search_nearby_button,  'button#searchByNearbyAirport'
 
   # if search results are expected, found is true. Verify that origin, destination, departure date,
@@ -61,8 +62,9 @@ class FlightSearchResultsPage < GenericPortalPage
       # no results expected
       error_message_label.wait_until_visible(30)
       ui = {
-          error_message_label  => { :visible => true, :caption => 'There are no flights that match your search criteria' },
-          search_nearby_button => { :visible => true, :caption => 'Search nearby airports' },
+          error_message_label  => { :visible => true, :caption => { :translate => 'search_results.no_flights_found' } },
+          search_nearby_button => { :visible => true, :caption => { :translate => 'search_results.search_nearby' } },
+          nearby_error_message => { :visible => true, :caption => { :translate => 'search_results.nearby_search_error' } },
           flight_results_list  => { :visible => false }
           }
       # verify that search error message is correctly displayed
