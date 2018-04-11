@@ -15,12 +15,10 @@ class FlightBookingPage < GenericPortalPage
                return_date_field:  'input#ReturnDate'
   selectlists  month_select:       'div#uniform-months',
                duration_select:    'div#uniform-tripLength',
-               cabin_type_select:  'div#uniform-cabinType',
-               award_cabin_select: 'select#awardCabinType'
+               cabin_type_select:  'div#uniform-cabinType'
   buttons      travelers_select:   'a#travelers-selector',
                search_button:      'button#flightBookingSubmit'
-  sections     travelers_selector: TravelersSelector,
-               locale_selector:    LocaleSelector
+  section      :travelers_selector, TravelersSelector
 
   # select the search type (either Round trip or One way)
   def select_search_type(search_type)
@@ -46,17 +44,21 @@ class FlightBookingPage < GenericPortalPage
     # parse the departure date into a meaningful date value
     unless search.depart_date.blank?
       depart_date_value = Chronic.parse(search.depart_date)
-      depart_date_value = depart_date_value.to_s.format_date_time('%m/%d/%Y')
+      # save the parsed departure date in FlightSearch data object
+      FlightSearch.current.depart_date = depart_date_value
+      depart_date_value = depart_date_value.to_s.format_date_time(:default)
     end
     # parse the return date into a meaningful date value
     unless search.return_date.blank?
       return_date_value = Chronic.parse(search.return_date)
-      return_date_value = return_date_value.to_s.format_date_time('%m/%d/%Y')
+      # save the parsed return date in FlightSearch data object
+      FlightSearch.current.return_date = return_date_value
+      return_date_value = return_date_value.to_s.format_date_time(:default)
     end
     # parse the flex month into a meaningful date value
     unless search.month.blank?
       month_value = Chronic.parse(search.month)
-      month_value = month_value.to_s.format_date_time('%B %Y')
+      month_value = month_value.to_s.format_date_time(:month_year)
     end
     # if search type is specified, select it before entering search criteria
     select_search_type(search.search_type) unless search.search_type.blank?
@@ -67,14 +69,26 @@ class FlightBookingPage < GenericPortalPage
                destination_field => search.destination,
                depart_date_field => depart_date_value,
                return_date_field => return_date_value,
-               month_select      => month_value,
-               duration_select   => search.duration,
-               cabin_type_select => search.cabin_type }
+               month_select      => month_value }
     populate_data_fields(fields)
     # invoke the Travelers selector and make selection(s)
     unless search.travelers.blank?
       travelers_select.click
       travelers_selector.select_travelers(search.travelers)
+    end
+    # select duration if specified - use option value since option text will be localized
+    unless search.duration.blank?
+      number_of_days = search.duration.split(' ')
+      duration_select.choose_option(:value => number_of_days[0])
+    end
+    # select cabin type if specified - use option value since option text will be localized
+    unless search.cabin_type.blank?
+      case search.cabin_type.downcase
+      when 'economy'
+        cabin_type_select.choose_option(:value => 'econ')
+      when 'business or first'
+        cabin_type_select.choose_option(:value => 'businessFirst')
+      end
     end
     # click non-stop checkbox if specified
     nonstop_checkbox.click if search.non_stop.to_bool

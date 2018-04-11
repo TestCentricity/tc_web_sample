@@ -4,8 +4,9 @@ class GenericPortalPage < TestCentricity::PageObject
   trait(:page_name)  { 'UAL Flight Bookings Portal' }
 
   # common UI elements
-  element  :portal_busy,         'div.spinner-container'
-  link     :change_locale_link,  'a#change-language-pos'
+  element  :portal_busy,        'div.spinner-container'
+  link     :change_locale_link, 'a#change-language-pos'
+  section  :locale_selector,    LocaleSelector
 
   # Wait until the portal spinning busy indicator object is hidden, or until the specified wait time has expired.
   #

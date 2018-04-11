@@ -1,8 +1,0 @@
-# Localization file for German language. Add more files in this directory for other languages/locales.
-
-
-de:
-  search_results:
-    search_nearby: "Flughäfen in der Nähe suchen"
-    nearby_search_error: "An Flughäfen in der Nähe sind möglicherweise Flüge verfügbar."
-    no_flights_found: "Zu Ihren Suchkriterien konnte kein Flug gefunden werden"

@@ -2,6 +2,14 @@ include TestCentricity
 
 
 Given(/^I am on the UAL portal$/) do
+  # split the specified locale into language and country codes
+  current_locale = ENV['LOCALE'] || 'en-US'
+  locale = current_locale.split('-')
+  language = locale[0]
+  country  = locale[1].downcase
+  # set the URL append value to include language and country codes
+  Environ.current.append = "#{language}/#{country}/"
+  # open the UAL web portal for the specified locale
   portal_page.open_portal
 end
 

@@ -1,0 +1,59 @@
+# Localization file for German/Germany locale.
+
+de-DE:
+  search_results:
+    search_nearby: "Flughäfen in der Nähe suchen"
+    nearby_search_error: "An Flughäfen in der Nähe sind möglicherweise Flüge verfügbar."
+    no_flights_found: "Zu Ihren Suchkriterien konnte kein Flug gefunden werden"
+  time:
+    formats:
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b"
+      abbrev: "%d %b, %Y"
+      month_year: "%B %Y"
+  date:
+    abbr_day_names:
+    - So
+    - Mo
+    - Di
+    - Mi
+    - Do
+    - Fr
+    - Sa
+    abbr_month_names:
+    -
+    - Jan.
+    - Feb.
+    - Mär.
+    - Apr.
+    - Mai
+    - Juni
+    - Juli
+    - Aug.
+    - Sep.
+    - Okt.
+    - Nov.
+    - Dez.
+    day_names:
+    - Sonntag
+    - Montag
+    - Dienstag
+    - Mittwoch
+    - Donnerstag
+    - Freitag
+    - Samstag
+    month_names:
+    -
+    - Januar
+    - Februar
+    - März
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember

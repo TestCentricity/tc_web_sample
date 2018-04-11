@@ -30,29 +30,37 @@ class TravelersSelector < TestCentricity::PageSection
   def select_travelers(travelers_data)
     num_adults_field.set('0')
     total_travelers = 0
+    # iterate through each type of traveler specified
     travelers_data.split(', ').each do |travelers|
+      # determine number and type of traveler(s)
       segment = travelers.split(' ')
       num_travelers  = segment[0]
-      type_travelers = segment[1]
+      segment.delete_at(0)
+      type_travelers = segment.join(' ')
       total_travelers = total_travelers + num_travelers.to_i
+      # find traveler type object
       case type_travelers.downcase
       when 'adult', 'adults'
-        num_adults_field.set(num_travelers)
+        traveler_type_obj = num_adults_field
       when 'senior', 'seniors'
-        num_seniors_field.set(num_travelers)
+        traveler_type_obj = num_seniors_field
       when 'child (16-17)', 'children (16-17)'
-        num_child_16_17_field.set(num_travelers)
+        traveler_type_obj = num_child_16_17_field
       when 'child (12-15)', 'children (12-15)'
-        num_child_12_15_field.set(num_travelers)
+        traveler_type_obj = num_child_12_15_field
       when 'child (5-11)', 'children (5-11)'
-        num_child_5_11_field.set(num_travelers)
+        traveler_type_obj = num_child_5_11_field
       when 'child (2-4)', 'children (2-4)'
-        num_child_2_4_field.set(num_travelers)
+        traveler_type_obj = num_child_2_4_field
       when 'infant', 'infants'
-        num_infants_field.set(num_travelers)
+        traveler_type_obj = num_infants_field
       when 'infant on lap', 'infants on lap'
-        num_lap_infants_field.set(num_travelers)
+        traveler_type_obj = num_lap_infants_field
+      else
+        raise "'#{type_travelers}' is not a valid traveler type"
       end
+      # set the number of travelers for the selected traveler type
+      traveler_type_obj.set(num_travelers)
     end
     # save the total number of travelers
     FlightSearch.current.total_travelers = total_travelers
