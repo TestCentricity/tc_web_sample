@@ -1,7 +1,8 @@
 # tc_web_sample
 
 Cucumber based sample test framework utilizing TestCentricity gem and page-object model for desktop and responsive mobile web functional testing of the
-United Airlines Flight Book web portal.
+United Airlines Flight Book web portal. Includes example of externally sourcing test data from an Excel file and support for testing multiple language/locale
+combinations.
 
 
 ## Gem Dependencies:
@@ -130,8 +131,9 @@ button to open the `tc_web_sample` project.
   `bundle exec cucumber -p target_test_environment -p target_browser -p test_context`
   
 NOTE:  To have Cucumber generate HTML formatted test results, append `-p report` to the above command line arguments.
+
 NOTE:  If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device by appending `-p landscape` or `-p portrait`
-to the above command line arguments
+to the above command line arguments.
 
 For example, to execute the entire regression suite against the TEST environment on a locally hosted Chrome browser, with test results being logged to an HTML test results
 file, execute the following command in the Terminal:
@@ -150,3 +152,24 @@ directory, and selecting the `test_results.html` file.
 
 Right-clicking on the `test_results.html` file will display a popup menu. Select the Open in Browser menu item, and then select a browser from the popup sub menu that appears.
 The HTML formatted test results will open in the web browser that you selected.
+
+
+## Multiple Language/Locale Testing
+
+This sample test framework includes support for test execution against 7 language/locale combinations. The supported `target_locale` options are:
+
+**Value** | **Language** | **Country**
+----------|--------------|------------
+`en-us`   | English      | United States *(default)*
+`en-us`   | English      | Canada
+`es-mx`   | Spanish      | Mexico
+`es-es`   | Spanish      | Spain
+`de-de`   | German       | Germany
+`fr-ca`   | French       | Canada
+`fr-fr`   | French       | France
+
+To specify one of the 7 supported language/locale combinations at runtime, include `-p target_locale` as one of the command line arguments. For instance, to to execute the
+Build Acceptance Test suite against the TEST environment on a locally hosted Chrome browser as a French Canadian user, execute the following command in the Terminal:
+    `bundle exec cucumber -p test -p chrome -p bat -p fr-ca`
+
+NOTE:  If you do not specify a target locale, the default target locale will be `en-us` (U.S./English).
