@@ -36,16 +36,14 @@ class FlightSearchResultsPage < GenericPortalPage
           search_nearby_button => { :visible => false },
           error_message_label  => { :visible => false }
       }
-      # parse the departure date into a meaningful date value
+      # parse the departure date into a meaningful localized date value
       unless search_data.depart_date.blank?
-        depart_date_value = Chronic.parse(search_data.depart_date)
-        depart_date_value = depart_date_value.to_s.format_date_time('%b %d, %Y')
+        depart_date_value = search_data.depart_date.to_s.format_date_time(:abbrev)
         ui[departure_date_field] = { :visible => true, :value => depart_date_value }
       end
-      # parse the return date into a meaningful date value
+      # parse the return date into a meaningful localized date value
       unless search_data.return_date.blank?
-        return_date_value = Chronic.parse(search_data.return_date)
-        return_date_value = return_date_value.to_s.format_date_time('%b %d, %Y')
+        return_date_value = search_data.return_date.to_s.format_date_time(:abbrev)
         ui[return_date_field] = { :visible => true, :value => return_date_value }
       end
       # verify correct search results lists are displayed
@@ -67,7 +65,7 @@ class FlightSearchResultsPage < GenericPortalPage
           nearby_error_message => { :visible => true, :caption => { :translate => 'search_results.nearby_search_error' } },
           flight_results_list  => { :visible => false }
           }
-      # verify that search error message is correctly displayed
+      # verify that search error message is correctly displayed and translated
       verify_ui_states(ui)
     end
   end

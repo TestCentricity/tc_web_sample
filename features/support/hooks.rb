@@ -7,8 +7,23 @@ def run_first_once
     report_header = "#{report_header}  <b>Device:</b>\t\t #{Environ.device_name}\n" if Environ.device_name
     report_header = "#{report_header}  <b>Device o/s:</b>\t #{Environ.device_os}\n" if Environ.device_os
     report_header = "#{report_header}  <b>Device type:</b>\t #{Environ.device_type}\n" if Environ.device_type
+    report_header = "#{report_header}  <b>Language:</b>\t #{ENV['LANGUAGE']}\n" if ENV['LANGUAGE']
+    report_header = "#{report_header}  <b>Country:</b>\t #{ENV['COUNTRY']}\n" if ENV['COUNTRY']
     report_header = "#{report_header}\n\n"
     puts report_header
+  end
+  # start Appium Server if command line option was specified and target browser is mobile simulator or device
+  if ENV['APPIUM_SERVER'] == 'run' && (Environ.driver == :appium || ENV['WEB_BROWSER'] == 'appium')
+    $server = TestCentricity::AppiumServer.new
+    $server.start
+  end
+end
+
+
+at_exit do
+  # terminate Appium Server if command line option was specified and target browser is mobile simulator or device
+  if ENV['APPIUM_SERVER'] == 'run' && (Environ.driver == :appium || ENV['WEB_BROWSER'] == 'appium')
+    $server.stop
   end
 end
 

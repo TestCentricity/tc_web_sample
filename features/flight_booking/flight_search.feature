@@ -33,7 +33,7 @@ Feature: Search for Flights using the Flight Booking Home page
     Examples:
       | origin  | destination | depart date      | return date      | travelers          | cabin type | non stop |
       | Seattle | San Diego   | 10 days from now | 14 days from now | 2 adults, 1 infant | Economy    | No       |
-      | Detroit | PHX         | 1 week from now  | 12 days from now | 2 seniors          | Economy    | No       |
+      | DTW     | PHX         | 1 week from now  | 12 days from now | 2 seniors          | Economy    | No       |
 
 
   Scenario Outline: Search for One Way flight with fixed date
@@ -55,11 +55,13 @@ Feature: Search for Flights using the Flight Booking Home page
       | ORD    | PDX         | 2 weeks from now | 1 adult   | Business or First | Yes      |
 
     Examples:
-      | origin       | destination | depart date      | travelers          | cabin type | non stop |
-      | Calgary      | San Antonio | 10 days from now | 2 adults, 1 infant | Economy    | No       |
-      | Indianapolis | Tucson      | next month       | 2 seniors          | Economy    | No       |
+      | origin  | destination | depart date      | travelers          | cabin type | non stop |
+      | Calgary | San Antonio | 10 days from now | 2 adults, 1 infant | Economy    | No       |
+      | IND     | Tucson      | next month       | 2 seniors          | Economy    | No       |
 
 
+# This is an example of using test data sourced from the Flight_Searches worksheet in /features/support/test_data/data.xls.
+# The itinerary_name value is the row_name in the worksheet.
   Scenario Outline: Search for Round Trip International flights using externally sourced data
     Given I am on the Flight Booking Home page
     When I perform a search using <itinerary_name>
@@ -91,7 +93,7 @@ Feature: Search for Flights using the Flight Booking Home page
       | origin  | destination | month             | duration | travelers          | cabin type        | non stop |
       | PDX     | ORD         | this month        | 6 days   | 1 adult            | Business or First | Yes      |
       | Seattle | San Diego   | 3 months from now | 14 days  | 2 adults, 1 infant | Economy           | No       |
-      | Detroit | PHX         | next month        | 8 days   | 2 seniors          | Economy           | No       |
+      | DTW     | PHX         | next month        | 8 days   | 2 seniors          | Economy           | No       |
 
 
   Scenario Outline: Search for One Way flight with flexible date
@@ -111,7 +113,7 @@ Feature: Search for Flights using the Flight Booking Home page
       | origin  | destination | month             | travelers          | cabin type        | non stop |
       | PDX     | ORD         | this month        | 1 adult            | Business or First | Yes      |
       | Seattle | San Diego   | 2 months from now | 2 adults, 1 infant | Economy           | No       |
-      | Detroit | PHX         | next month        | 2 seniors          | Economy           | No       |
+      | DTW     | PHX         | next month        | 2 seniors          | Economy           | No       |
 
 
   Scenario Outline: No results returned for search with invalid criteria

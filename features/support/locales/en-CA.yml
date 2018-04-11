@@ -1,16 +1,16 @@
-# Localization file for English/U.S. locale.
+# Localization file for English/Canada locale.
 
-en-US:
+en-CA:
   search_results:
     search_nearby: "Search nearby airports"
     nearby_search_error: "Flights may be available at nearby airports."
     no_flights_found: "There are no flights that match your search criteria"
   time:
     formats:
-      default: "%m/%d/%Y"
+      default: "%d-%m-%Y"
       long: "%B %d, %Y"
-      short: "%b %d"
-      abbrev: "%b %d, %Y"
+      short: "%d %b"
+      abbrev: "%d %b, %Y"
       month_year: "%B %Y"
   date:
     abbr_day_names:

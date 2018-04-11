@@ -1,5 +1,5 @@
-<% desktop          = "--tags @desktop --require features  BROWSER_SIZE=1500,1000" %>
-<% tablet           = "--tags @desktop --require features --profile web BROWSER_TILE=true" %>
+<% desktop          = "--tags @desktop --require features BROWSER_SIZE=1500,1000" %>
+<% tablet           = "--tags @desktop --require features BROWSER_TILE=true" %>
 <% mobile           = "--tags @mobile  --require features" %>
 <% regression       = "--tags ~@wip --tags ~@failing --tags @regression --require features" %>
 <% acceptance       = "--tags ~@wip --tags ~@failing --tags @bat --require features" %>
@@ -24,6 +24,18 @@ wip:                --tags @wip --tags ~@failing
 dev:                --tags @dev --tags ~@wip --tags ~@failing
 regress:            <%= regression %> TEST_CONTEXT="REGRESSION" AUTOMATE_PROJECT="TC_Web_Sample"
 bat:                <%= acceptance %> TEST_CONTEXT="BAT" AUTOMATE_PROJECT="TC_Web_Sample"
+
+
+#==============
+# profiles for I18n/L10n Language/Locale selections
+#==============
+en-us:              LOCALE="en-US" LANGUAGE="English" COUNTRY="United States"
+en-ca:              LOCALE="en-CA" LANGUAGE="English" COUNTRY="Canada"
+es-mx:              LOCALE="es-MX" LANGUAGE="Spanish" COUNTRY="Mexico"
+es-es:              LOCALE="es-ES" LANGUAGE="Spanish" COUNTRY="Spain"
+de-de:              LOCALE="de-DE" LANGUAGE="German" COUNTRY="Germany"
+fr-ca:              LOCALE="fr-CA" LANGUAGE="French" COUNTRY="Canada"
+fr-fr:              LOCALE="fr-FR" LANGUAGE="French" COUNTRY="France"
 
 
 #==============
@@ -287,9 +299,9 @@ tonys_ipad:            --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="Tony 
 #==============
 
 appium_android:        WEB_BROWSER=appium AUTOMATION_ENGINE=UiAutomator2 APP_PLATFORM_NAME="Android" <%= mobile %>
-android_8:             --profile appium_android APP_BROWSER="Chrome" APP_VERSION="8.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDriver/2.31/chromedriver"
-android_7:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="7.1.1" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDriver/2.28/chromedriver"
-android_6:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="6.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDriver/2.20/chromedriver"
+android_8:             --profile appium_android APP_BROWSER="Chrome" APP_VERSION="8.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.31/chromedriver"
+android_7:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="7.1.1" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.28/chromedriver"
+android_6:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="6.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.20/chromedriver"
 pixel_xl_api26_sim:    --profile android_8 DEVICE_TYPE=phone APP_DEVICE="Pixel_XL_API_26"
 pixel_2_xl_api26_sim:  --profile android_8 DEVICE_TYPE=phone APP_DEVICE="Pixel_2_XL_API_26"
 pixel_api_25_sim:      --profile android_7 DEVICE_TYPE=phone APP_DEVICE="Pixel_API_25"
