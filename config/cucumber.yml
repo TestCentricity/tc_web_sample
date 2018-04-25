@@ -59,6 +59,9 @@ firefox:            WEB_BROWSER=firefox <%= desktop %>
 safari:             WEB_BROWSER=safari  <%= desktop %>
 chrome:             WEB_BROWSER=chrome  <%= desktop %>
 ie:                 WEB_BROWSER=ie      <%= desktop %>
+chrome_headless:    WEB_BROWSER=chrome_headless  <%= desktop %>
+firefox_headless:   WEB_BROWSER=firefox_headless <%= desktop %>
+firefox_legacy:     WEB_BROWSER=firefox_legacy <%= desktop %>
 
 
 #==============
@@ -72,21 +75,21 @@ ipad_pro_10_5:       WEB_BROWSER=ipad_pro_10_5       HOST_BROWSER=chrome <%= tab
 ipad_chrome:         WEB_BROWSER=ipad_chrome         HOST_BROWSER=chrome <%= tablet %>
 ipad_firefox:        WEB_BROWSER=ipad_firefox        HOST_BROWSER=chrome <%= tablet %>
 ipad_edge:           WEB_BROWSER=ipad_edge           HOST_BROWSER=chrome <%= tablet %>
-iphone:              WEB_BROWSER=iphone              HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone4:             WEB_BROWSER=iphone4             HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone5:             WEB_BROWSER=iphone5             HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone6:             WEB_BROWSER=iphone6             HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone6_plus:        WEB_BROWSER=iphone6_plus        HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone7:             WEB_BROWSER=iphone7             HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone7_plus:        WEB_BROWSER=iphone7_plus        HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone7_chrome:      WEB_BROWSER=iphone7_chrome      HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone7_firefox:     WEB_BROWSER=iphone7_firefox     HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone7_edge:        WEB_BROWSER=iphone7_edge        HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone8:             WEB_BROWSER=iphone8             HOST_BROWSER=chrome --profile web <%= mobile %>
-iphone8_plus:        WEB_BROWSER=iphone8_plus        HOST_BROWSER=chrome --profile web <%= mobile %>
-iphoneX:             WEB_BROWSER=iphonex             HOST_BROWSER=chrome --profile web <%= mobile %>
-android_phone:       WEB_BROWSER=android_phone       HOST_BROWSER=chrome --profile web <%= mobile %>
-nexus6:              WEB_BROWSER=nexus6              HOST_BROWSER=chrome --profile web <%= mobile %>
+iphone:              WEB_BROWSER=iphone              HOST_BROWSER=chrome <%= mobile %>
+iphone4:             WEB_BROWSER=iphone4             HOST_BROWSER=chrome <%= mobile %>
+iphone5:             WEB_BROWSER=iphone5             HOST_BROWSER=chrome <%= mobile %>
+iphone6:             WEB_BROWSER=iphone6             HOST_BROWSER=chrome <%= mobile %>
+iphone6_plus:        WEB_BROWSER=iphone6_plus        HOST_BROWSER=chrome <%= mobile %>
+iphone7:             WEB_BROWSER=iphone7             HOST_BROWSER=chrome <%= mobile %>
+iphone7_plus:        WEB_BROWSER=iphone7_plus        HOST_BROWSER=chrome <%= mobile %>
+iphone7_chrome:      WEB_BROWSER=iphone7_chrome      HOST_BROWSER=chrome <%= mobile %>
+iphone7_firefox:     WEB_BROWSER=iphone7_firefox     HOST_BROWSER=chrome <%= mobile %>
+iphone7_edge:        WEB_BROWSER=iphone7_edge        HOST_BROWSER=chrome <%= mobile %>
+iphone8:             WEB_BROWSER=iphone8             HOST_BROWSER=chrome <%= mobile %>
+iphone8_plus:        WEB_BROWSER=iphone8_plus        HOST_BROWSER=chrome <%= mobile %>
+iphoneX:             WEB_BROWSER=iphonex             HOST_BROWSER=chrome <%= mobile %>
+android_phone:       WEB_BROWSER=android_phone       HOST_BROWSER=chrome <%= mobile %>
+nexus6:              WEB_BROWSER=nexus6              HOST_BROWSER=chrome <%= mobile %>
 android_tablet:      WEB_BROWSER=android_tablet      HOST_BROWSER=chrome <%= tablet %>
 kindle_fire:         WEB_BROWSER=kindle_fire         HOST_BROWSER=chrome <%= tablet %>
 kindle_firehd7:      WEB_BROWSER=kindle_firehd7      HOST_BROWSER=chrome <%= tablet %>
@@ -98,18 +101,18 @@ samsung_galaxy_tab:  WEB_BROWSER=samsung_galaxy_tab  HOST_BROWSER=chrome <%= tab
 google_nexus7:       WEB_BROWSER=google_nexus7       HOST_BROWSER=chrome <%= tablet %>
 google_nexus9:       WEB_BROWSER=google_nexus9       HOST_BROWSER=chrome <%= tablet %>
 google_nexus10:      WEB_BROWSER=google_nexus10      HOST_BROWSER=chrome <%= tablet %>
-samsung_galaxy_s4:   WEB_BROWSER=samsung_galaxy_s4   HOST_BROWSER=chrome --profile web <%= mobile %>
-samsung_galaxy_s5:   WEB_BROWSER=samsung_galaxy_s5   HOST_BROWSER=chrome --profile web <%= mobile %>
-samsung_galaxy_s6:   WEB_BROWSER=samsung_galaxy_s6   HOST_BROWSER=chrome --profile web <%= mobile %>
-pixel:               WEB_BROWSER=pixel               HOST_BROWSER=chrome --profile web <%= mobile %>
-pixel_xl:            WEB_BROWSER=pixel_xl            HOST_BROWSER=chrome --profile web <%= mobile %>
-windows_phone7:      WEB_BROWSER=windows_phone7      HOST_BROWSER=chrome --profile web <%= mobile %>
-windows_phone8:      WEB_BROWSER=windows_phone8      HOST_BROWSER=chrome --profile web <%= mobile %>
-lumia_950_xl:        WEB_BROWSER=lumia_950_xl        HOST_BROWSER=chrome --profile web <%= mobile %>
-blackberry_z10:      WEB_BROWSER=blackberry_z10      HOST_BROWSER=chrome --profile web <%= mobile %>
-blackberry_z30:      WEB_BROWSER=blackberry_z30      HOST_BROWSER=chrome --profile web <%= mobile %>
-blackberry_leap:     WEB_BROWSER=blackberry_leap     HOST_BROWSER=chrome --profile web <%= mobile %>
-blackberry_passport: WEB_BROWSER=blackberry_passport HOST_BROWSER=chrome --profile web <%= mobile %>
+samsung_galaxy_s4:   WEB_BROWSER=samsung_galaxy_s4   HOST_BROWSER=chrome <%= mobile %>
+samsung_galaxy_s5:   WEB_BROWSER=samsung_galaxy_s5   HOST_BROWSER=chrome <%= mobile %>
+samsung_galaxy_s6:   WEB_BROWSER=samsung_galaxy_s6   HOST_BROWSER=chrome <%= mobile %>
+pixel:               WEB_BROWSER=pixel               HOST_BROWSER=chrome <%= mobile %>
+pixel_xl:            WEB_BROWSER=pixel_xl            HOST_BROWSER=chrome <%= mobile %>
+windows_phone7:      WEB_BROWSER=windows_phone7      HOST_BROWSER=chrome <%= mobile %>
+windows_phone8:      WEB_BROWSER=windows_phone8      HOST_BROWSER=chrome <%= mobile %>
+lumia_950_xl:        WEB_BROWSER=lumia_950_xl        HOST_BROWSER=chrome <%= mobile %>
+blackberry_z10:      WEB_BROWSER=blackberry_z10      HOST_BROWSER=chrome <%= mobile %>
+blackberry_z30:      WEB_BROWSER=blackberry_z30      HOST_BROWSER=chrome <%= mobile %>
+blackberry_leap:     WEB_BROWSER=blackberry_leap     HOST_BROWSER=chrome <%= mobile %>
+blackberry_passport: WEB_BROWSER=blackberry_passport HOST_BROWSER=chrome <%= mobile %>
 
 
 #==============
@@ -126,7 +129,7 @@ landscape:          ORIENTATION=landscape
 
 browserstack:       WEB_BROWSER=browserstack BS_USERNAME=<INSERT USER NAME HERE> BS_AUTHKEY=<INSERT PASSWORD HERE> AUTOMATE_PROJECT="TC_Web_Sample"
 bs_desktop:         --profile browserstack <%= desktop %> RESOLUTION="1920x1080"
-bs_mobile:          --profile browserstack --profile web <%= mobile %>
+bs_mobile:          --profile browserstack <%= mobile %>
 
 # BrowserStack OS X desktop browser profiles
 bs_macos_high_sierra:  --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="High Sierra"
@@ -255,7 +258,7 @@ bs_app_galaxy_note4:   --profile bs_app_android BS_DEVICE="Samsung Galaxy Note 4
 # NOTE: Requires installation of XCode, iOS version specific target simulators, Appium, and the appium_capybara gem
 #==============
 
-appium_ios:            WEB_BROWSER=appium AUTOMATION_ENGINE=XCUITest APP_PLATFORM_NAME="ios" APP_BROWSER="Safari" BUNDLE_ID="com.crowdcompass.tumbleweed" TEAM_ID="U943ZCC3J3" TEAM_NAME="iPhone Developer" <%= mobile %>
+appium_ios:            WEB_BROWSER=appium AUTOMATION_ENGINE=XCUITest APP_PLATFORM_NAME="ios" APP_BROWSER="Safari" <%= mobile %>
 app_ios_10:            --profile appium_ios APP_VERSION="10.3"
 app_ios_11:            --profile appium_ios APP_VERSION="11.2"
 
@@ -289,8 +292,8 @@ ipad_air_2_10_sim:     --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="iPad 
 # NOTE: Requires installation of XCode, Appium, and the appium_capybara gem
 #==============
 
-tonys_iphone:          --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="Tony's iPhone6" UDID="INSERT UDID HERE"
-tonys_ipad:            --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="Tony Mrozinski's iPad" UDID="INSERT UDID HERE"
+my_ios_11_3_iphone:    --profile app_ios_11 DEVICE_TYPE=phone  APP_DEVICE="My Test iPhoneX"  APP_UDID="INSERT YOUR DEVICE UDID"
+my_ios_10_3_ipad:      --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="My Test iPad Pro" APP_UDID="INSERT YOUR DEVICE UDID"
 
 
 #==============
@@ -312,9 +315,7 @@ nexus_9_api25_sim:     --profile android_7 DEVICE_TYPE=tablet APP_DEVICE="Nexus_
 nexus_10_api25_sim:    --profile android_7 DEVICE_TYPE=tablet APP_DEVICE="Nexus_10_API_25"
 pixel_c_api26_sim:     --profile android_8 DEVICE_TYPE=tablet APP_DEVICE="Pixel_C_API_26"
 
-
 run_appium:            APPIUM_SERVER=run
-debug:                 DEBUG=true
 
 
 #==============

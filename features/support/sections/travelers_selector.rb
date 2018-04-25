@@ -28,6 +28,7 @@ class TravelersSelector < TestCentricity::PageSection
   #    Infant on lap  or  Infants on lap
   #
   def select_travelers(travelers_data)
+    num_adults_field.wait_until_visible(5)
     num_adults_field.set('0')
     total_travelers = 0
     # iterate through each type of traveler specified

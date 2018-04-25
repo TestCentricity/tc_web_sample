@@ -1,8 +1,7 @@
 # tc_web_sample
 
-Cucumber based sample test framework utilizing TestCentricity gem and page-object model for desktop and responsive mobile web functional testing of the
-United Airlines Flight Book web portal. Includes example of externally sourcing test data from an Excel file and support for testing multiple language/locale
-combinations.
+This is a Cucumber based sample test framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and responsive mobile web functional testing of the
+UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing multiple language/locale combinations.
 
 
 ## Gem Dependencies:
@@ -36,7 +35,7 @@ Automated tests may be targeted at one of 2 test environments. Those test enviro
 `test`    | TEST environment
 `prod`    | PRODUCTION environment
 
-NOTE:  Both environments point to the same US English UAL Booking portal at http://www.united.com/ual/en/us/
+NOTE:  Both environments point to the same US English UAL Booking portal at http://www.united.com/ual/
 
 
 ### `test_context`:

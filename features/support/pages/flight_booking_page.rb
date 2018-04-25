@@ -5,10 +5,13 @@ class FlightBookingPage < GenericPortalPage
   trait(:page_locator)   { 'form#flightSearch' }
 
   # Flight Booking page UI elements
-  radios       roundtrip_radio:    'input#SearchTypeMain_roundTrip',
-               one_way_radio:      'input#SearchTypeMain_oneWay'
+  labels       roundtrip_label:    "label[for='SearchTypeMain_roundTrip']",
+               one_way_label:      "label[for='SearchTypeMain_oneWay']"
+  radio        :roundtrip_radio,   'input#SearchTypeMain_roundTrip', :roundtrip_label
+  radio        :one_way_radio,     'input#SearchTypeMain_oneWay', :one_way_label
   elements     flexible_checkbox:  'div.form-row:nth-of-type(3) > div.form-group',
-               nonstop_checkbox:   'div.nonstop-only'
+               nonstop_checkbox:   'div.nonstop-only',
+               calendar_popup:     'div#ui-datepicker-div'
   textfields   origin_field:       'input#Origin',
                destination_field:  'input#Destination',
                depart_date_field:  'input#DepartDate',
@@ -71,6 +74,12 @@ class FlightBookingPage < GenericPortalPage
                return_date_field => return_date_value,
                month_select      => month_value }
     populate_data_fields(fields)
+    # tab out of departure date field if the popup calendar remains visible
+    if calendar_popup.visible?
+      depart_date_field.send_keys(:tab)
+      calendar_popup.wait_until_gone(5)
+      sleep(1)
+    end
     # invoke the Travelers selector and make selection(s)
     unless search.travelers.blank?
       travelers_select.click

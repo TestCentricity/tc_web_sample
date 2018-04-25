@@ -1,13 +1,13 @@
 Firefox:
 https://github.com/mozilla/geckodriver/releases
-v0.20.0
+v0.20.1
 mac/geckodriver
 windows/geckodriver.exe
 
 
 Chrome:
 http://chromedriver.storage.googleapis.com/index.html
-v2.36  ( http://chromedriver.storage.googleapis.com/index.html?path=2.36/ )
+v2.38  ( http://chromedriver.storage.googleapis.com/index.html?path=2.38/ )
 mac/chromedriver
 windows/chromedriver.exe
 
@@ -19,13 +19,13 @@ mac/SafariDriver.safariextz
 Info --> Double-click the file to add the extension to Safari. When prompted, click 'Trust'.
 
 
-IE 32-bit:
+IE 64-bit:
 http://selenium-release.storage.googleapis.com/index.html
-v2.48
+v3.11
 windows/IEDriverServer.exe
 
 
 Edge:
-https://www.microsoft.com/en-us/download/details.aspx?id=48212
-v1.0
+https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/#downloads
+v5.16299
 windows/MicrosoftWebDriver.exe
