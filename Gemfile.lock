@@ -78,7 +78,7 @@ GEM
       ruby-ole (>= 1.0)
     test-unit (3.2.7)
       power_assert
-    testcentricity_web (3.0.0)
+    testcentricity_web (3.0.1)
       browserstack-local
       capybara
       childprocess (~> 0.5)
@@ -106,7 +106,7 @@ DEPENDENCIES
   parallel_tests
   pry
   require_all (= 1.5.0)
-  testcentricity_web (>= 3.0.0)
+  testcentricity_web (>= 3.0.1)
 
 BUNDLED WITH
    1.16.1

@@ -35,7 +35,7 @@ Automated tests may be targeted at one of 2 test environments. Those test enviro
 `test`    | TEST environment
 `prod`    | PRODUCTION environment
 
-NOTE:  Both environments point to the same US English UAL Booking portal at http://www.united.com/ual/
+**NOTE:**  Both environments point to the same UAL Booking portal at http://www.united.com/ual/
 
 
 ### `test_context`:
@@ -52,20 +52,23 @@ Automated tests may be targeted at one of 4 test contexts. Those test contexts a
 
 ### `target_browser`:
 
-Automated tests may be targeted at one of 4 supported desktop web browsers, which must already be locally installed on your test workstation. Supported desktop browsers are:
+Automated tests may be targeted at one of 7 supported desktop web browsers, which must already be locally installed on your test workstation. Supported desktop browsers are:
 
-**Value** | **Description**
-----------|----------------
-`firefox` | OS X or Windows
-`chrome`  | OS X or Windows
-`safari`  | OS X only
-`ie`      | Windows only (IE version 10.x or greater only)
+**Value**          | **Description**
+-------------------|----------------
+`chrome`           | OS X or Windows
+`chrome_headless`  | OS X or Windows (headless - no visible UI)
+`firefox`          | OS X or Windows (Firefox version 55 or greater only)
+`firefox_headless` | OS X or Windows (headless - no visible UI)
+`firefox_legacy`   | OS X or Windows (Firefox version 47.0.1 only)
+`safari`           | OS X only
+`ie`               | Windows only (IE version 10.x or greater only)
 
 Automated tests may also be targeted at one of 44 supported emulated mobile web browsers, hosted within a local instance of the Chrome desktop browser. The specified mobile
 browser's user agent, CSS screen dimensions, and default screen orientation will be automatically set in the local Chrome browser instance. Supported mobile browsers are:
 
 **Value**             | **CSS Screen Dimensions** | **Default Orientation**  | **OS Version**
-----------------------|---------------------------|--------------------------|--------------
+----------------------|---------------------------|--------------------------|---------------
 `ipad`                |1024 x 768 |landscape |iOS 10
 `ipad_pro`            |1366 x 1024|landscape |iOS 11
 `ipad_pro_10_5`       |1112 x 834 |landscape |iOS 11
@@ -90,9 +93,9 @@ browser's user agent, CSS screen dimensions, and default screen orientation will
 `iphone6_plus`        |414 x 736  |portrait  |iOS 9.1
 `iphone7`             |375 x 667  |portrait  |iOS 10
 `iphone7_plus`        |414 x 736  |portrait  |iOS 10
-`iphone7_chrome`      |375 x 667  |portrait  |iOS 10 - Mobile Chrome browser for iOS
-`iphone7_firefox`     |375 x 667  |portrait  |iOS 10 - Mobile Firefox browser for iOS
-`iphone7_edge`        |375 x 667  |portrait  |iOS 10 - Microsoft Edge browser for iOS
+`iphone7_chrome`      |375 x 667  |portrait  |iOS 11 - Mobile Chrome browser for iOS
+`iphone7_firefox`     |375 x 667  |portrait  |iOS 11 - Mobile Firefox browser for iOS
+`iphone7_edge`        |375 x 667  |portrait  |iOS 11 - Microsoft Edge browser for iOS
 `iphone8`             |375 x 667  |portrait  |iOS 11
 `iphone8_plus`        |414 x 736  |portrait  |iOS 11
 `iphonex`             |375 x 812  |portrait  |iOS 11
@@ -129,9 +132,9 @@ button to open the `tc_web_sample` project.
 4.  To run Cucumber, execute the following command in the RubyMine Terminal window:
   `bundle exec cucumber -p target_test_environment -p target_browser -p test_context`
   
-NOTE:  To have Cucumber generate HTML formatted test results, append `-p report` to the above command line arguments.
+**NOTE:**  To have Cucumber generate HTML formatted test results, append `-p report` to the above command line arguments.
 
-NOTE:  If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device by appending `-p landscape` or `-p portrait`
+**NOTE:**  If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device by appending `-p landscape` or `-p portrait`
 to the above command line arguments.
 
 For example, to execute the entire regression suite against the TEST environment on a locally hosted Chrome browser, with test results being logged to an HTML test results
@@ -171,4 +174,4 @@ To specify one of the 7 supported language/locale combinations at runtime, inclu
 Build Acceptance Test suite against the TEST environment on a locally hosted Chrome browser as a French Canadian user, execute the following command in the Terminal:
     `bundle exec cucumber -p test -p chrome -p bat -p fr-ca`
 
-NOTE:  If you do not specify a target locale, the default target locale will be `en-us` (U.S./English).
+**NOTE:**  If you do not specify a target locale, the default target locale will be `en-us` (U.S./English).
