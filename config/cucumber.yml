@@ -303,7 +303,7 @@ my_ios_10_3_ipad:      --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="My Te
 
 appium_android:        WEB_BROWSER=appium AUTOMATION_ENGINE=UiAutomator2 APP_PLATFORM_NAME="Android" <%= mobile %>
 android_8:             --profile appium_android APP_BROWSER="Chrome" APP_VERSION="8.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.31/chromedriver"
-android_7:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="7.1.1" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.28/chromedriver"
+android_7:             --profile appium_android APP_BROWSER="Chrome" APP_VERSION="7.1.1" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.28/chromedriver"
 android_6:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="6.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.20/chromedriver"
 pixel_xl_api26_sim:    --profile android_8 DEVICE_TYPE=phone APP_DEVICE="Pixel_XL_API_26"
 pixel_2_xl_api26_sim:  --profile android_8 DEVICE_TYPE=phone APP_DEVICE="Pixel_2_XL_API_26"
@@ -311,6 +311,7 @@ pixel_api_25_sim:      --profile android_7 DEVICE_TYPE=phone APP_DEVICE="Pixel_A
 pixel_xl_api25_sim:    --profile android_7 DEVICE_TYPE=phone APP_DEVICE="Pixel_XL_API_25"
 nexus_6_api23_sim:     --profile android_6 DEVICE_TYPE=phone APP_DEVICE="Nexus_6_API_23"
 
+nexus_10_api23_sim:    --profile android_6 DEVICE_TYPE=tablet APP_DEVICE="Nexus_10_API_23"
 nexus_9_api25_sim:     --profile android_7 DEVICE_TYPE=tablet APP_DEVICE="Nexus_9_API_25"
 nexus_10_api25_sim:    --profile android_7 DEVICE_TYPE=tablet APP_DEVICE="Nexus_10_API_25"
 pixel_c_api26_sim:     --profile android_8 DEVICE_TYPE=tablet APP_DEVICE="Pixel_C_API_26"

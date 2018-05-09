@@ -43,6 +43,11 @@ Before do |scenario|
 end
 
 
+After do
+  # close Capybara Appium driver if it was opened
+  Capybara.page.driver.quit if Capybara.default_driver == :appium
+end
+
 
 # exclusionary Around hooks to prevent running feature/scenario on unsupported browsers, devices, or
 # cloud remote browser hosting platforms. Use the following tags to block test execution:

@@ -29,16 +29,16 @@ class TravelersSelector < TestCentricity::PageSection
   #
   def select_travelers(travelers_data)
     num_adults_field.wait_until_visible(5)
-    num_adults_field.set('0')
+    num_adults_field.clear
     total_travelers = 0
     # iterate through each type of traveler specified
     travelers_data.split(', ').each do |travelers|
       # determine number and type of traveler(s)
       segment = travelers.split(' ')
-      num_travelers  = segment[0]
+      num_travelers = segment[0].to_i
       segment.delete_at(0)
-      type_travelers = segment.join(' ')
-      total_travelers = total_travelers + num_travelers.to_i
+      type_travelers  = segment.join(' ')
+      total_travelers = total_travelers + num_travelers
       # find traveler type object
       case type_travelers.downcase
       when 'adult', 'adults'
@@ -61,6 +61,7 @@ class TravelersSelector < TestCentricity::PageSection
         raise "'#{type_travelers}' is not a valid traveler type"
       end
       # set the number of travelers for the selected traveler type
+      traveler_type_obj.clear
       traveler_type_obj.set(num_travelers)
     end
     # save the total number of travelers

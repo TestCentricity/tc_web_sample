@@ -9,7 +9,7 @@ class FlightSearchResultsPage < GenericPortalPage
               destination_field:      'input#Destination',
               departure_date_field:   'input#DepartDate',
               return_date_field:      'input#ReturnDateForEditSearch'
-  list        :flight_results_list,   'ul#flight-result-list-revised'
+  list        :flight_results_list,   'ul#flight-result-list-revised:nth-of-type(1)'
   table       :fare_calendar_table,   'table.fare-calendar-price-month'
   labels      error_message_label:    'div#gridNearByError > h2',
               nearby_error_message:   'p#nearbysearcherrormsg'
