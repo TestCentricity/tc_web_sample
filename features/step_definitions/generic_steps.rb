@@ -16,29 +16,29 @@ end
 
 Given(/^I am (?:on|viewing) the ([^\"]*) page$/) do |page_name|
   # find and load the specified target page
-  target_page = page_dispatcher(page_name)
-  target_page.load_page if target_page
+  target_page = PageManager.find_page(page_name)
+  target_page.load_page
 end
 
 
 Given(/^I (?:go|navigate) to the ([^\"]*) page$/) do |page_name|
   # find and navigate to the specified target page
-  target_page = page_dispatcher(page_name)
-  target_page.navigate_to if target_page
+  target_page = PageManager.find_page(page_name)
+  target_page.navigate_to
   target_page.verify_page_exists
 end
 
 
 Then(/^I should see the ([^\"]*) page$/) do |page_name|
   # find and verify that the specified target page is loaded
-  target_page = page_dispatcher(page_name)
-  target_page.verify_page_exists if target_page
+  target_page = PageManager.find_page(page_name)
+  target_page.verify_page_exists
 end
 
 
 Then(/^I expect the ([^\"]*) page to be correctly displayed$/) do |page_name|
   # find and verify that the specified target page is loaded
-  target_page = page_dispatcher(page_name)
+  target_page = PageManager.find_page(page_name)
   target_page.verify_page_exists
   # verify that target page is correctly displayed
   target_page.verify_page_ui
@@ -84,9 +84,3 @@ When(/^I set device orientation to ([^\"]*)$/) do |orientation|
   Browsers.set_device_orientation(orientation.downcase.to_sym)
 end
 
-
-def page_dispatcher(page_name)
-  page = PageManager.find_page(page_name)
-  raise "No page object defined for page named '#{page_name}'" unless page
-  page
-end

@@ -68,11 +68,13 @@ class FlightBookingPage < GenericPortalPage
     # select flexible dates, if specified
     flexible_checkbox.click if search.flexible.to_bool
     # populate the search data fields with their associate search parameters
-    fields = { origin_field      => search.origin,
-               destination_field => search.destination,
-               depart_date_field => depart_date_value,
-               return_date_field => return_date_value,
-               month_select      => month_value }
+    fields = {
+        origin_field      => search.origin,
+        destination_field => search.destination,
+        depart_date_field => depart_date_value,
+        return_date_field => return_date_value,
+        month_select      => month_value
+    }
     populate_data_fields(fields)
     # tab out of departure date field if the popup calendar remains visible
     if calendar_popup.visible?

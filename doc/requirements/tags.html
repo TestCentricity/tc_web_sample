@@ -69,7 +69,7 @@
 
   <div id="tags" class="requirements">
     <script type="text/javascript" charset="utf-8">
-      var tag_list = [ '@bat','@desktop','@flight','@mobile','@regression','@search' ];
+      var tag_list = [ '@bat','@desktop','@dev','@fixed_dates','@flexible_dates','@flight','@mobile','@regression','@search' ];
 
       $(function() {
 
@@ -157,6 +157,9 @@
     <div class="tags" style="margin-top: 20px;"><span class="name">Tags:</span>
       <span class="tag" href="tags/bat.html">@bat</span>,
 <span class="tag" href="tags/desktop.html">@desktop</span>,
+<span class="tag" href="tags/dev.html">@dev</span>,
+<span class="tag" href="tags/fixed_dates.html">@fixed_dates</span>,
+<span class="tag" href="tags/flexible_dates.html">@flexible_dates</span>,
 <span class="tag" href="tags/flight.html">@flight</span>,
 <span class="tag" href="tags/mobile.html">@mobile</span>,
 <span class="tag" href="tags/regression.html">@regression</span>,
@@ -165,25 +168,25 @@
 
     <div id="features">
       <div class="title">
-        <span class="name">Features<span id="scenario_count"> (6)</span></span>
+        <span class="name">Features<span id="scenario_count"> (7)</span></span>
       </div>
       
       <ul style="padding-left: 0px;">
       
-        <li class="feature odd @desktop @mobile @regression @flight @search">
-        <span class='object_link'><a href="features/flight_booking/flight_search.html" title="requirements::features::flight_booking::flight_search (feature)">Search for Flights using the Flight Booking Home page</a></span>
+        <li class="feature odd @desktop @mobile @regression @flight @search @fixed_dates">
+        <span class='object_link'><a href="features/flight_booking/fixed_date_search.html" title="requirements::features::flight_booking::fixed_date_search (feature)">Search for Flights using Fixed Dates</a></span>
           
           
-          - <small><span class="tag" href="tags/desktop.html">@desktop</span>, <span class="tag" href="tags/mobile.html">@mobile</span>, <span class="tag" href="tags/regression.html">@regression</span>, <span class="tag" href="tags/flight.html">@flight</span>, <span class="tag" href="tags/search.html">@search</span></small>
+          - <small><span class="tag" href="tags/desktop.html">@desktop</span>, <span class="tag" href="tags/mobile.html">@mobile</span>, <span class="tag" href="tags/regression.html">@regression</span>, <span class="tag" href="tags/flight.html">@flight</span>, <span class="tag" href="tags/search.html">@search</span>, <span class="tag" href="tags/fixed_dates.html">@fixed_dates</span></small>
           
         </li>
         
         
           <ul style="padding-left: 20px;">
           	
-          	<li class="scenario even @desktop @mobile @regression @flight @search " count="0">
+          	<li class="scenario even @desktop @mobile @regression @flight @search @fixed_dates " count="0">
           	  <span class='object_link'>
-             		<a href="features/flight_booking/flight_search.html#scenario_0">
+             		<a href="features/flight_booking/fixed_date_search.html#scenario_0">
              		  Search for Round Trip flight with fixed dates
              		</a>
              	</span>
@@ -196,10 +199,10 @@
                 
                   <ul style="padding-left: 40px;">
                   
-                    <li class="scenario odd @desktop @mobile @regression @flight @search  @bat" count="1">
+                    <li class="scenario odd @desktop @mobile @regression @flight @search @fixed_dates  @bat" count="1">
 
                      <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_0">
+                       <a href="features/flight_booking/fixed_date_search.html#scenario_0">
                           Examples
                        </a>
                      </span>
@@ -211,10 +214,10 @@
                     </li>
                     
                   
-                    <li class="scenario even @desktop @mobile @regression @flight @search  " count="2">
+                    <li class="scenario even @desktop @mobile @regression @flight @search @fixed_dates  " count="2">
 
                      <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_0">
+                       <a href="features/flight_booking/fixed_date_search.html#scenario_0">
                           Examples
                        </a>
                      </span>
@@ -227,9 +230,9 @@
                   </ul>
                 
           
-          	<li class="scenario odd @desktop @mobile @regression @flight @search " count="0">
+          	<li class="scenario odd @desktop @mobile @regression @flight @search @fixed_dates " count="0">
           	  <span class='object_link'>
-             		<a href="features/flight_booking/flight_search.html#scenario_1">
+             		<a href="features/flight_booking/fixed_date_search.html#scenario_1">
              		  Search for One Way flight with fixed date
              		</a>
              	</span>
@@ -242,10 +245,10 @@
                 
                   <ul style="padding-left: 40px;">
                   
-                    <li class="scenario even @desktop @mobile @regression @flight @search  @bat" count="1">
+                    <li class="scenario even @desktop @mobile @regression @flight @search @fixed_dates  @bat" count="1">
 
                      <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_1">
+                       <a href="features/flight_booking/fixed_date_search.html#scenario_1">
                           Examples
                        </a>
                      </span>
@@ -257,10 +260,10 @@
                     </li>
                     
                   
-                    <li class="scenario odd @desktop @mobile @regression @flight @search  " count="2">
+                    <li class="scenario odd @desktop @mobile @regression @flight @search @fixed_dates  " count="2">
 
                      <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_1">
+                       <a href="features/flight_booking/fixed_date_search.html#scenario_1">
                           Examples
                        </a>
                      </span>
@@ -273,10 +276,10 @@
                   </ul>
                 
           
-          	<li class="scenario even @desktop @mobile @regression @flight @search " count="0">
+          	<li class="scenario even @desktop @mobile @regression @flight @search @fixed_dates " count="0">
           	  <span class='object_link'>
-             		<a href="features/flight_booking/flight_search.html#scenario_2">
-             		  Search for Round Trip International flights using externally sourced data
+             		<a href="features/flight_booking/fixed_date_search.html#scenario_2">
+             		  Search for flights with fixed dates using externally sourced data
              		</a>
              	</span>
              	
@@ -288,10 +291,10 @@
                 
                   <ul style="padding-left: 40px;">
                   
-                    <li class="scenario odd @desktop @mobile @regression @flight @search  " count="4">
+                    <li class="scenario odd @desktop @mobile @regression @flight @search @fixed_dates  " count="4">
 
                      <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_2">
+                       <a href="features/flight_booking/fixed_date_search.html#scenario_2">
                           Examples
                        </a>
                      </span>
@@ -304,71 +307,9 @@
                   </ul>
                 
           
-          	<li class="scenario even @desktop @mobile @regression @flight @search " count="0">
+          	<li class="scenario even @desktop @mobile @regression @flight @search @fixed_dates " count="0">
           	  <span class='object_link'>
-             		<a href="features/flight_booking/flight_search.html#scenario_3">
-             		  Search for Round Trip flight with flexible dates
-             		</a>
-             	</span>
-             	
-              
-          	</li>
-
-            
-            
-                
-                  <ul style="padding-left: 40px;">
-                  
-                    <li class="scenario odd @desktop @mobile @regression @flight @search  " count="3">
-
-                     <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_3">
-                          Examples
-                       </a>
-                     </span>
-
-                    
-                    
-                    </li>
-                    
-                  
-                  </ul>
-                
-          
-          	<li class="scenario even @desktop @mobile @regression @flight @search " count="0">
-          	  <span class='object_link'>
-             		<a href="features/flight_booking/flight_search.html#scenario_4">
-             		  Search for One Way flight with flexible date
-             		</a>
-             	</span>
-             	
-              
-          	</li>
-
-            
-            
-                
-                  <ul style="padding-left: 40px;">
-                  
-                    <li class="scenario odd @desktop @mobile @regression @flight @search  " count="3">
-
-                     <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_4">
-                          Examples
-                       </a>
-                     </span>
-
-                    
-                    
-                    </li>
-                    
-                  
-                  </ul>
-                
-          
-          	<li class="scenario even @desktop @mobile @regression @flight @search " count="0">
-          	  <span class='object_link'>
-             		<a href="features/flight_booking/flight_search.html#scenario_5">
+             		<a href="features/flight_booking/fixed_date_search.html#scenario_3">
              		  No results returned for search with invalid criteria
              		</a>
              	</span>
@@ -381,10 +322,149 @@
                 
                   <ul style="padding-left: 40px;">
                   
-                    <li class="scenario odd @desktop @mobile @regression @flight @search  " count="2">
+                    <li class="scenario odd @desktop @mobile @regression @flight @search @fixed_dates  " count="2">
 
                      <span class='object_link'>
-                       <a href="features/flight_booking/flight_search.html#scenario_5">
+                       <a href="features/flight_booking/fixed_date_search.html#scenario_3">
+                          Examples
+                       </a>
+                     </span>
+
+                    
+                    
+                    </li>
+                    
+                  
+                  </ul>
+                
+          
+          </ul>
+        
+      
+        <li class="feature even @desktop @mobile @regression @flight @search @flexible_dates">
+        <span class='object_link'><a href="features/flight_booking/flexible_date_search.html" title="requirements::features::flight_booking::flexible_date_search (feature)">Search for Flights using Flexible Dates</a></span>
+          
+          
+          - <small><span class="tag" href="tags/desktop.html">@desktop</span>, <span class="tag" href="tags/mobile.html">@mobile</span>, <span class="tag" href="tags/regression.html">@regression</span>, <span class="tag" href="tags/flight.html">@flight</span>, <span class="tag" href="tags/search.html">@search</span>, <span class="tag" href="tags/flexible_dates.html">@flexible_dates</span></small>
+          
+        </li>
+        
+        
+          <ul style="padding-left: 20px;">
+          	
+          	<li class="scenario odd @desktop @mobile @regression @flight @search @flexible_dates " count="0">
+          	  <span class='object_link'>
+             		<a href="features/flight_booking/flexible_date_search.html#scenario_0">
+             		  Search for Round Trip flight with flexible dates
+             		</a>
+             	</span>
+             	
+              
+          	</li>
+
+            
+            
+                
+                  <ul style="padding-left: 40px;">
+                  
+                    <li class="scenario even @desktop @mobile @regression @flight @search @flexible_dates  @bat" count="1">
+
+                     <span class='object_link'>
+                       <a href="features/flight_booking/flexible_date_search.html#scenario_0">
+                          Examples
+                       </a>
+                     </span>
+
+                    
+                    
+                    - <small><span class="tag" href="tags/bat.html">@bat</span></small>
+                    
+                    </li>
+                    
+                  
+                    <li class="scenario odd @desktop @mobile @regression @flight @search @flexible_dates  " count="2">
+
+                     <span class='object_link'>
+                       <a href="features/flight_booking/flexible_date_search.html#scenario_0">
+                          Examples
+                       </a>
+                     </span>
+
+                    
+                    
+                    </li>
+                    
+                  
+                  </ul>
+                
+          
+          	<li class="scenario even @desktop @mobile @regression @flight @search @flexible_dates " count="0">
+          	  <span class='object_link'>
+             		<a href="features/flight_booking/flexible_date_search.html#scenario_1">
+             		  Search for One Way flight with flexible date
+             		</a>
+             	</span>
+             	
+              
+          	</li>
+
+            
+            
+                
+                  <ul style="padding-left: 40px;">
+                  
+                    <li class="scenario odd @desktop @mobile @regression @flight @search @flexible_dates  @bat" count="1">
+
+                     <span class='object_link'>
+                       <a href="features/flight_booking/flexible_date_search.html#scenario_1">
+                          Examples
+                       </a>
+                     </span>
+
+                    
+                    
+                    - <small><span class="tag" href="tags/bat.html">@bat</span></small>
+                    
+                    </li>
+                    
+                  
+                    <li class="scenario even @desktop @mobile @regression @flight @search @flexible_dates  " count="2">
+
+                     <span class='object_link'>
+                       <a href="features/flight_booking/flexible_date_search.html#scenario_1">
+                          Examples
+                       </a>
+                     </span>
+
+                    
+                    
+                    </li>
+                    
+                  
+                  </ul>
+                
+          
+          	<li class="scenario odd @desktop @mobile @regression @flight @search @flexible_dates @dev" count="0">
+          	  <span class='object_link'>
+             		<a href="features/flight_booking/flexible_date_search.html#scenario_2">
+             		  Search for flights with flexible dates using externally sourced data
+             		</a>
+             	</span>
+             	
+              
+                - <small><span class="tag" href="tags/dev.html">@dev</span></small>
+              
+          	</li>
+
+            
+            
+                
+                  <ul style="padding-left: 40px;">
+                  
+                    <li class="scenario even @desktop @mobile @regression @flight @search @flexible_dates @dev " count="4">
+
+                     <span class='object_link'>
+                       <a href="features/flight_booking/flexible_date_search.html#scenario_2">
                           Examples
                        </a>
                      </span>
@@ -411,7 +491,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Apr 28 11:16:09 2018 by
+  Generated on Wed May  9 11:40:03 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

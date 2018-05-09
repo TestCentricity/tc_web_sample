@@ -1,7 +1,8 @@
 # tc_web_sample
 
-This is a Cucumber based sample test framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and responsive mobile web functional testing of the
-UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing multiple language/locale combinations.
+This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and responsive mobile web functional
+testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing multiple language/locale
+combinations.
 
 
 ## Gem Dependencies:
@@ -46,7 +47,7 @@ Automated tests may be targeted at one of 4 test contexts. Those test contexts a
 ----------|----------------
 `bat`     | Run only features/scenarios with `@bat` tag to execute a Build Acceptance Test suite
 `regress` | Run only features/scenarios with `@regression` tag to execute a comprehensive Regression test suite
-`dev`     | Run only features/scenarios with `@dev` tag. Used to run only those features or scenarios that are tagged with `@dev`, are actively under development, and being debugged.
+`dev`     | Run only features/scenarios with `@dev` tag. Used to run only those features/scenarios that are tagged with `@dev`, are actively under development or being debugged.
 `wip`     | Run only features/scenarios with `@wip` tag  (work in progress)
 
 
@@ -122,6 +123,7 @@ of the TestCentricityWeb gem documentation. 
 
 
 ## Instructions for running the test suite:
+
 1.  Launch RubyMine, select the File/Open... menu item, navigate to the `tc_web_sample` folder on your drive's Home directory or your C: drive, and click the OK
 button to open the `tc_web_sample` project.
 
@@ -172,6 +174,7 @@ This sample test framework includes support for test execution against 7 languag
 
 To specify one of the 7 supported language/locale combinations at runtime, include `-p target_locale` as one of the command line arguments. For instance, to to execute the
 Build Acceptance Test suite against the TEST environment on a locally hosted Chrome browser as a French Canadian user, execute the following command in the Terminal:
+
     `bundle exec cucumber -p test -p chrome -p bat -p fr-ca`
 
 **NOTE:**  If you do not specify a target locale, the default target locale will be `en-us` (U.S./English).

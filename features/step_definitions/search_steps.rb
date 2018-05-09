@@ -14,7 +14,9 @@ When(/^I perform a search using ([^\"]*)$/) do |row_name|
 end
 
 
-Then(/^I should( not)? see search results on the Flight Search Results page$/) do |negate|
-  flight_search_results_page.verify_page_exists
-  flight_search_results_page.verify_search_results(!negate)
+Then(/^I should( not)? see search results on the ([^\"]*) page$/) do |negate, page_name|
+  # find and verify that the specified target page is loaded
+  target_page = PageManager.find_page(page_name)
+  target_page.verify_page_exists
+  target_page.verify_search_results(!negate)
 end
