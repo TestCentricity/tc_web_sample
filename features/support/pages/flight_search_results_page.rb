@@ -5,15 +5,15 @@ class FlightSearchResultsPage < GenericPortalPage
   trait(:page_locator)     { "body[class*='flight-search-results']" }
 
   # Flight Booking page UI elements
-  textfields  origin_field:           'input#Origin',
-              destination_field:      'input#Destination',
-              departure_date_field:   'input#DepartDate',
-              return_date_field:      'input#ReturnDateForEditSearch'
-  list        :flight_results_list,   'ul#flight-result-list-revised:nth-of-type(1)'
+  textfields  origin_field:           '#Origin',
+              destination_field:      '#Destination',
+              departure_date_field:   '#DepartDate',
+              return_date_field:      '#ReturnDateForEditSearch'
+  list        :flight_results_list,   'section#fl-results > div:nth-of-type(1) > ul#flight-result-list-revised:nth-of-type(1)'
   table       :fare_calendar_table,   'table.fare-calendar-price-month'
-  labels      error_message_label:    'div#gridNearByError > h2',
-              nearby_error_message:   'p#nearbysearcherrormsg'
-  button      :search_nearby_button,  'button#searchByNearbyAirport'
+  labels      error_message_label:    '#gridNearByError > h2',
+              nearby_error_message:   '#nearbysearcherrormsg'
+  button      :search_nearby_button,  '#searchByNearbyAirport'
 
   # if search results are expected, found is true. Verify that origin, destination, departure date,
   # and number of travelers is displayed on search results page.

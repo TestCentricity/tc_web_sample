@@ -7,20 +7,20 @@ class FlightBookingPage < GenericPortalPage
   # Flight Booking page UI elements
   labels       roundtrip_label:    "label[for='SearchTypeMain_roundTrip']",
                one_way_label:      "label[for='SearchTypeMain_oneWay']"
-  radio        :roundtrip_radio,   'input#SearchTypeMain_roundTrip', :roundtrip_label
-  radio        :one_way_radio,     'input#SearchTypeMain_oneWay', :one_way_label
+  radio        :roundtrip_radio,   '#SearchTypeMain_roundTrip', :roundtrip_label
+  radio        :one_way_radio,     '#SearchTypeMain_oneWay', :one_way_label
   elements     flexible_checkbox:  'div.form-row:nth-of-type(3) > div.form-group',
                nonstop_checkbox:   'div.nonstop-only',
-               calendar_popup:     'div#ui-datepicker-div'
-  textfields   origin_field:       'input#Origin',
-               destination_field:  'input#Destination',
-               depart_date_field:  'input#DepartDate',
-               return_date_field:  'input#ReturnDate'
-  selectlists  month_select:       'div#uniform-months',
-               duration_select:    'div#uniform-tripLength',
-               cabin_type_select:  'div#uniform-cabinType'
-  buttons      travelers_select:   'a#travelers-selector',
-               search_button:      'button#flightBookingSubmit'
+               calendar_popup:     '#ui-datepicker-div'
+  textfields   origin_field:       '#Origin',
+               destination_field:  '#Destination',
+               depart_date_field:  '#DepartDate',
+               return_date_field:  '#ReturnDate'
+  selectlists  month_select:       '#uniform-months',
+               duration_select:    '#uniform-tripLength',
+               cabin_type_select:  '#uniform-cabinType'
+  buttons      travelers_select:   '#travelers-selector',
+               search_button:      '#flightBookingSubmit'
   section      :travelers_selector, TravelersSelector
 
   # select the search type (either Round trip or One way)
