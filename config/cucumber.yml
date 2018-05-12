@@ -1,6 +1,6 @@
-<% desktop          = "--tags @desktop --require features BROWSER_SIZE=1500,1000" %>
+<% desktop          = "--tags @desktop --require features BROWSER_TILE=true BROWSER_SIZE=1500,1000" %>
 <% tablet           = "--tags @desktop --require features BROWSER_TILE=true" %>
-<% mobile           = "--tags @mobile  --require features" %>
+<% mobile           = "--tags @mobile  --require features BROWSER_TILE=true" %>
 <% regression       = "--tags ~@wip --tags ~@failing --tags @regression --require features" %>
 <% acceptance       = "--tags ~@wip --tags ~@failing --tags @bat --require features" %>
 <% jenkins_reports  = "--require features --format pretty --format html --out reports/test_results.html --format junit --out reports --format json --out reports/test_results.json" %>

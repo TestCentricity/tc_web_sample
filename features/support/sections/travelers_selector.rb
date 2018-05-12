@@ -7,14 +7,14 @@ class TravelersSelector < TestCentricity::PageSection
 
   # Travelers selector UI elements
   button      :close_button,          'button.modalCloseImg.dropdown-close'
-  textfields  num_adults_field:       'input#NumOfAdults',
-              num_seniors_field:      'input#NumOfSeniors',
-              num_child_16_17_field:  'input#NumOfChildren04',
-              num_child_12_15_field:  'input#NumOfChildren03',
-              num_child_5_11_field:   'input#NumOfChildren02',
-              num_child_2_4_field:    'input#NumOfChildren01',
-              num_infants_field:      'input#NumOfInfants',
-              num_lap_infants_field:  'input#NumOfLapInfants'
+  textfields  num_adults_field:       '#NumOfAdults',
+              num_seniors_field:      '#NumOfSeniors',
+              num_child_16_17_field:  '#NumOfChildren04',
+              num_child_12_15_field:  '#NumOfChildren03',
+              num_child_5_11_field:   '#NumOfChildren02',
+              num_child_2_4_field:    '#NumOfChildren01',
+              num_infants_field:      '#NumOfInfants',
+              num_lap_infants_field:  '#NumOfLapInfants'
 
   # travelers_data argument is a comma-delimited string, each segment specifying the number and type of traveler(s).
   # Valid traveler type descriptors are:
