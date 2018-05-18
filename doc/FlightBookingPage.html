@@ -298,7 +298,9 @@ features/test_data/data.xls</p>
 103
 104
 105
-106</pre>
+106
+107
+108</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 39</span>
@@ -335,11 +337,13 @@ features/test_data/data.xls</p>
   <span class='comment'># select flexible dates, if specified
 </span>  <span class='id identifier rubyid_flexible_checkbox'>flexible_checkbox</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>if</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_flexible'>flexible</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span>
   <span class='comment'># populate the search data fields with their associate search parameters
-</span>  <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_origin_field'>origin_field</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span>
-             <span class='id identifier rubyid_destination_field'>destination_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_destination'>destination</span><span class='comma'>,</span>
-             <span class='id identifier rubyid_depart_date_field'>depart_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_depart_date_value'>depart_date_value</span><span class='comma'>,</span>
-             <span class='id identifier rubyid_return_date_field'>return_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_return_date_value'>return_date_value</span><span class='comma'>,</span>
-             <span class='id identifier rubyid_month_select'>month_select</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_month_value'>month_value</span> <span class='rbrace'>}</span>
+</span>  <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+      <span class='id identifier rubyid_origin_field'>origin_field</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span>
+      <span class='id identifier rubyid_destination_field'>destination_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_destination'>destination</span><span class='comma'>,</span>
+      <span class='id identifier rubyid_depart_date_field'>depart_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_depart_date_value'>depart_date_value</span><span class='comma'>,</span>
+      <span class='id identifier rubyid_return_date_field'>return_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_return_date_value'>return_date_value</span><span class='comma'>,</span>
+      <span class='id identifier rubyid_month_select'>month_select</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_month_value'>month_value</span>
+  <span class='rbrace'>}</span>
   <span class='id identifier rubyid_populate_data_fields'>populate_data_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_fields'>fields</span><span class='rparen'>)</span>
   <span class='comment'># tab out of departure date field if the popup calendar remains visible
 </span>  <span class='kw'>if</span> <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
@@ -432,7 +436,7 @@ features/test_data/data.xls</p>
 </div>
 
       <div id="footer">
-  Generated on Sat Apr 28 11:16:08 2018 by
+  Generated on Fri May 18 09:23:53 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>
