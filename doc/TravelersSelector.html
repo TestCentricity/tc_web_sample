@@ -246,23 +246,24 @@ descriptors are:</p>
 68
 69
 70
-71</pre>
+71
+72</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/sections/travelers_selector.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_select_travelers'>select_travelers</span><span class='lparen'>(</span><span class='id identifier rubyid_travelers_data'>travelers_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_num_adults_field'>num_adults_field</span><span class='period'>.</span><span class='id identifier rubyid_wait_until_visible'>wait_until_visible</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_num_adults_field'>num_adults_field</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_num_adults_field'>num_adults_field</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
   <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='comment'># iterate through each type of traveler specified
 </span>  <span class='id identifier rubyid_travelers_data'>travelers_data</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_travelers'>travelers</span><span class='op'>|</span>
     <span class='comment'># determine number and type of traveler(s)
 </span>    <span class='id identifier rubyid_segment'>segment</span> <span class='op'>=</span> <span class='id identifier rubyid_travelers'>travelers</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_num_travelers'>num_travelers</span>  <span class='op'>=</span> <span class='id identifier rubyid_segment'>segment</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_num_travelers'>num_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_segment'>segment</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
     <span class='id identifier rubyid_segment'>segment</span><span class='period'>.</span><span class='id identifier rubyid_delete_at'>delete_at</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_type_travelers'>type_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_segment'>segment</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>+</span> <span class='id identifier rubyid_num_travelers'>num_travelers</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_type_travelers'>type_travelers</span>  <span class='op'>=</span> <span class='id identifier rubyid_segment'>segment</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>+</span> <span class='id identifier rubyid_num_travelers'>num_travelers</span>
     <span class='comment'># find traveler type object
 </span>    <span class='kw'>case</span> <span class='id identifier rubyid_type_travelers'>type_travelers</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
     <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>adult</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>adults</span><span class='tstring_end'>&#39;</span></span>
@@ -285,7 +286,8 @@ descriptors are:</p>
       <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type_travelers'>type_travelers</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; is not a valid traveler type</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
     <span class='comment'># set the number of travelers for the selected traveler type
-</span>    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_num_travelers'>num_travelers</span><span class='rparen'>)</span>
+</span>    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_num_travelers'>num_travelers</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
   <span class='comment'># save the total number of travelers
 </span>  <span class='const'><span class='object_link'><a href="FlightSearch.html" title="FlightSearch (class)">FlightSearch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_total_travelers'>total_travelers</span>
@@ -303,7 +305,7 @@ descriptors are:</p>
 </div>
 
       <div id="footer">
-  Generated on Sat Apr 28 11:16:08 2018 by
+  Generated on Fri May 18 09:23:53 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>
