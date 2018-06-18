@@ -1,8 +1,8 @@
 # tc_web_sample
 
-This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and responsive mobile web functional
-testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing multiple language/locale
-combinations.
+This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and responsive mobile web
+functional testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing
+multiple language/locale combinations.
 
 
 ## Gem Dependencies:
@@ -117,14 +117,16 @@ browser's user agent, CSS screen dimensions, and default screen orientation will
 
 To change the emulated device's screen orientation from the default setting, set the `ORIENTATION` Environment Variable to either `portrait` or `landscape`.
 
-Automated tests may also be targeted to run on cloud hosted desktop or mobile web browsers using the BrowserStack, Sauce Labs, CrossBrowserTesting, or TestingBot
-services. For instructions on using these cloud hosted services, refer to the [Remotely hosted desktop and mobile web browsers](https://www.rubydoc.info/gems/testcentricity_web/3.0.5#Remotely_hosted_desktop_and_mobile_web_browsers) section
+Automated tests may also be targeted to run on cloud hosted desktop or mobile web browsers using the [Browserstack](https://www.browserstack.com/list-of-browsers-and-platforms?product=automate),
+[Sauce Labs](https://saucelabs.com/open-source#automated-testing-platform), [CrossBrowserTesting](https://crossbrowsertesting.com/selenium-testing), 
+[TestingBot](https://testingbot.com/features), or [Gridlastic](https://www.gridlastic.com/test-environments.html) services. For instructions on using these
+cloud hosted services, refer to the [Remotely hosted desktop and mobile web browsers](https://www.rubydoc.info/gems/testcentricity_web/3.0.6#Remotely_hosted_desktop_and_mobile_web_browsers) section
 of the TestCentricity gem documentation. 
 
 
 ## Instructions for running tests sequentially:
 
-These instruction are for the sequential execution of features/scenarios. Test will be executed within a single browser instance.
+These instruction are for the sequential execution of features/scenarios. Tests will be executed within a single browser instance.
 
 1.  Launch RubyMine, select the File/Open... menu item, navigate to the `tc_web_sample` folder on your drive's Home directory or your C: drive, and click the OK
 button to open the `tc_web_sample` project.

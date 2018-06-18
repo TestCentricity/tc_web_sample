@@ -63,10 +63,11 @@ chrome_headless:    WEB_BROWSER=chrome_headless  <%= desktop %>
 firefox_headless:   WEB_BROWSER=firefox_headless <%= desktop %>
 firefox_legacy:     WEB_BROWSER=firefox_legacy <%= desktop %>
 
+chrome_remote:      WEB_BROWSER=chrome SELENIUM=remote REMOTE_ENDPOINT="http://localhost:4444/wd/hub"
+
 
 #==============
 # profiles for locally hosted mobile web browsers (emulated locally in Chrome browser)
-# NOTE: to host emulated mobile browsers in Firefox set the HOST_BROWSER=chrome
 #==============
 
 ipad:                WEB_BROWSER=ipad                HOST_BROWSER=chrome <%= tablet %>
@@ -130,48 +131,39 @@ landscape:          ORIENTATION=landscape
 browserstack:       WEB_BROWSER=browserstack BS_USERNAME=<INSERT USER NAME HERE> BS_AUTHKEY=<INSERT PASSWORD HERE> AUTOMATE_PROJECT="TC_Web_Sample"
 bs_desktop:         --profile browserstack <%= desktop %> RESOLUTION="1920x1080"
 bs_mobile:          --profile browserstack <%= mobile %>
+bs_firefox:         BS_BROWSER="Firefox" SELENIUM_VERSION="3.11.0" WD_VERSION="0.19.1"
+bs_chrome:          BS_BROWSER="Chrome"  SELENIUM_VERSION="3.11.0"
+bs_safari:          BS_BROWSER="Safari"  SELENIUM_VERSION="2.53.0" WD_VERSION="2.48"
 
 # BrowserStack OS X desktop browser profiles
 bs_macos_high_sierra:  --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="High Sierra"
-bs_ff_high_sierra:     --profile bs_macos_high_sierra BS_BROWSER="Firefox"
-bs_chrome_high_sierra: --profile bs_macos_high_sierra BS_BROWSER="Chrome"
-bs_safari_high_sierra: --profile bs_macos_high_sierra BS_BROWSER="Safari"
+bs_ff_high_sierra:     --profile bs_macos_high_sierra --profile bs_firefox
+bs_chrome_high_sierra: --profile bs_macos_high_sierra --profile bs_chrome
+bs_safari_high_sierra: --profile bs_macos_high_sierra --profile bs_safari
 
 bs_macos_sierra:    --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="Sierra"
-bs_ff_sierra:       --profile bs_macos_sierra BS_BROWSER="Firefox"
-bs_chrome_sierra:   --profile bs_macos_sierra BS_BROWSER="Chrome"
-bs_safari_sierra:   --profile bs_macos_sierra BS_BROWSER="Safari"
+bs_ff_sierra:       --profile bs_macos_sierra --profile bs_firefox
+bs_chrome_sierra:   --profile bs_macos_sierra --profile bs_chrome
+bs_safari_sierra:   --profile bs_macos_sierra --profile bs_safari
 
 bs_osx_el_capitan:  --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="El Capitan"
-bs_ff_el_cap:       --profile bs_osx_el_capitan BS_BROWSER="Firefox"
-bs_chrome_el_cap:   --profile bs_osx_el_capitan BS_BROWSER="Chrome"
-bs_safari_el_cap:   --profile bs_osx_el_capitan BS_BROWSER="Safari"
+bs_ff_el_cap:       --profile bs_osx_el_capitan --profile bs_firefox
+bs_chrome_el_cap:   --profile bs_osx_el_capitan --profile bs_chrome
+bs_safari_el_cap:   --profile bs_osx_el_capitan --profile bs_safari
 
 bs_osx_yosemite:    --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="Yosemite"
-bs_ff_yos:          --profile bs_osx_yosemite BS_BROWSER="Firefox"
-bs_chrome_yos:      --profile bs_osx_yosemite BS_BROWSER="Chrome"
-bs_safari_yos:      --profile bs_osx_yosemite BS_BROWSER="Safari"
-
-bs_osx_mavericks:   --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="Mavericks"
-bs_ff_mav:          --profile bs_osx_mavericks BS_BROWSER="Firefox"
-bs_chrome_mav:      --profile bs_osx_mavericks BS_BROWSER="Chrome"
-bs_safari_mav:      --profile bs_osx_mavericks BS_BROWSER="Safari"
+bs_ff_yos:          --profile bs_osx_yosemite --profile bs_firefox
+bs_chrome_yos:      --profile bs_osx_yosemite --profile bs_chrome
+bs_safari_yos:      --profile bs_osx_yosemite --profile bs_safari
 
 # BrowserStack Windows desktop browser profiles
-bs_win7:            --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="7"
 bs_win8:            --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="8"
 bs_win10:           --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="10"
-bs_ff_win7:         --profile bs_win7 BS_BROWSER="Firefox"
-bs_ff_win8:         --profile bs_win8 BS_BROWSER="Firefox"
-bs_ff_win10:        --profile bs_win10 BS_BROWSER="Firefox"
-bs_chrome_win7:     --profile bs_win7 BS_BROWSER="Chrome"
-bs_chrome_win8:     --profile bs_win8 BS_BROWSER="Chrome"
-bs_chrome_win10:    --profile bs_win10 BS_BROWSER="Chrome"
+bs_ff_win8:         --profile bs_win8  --profile bs_firefox
+bs_ff_win10:        --profile bs_win10 --profile bs_firefox
+bs_chrome_win8:     --profile bs_win8  --profile bs_chrome
+bs_chrome_win10:    --profile bs_win10 --profile bs_chrome
 
-bs_ie_win7:         --profile bs_win7 BS_BROWSER="IE"
-bs_ie11_win7:       --profile bs_ie_win7 BS_VERSION="11.0"
-bs_ie10_win7:       --profile bs_ie_win7 BS_VERSION="10.0"
-bs_ie9_win7:        --profile bs_ie_win7 BS_VERSION="9.0"
 bs_ie10_win8:       --profile bs_win8 BS_BROWSER="IE" BS_VERSION="10.0"
 bs_ie11_win8:       --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="8.1" BS_BROWSER="IE" BS_VERSION="11.0"
 bs_ie11_win10:      --profile bs_win10 BS_BROWSER="IE" BS_VERSION="11.0"
@@ -339,26 +331,15 @@ cb_ff_yos:          --profile cb_osx_yosemite CB_BROWSER="FF44"
 cb_chrome_yos:      --profile cb_osx_yosemite CB_BROWSER="Chrome48x64"
 cb_safari_yos:      --profile cb_osx_yosemite CB_BROWSER="Safari8"
 
-cb_osx_mavericks:   --profile cb_osx CB_OS="Mac10.9"
-cb_ff_mav:          --profile cb_osx_mavericks CB_BROWSER="FF43"
-cb_chrome_mav:      --profile cb_osx_mavericks CB_BROWSER="Chrome48x64"
-cb_safari_mav:      --profile cb_osx_mavericks CB_BROWSER="Safari7"
-
 # CrossBrowserTesting Windows desktop browser profiles
 cb_win:             --profile cb_desktop RESOLUTION="1920x1080"
-cb_win7:            --profile cb_win CB_OS="Win7x64-C1"
 cb_win8:            --profile cb_win CB_OS="Win8"
 cb_win10:           --profile cb_win CB_OS="Win10"
-cb_ff_win7:         --profile cb_win7 CB_BROWSER="FF44"
 cb_ff_win8:         --profile cb_win8 CB_BROWSER="FF44"
 cb_ff_win10:        --profile cb_win10 CB_BROWSER="FF44"
-cb_chrome_win7:     --profile cb_win7 CB_BROWSER="Chrome48x64"
 cb_chrome_win8:     --profile cb_win8 CB_BROWSER="Chrome48x64"
 cb_chrome_win10:    --profile cb_win10 CB_BROWSER="Chrome48x64"
 
-cb_ie11_win7:       --profile cb_win7 CB_BROWSER="IE11"
-cb_ie10_win7:       --profile cb_win7 CB_BROWSER="IE10"
-cb_ie9_win7:        --profile cb_win7 CB_BROWSER="IE9"
 cb_ie11_win8:       --profile cb_win8 CB_BROWSER="IE11"
 cb_ie10_win8:       --profile cb_win8 CB_BROWSER="IE10"
 cb_ie11_win10:      --profile cb_win10 CB_BROWSER="IE11"
@@ -397,25 +378,14 @@ sl_ff_yos:          --profile sl_osx_yosemite SL_BROWSER="firefox"
 sl_chrome_yos:      --profile sl_osx_yosemite SL_BROWSER="chrome"
 sl_safari_yos:      --profile sl_osx_yosemite SL_BROWSER="safari"
 
-sl_osx_mavericks:   --profile sl_desktop SL_OS="OS X 10.9" RESOLUTION="1920x1200"
-sl_ff_mav:          --profile sl_osx_mavericks SL_BROWSER="firefox"
-sl_chrome_mav:      --profile sl_osx_mavericks SL_BROWSER="chrome"
-sl_safari_mav:      --profile sl_osx_mavericks SL_BROWSER="safari"
-
 # SauceLabs Windows desktop browser profiles
-sl_win7:            --profile sl_desktop SL_OS="Windows 7" RESOLUTION="1920x1200"
 sl_win8:            --profile sl_desktop SL_OS="Windows 8.1" RESOLUTION="1280x1024"
 sl_win10:           --profile sl_desktop SL_OS="Windows 10" RESOLUTION="1280x1024"
-sl_ff_win7:         --profile sl_win7 SL_BROWSER="firefox"
 sl_ff_win8:         --profile sl_win8 SL_BROWSER="firefox"
 sl_ff_win10:        --profile sl_win10 SL_BROWSER="firefox"
-sl_chrome_win7:     --profile sl_win7 SL_BROWSER="chrome"
 sl_chrome_win8:     --profile sl_win8 SL_BROWSER="chrome"
 sl_chrome_win10:    --profile sl_win10 SL_BROWSER="chrome"
 
-sl_ie11_win7:       --profile sl_win7 SL_BROWSER="internet explorer" SL_VERSION="11.0"
-sl_ie10_win7:       --profile sl_win7 SL_BROWSER="internet explorer" SL_VERSION="10.0"
-sl_ie9_win7:        --profile sl_win7 SL_BROWSER="internet explorer" SL_VERSION="9.0"
 sl_ie11_win8:       --profile sl_win8 SL_BROWSER="internet explorer" SL_VERSION="11.0"
 sl_ie11_win10:      --profile sl_win10 SL_BROWSER="internet explorer"
 
@@ -458,24 +428,40 @@ tb_ff_yos:          --profile tb_osx_yosemite TB_BROWSER="firefox"
 tb_chrome_yos:      --profile tb_osx_yosemite TB_BROWSER="chrome"
 tb_safari_yos:      --profile tb_osx_yosemite TB_BROWSER="safari" TB_VERSION="8"
 
-tb_osx_mavericks:   --profile tb_desktop TB_OS="MAVERICKS"
-tb_ff_mav:          --profile tb_osx_mavericks TB_BROWSER="firefox"
-tb_chrome_mav:      --profile tb_osx_mavericks TB_BROWSER="chrome"
-tb_safari_mav:      --profile tb_osx_mavericks TB_BROWSER="safari" TB_VERSION="7"
-
 # TestingBot Windows desktop browser profiles
-tb_win7:            --profile tb_desktop TB_OS="WIN7"
 tb_win8:            --profile tb_desktop TB_OS="WIN8"
 tb_win10:           --profile tb_desktop TB_OS="WIN10"
-tb_ff_win7:         --profile tb_win7 TB_BROWSER="firefox"
 tb_ff_win8:         --profile tb_win8 TB_BROWSER="firefox"
 tb_ff_win10:        --profile tb_win10 TB_BROWSER="firefox"
-tb_chrome_win7:     --profile tb_win7 TB_BROWSER="chrome"
 tb_chrome_win8:     --profile tb_win8 TB_BROWSER="chrome"
 tb_chrome_win10:    --profile tb_win10 TB_BROWSER="chrome"
 
-tb_ie9_win7:        --profile tb_win7 TB_BROWSER="internet explorer" TB_VERSION="9"
 tb_ie11_win8:       --profile tb_win8 TB_BROWSER="internet explorer" TB_VERSION="11"
 tb_ie10_win8:       --profile tb_win8 TB_BROWSER="internet explorer" TB_VERSION="10"
 tb_ie11_win10:      --profile tb_win10 TB_BROWSER="internet explorer" TB_VERSION="11"
 tb_edge_win10:      --profile tb_win10 TB_BROWSER="microsoftedge" TB_VERSION="13"
+
+
+#==============
+# profiles for remotely hosted web browsers on the Gridlastic service
+#==============
+
+gridlastic:         WEB_BROWSER=gridlastic GL_USERNAME=<INSERT USER NAME HERE> GL_AUTHKEY=<INSERT PASSWORD HERE> GL_SUBDOMAIN=<INSERT SUBDOMAIN HERE>
+gl_video:           RECORD_VIDEO="True" VIDEO_URL="<INSERT VIDEO URL HERE>"
+gl_desktop:         --profile gridlastic --profile gl_video <%= desktop %>
+
+# Gridlastic Windows desktop browser profiles
+gl_windows:         --profile gl_desktop GL_PLATFORM="windows"
+gl_win8:            --profile gl_windows GL_OS="WIN8"
+gl_win8_1:          --profile gl_windows GL_OS="WIN8_1"
+gl_win10:           --profile gl_windows GL_OS="WIN10"
+gl_ff_win8:         --profile gl_win8_1 GL_BROWSER="firefox" GL_VERSION="59"
+gl_ff_win10:        --profile gl_win10 GL_BROWSER="firefox" GL_VERSION="59"
+gl_chrome_win8:     --profile gl_win8_1 GL_BROWSER="chrome" GL_VERSION="latest"
+gl_chrome_win10:    --profile gl_win10 GL_BROWSER="chrome" GL_VERSION="latest"
+
+gl_ie11_win8:       --profile gl_win8_1 GL_BROWSER="internet explorer" GL_VERSION="11"
+gl_ie10_win8:       --profile gl_win8 GL_BROWSER="internet explorer" GL_VERSION="10"
+gl_ie11_win10:      --profile gl_win10 GL_BROWSER="internet explorer" GL_VERSION="11"
+
+gl_chrome_linux:    --profile gl_desktop GL_OS="LINUX" GL_BROWSER="chrome" GL_VERSION="latest"

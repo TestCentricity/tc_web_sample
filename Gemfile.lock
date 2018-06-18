@@ -60,7 +60,7 @@ GEM
     parallel (1.12.1)
     parallel_tests (2.21.3)
       parallel
-    power_assert (1.1.1)
+    power_assert (1.1.2)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -78,7 +78,7 @@ GEM
       ruby-ole (>= 1.0)
     test-unit (3.2.8)
       power_assert
-    testcentricity_web (3.0.5)
+    testcentricity_web (3.0.6)
       appium_lib
       browserstack-local
       capybara
@@ -87,7 +87,7 @@ GEM
       faker
       i18n
       os
-      selenium-webdriver (>= 3.11.0)
+      selenium-webdriver (>= 3.11.0, < 4.0)
       spreadsheet (= 1.1.1)
       test-unit
     tomlrb (1.2.6)
@@ -107,7 +107,7 @@ DEPENDENCIES
   parallel_tests
   pry
   require_all (= 1.5.0)
-  testcentricity_web (>= 3.0.5)
+  testcentricity_web (>= 3.0.6)
 
 BUNDLED WITH
    1.16.1

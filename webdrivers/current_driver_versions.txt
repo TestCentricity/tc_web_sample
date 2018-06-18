@@ -7,7 +7,7 @@ windows/geckodriver.exe
 
 Chrome:
 http://chromedriver.storage.googleapis.com/index.html
-v2.37  ( http://chromedriver.storage.googleapis.com/index.html?path=2.37/ )
+v2.40  ( http://chromedriver.storage.googleapis.com/index.html?path=2.40/ )
 mac/chromedriver
 windows/chromedriver.exe
 
