@@ -5,7 +5,7 @@ def screen_shot_and_save_page(scenario)
   save_screenshot "#{path}.png"
   puts "Screenshot saved at #{path}.png"
   if scenario.nil?
-    screen_shot = { :path => path, :filename => filename }
+    screen_shot = { path: path, filename: filename }
     Environ.save_screen_shot(screen_shot)
   else
     embed("#{path}.png", 'image/png', filename)

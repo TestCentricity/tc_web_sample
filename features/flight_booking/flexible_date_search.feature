@@ -1,4 +1,4 @@
-@desktop @mobile @regression @flight @search @flexible_dates
+@desktop @regression @flight @search @flexible_dates
 
 
 Feature: Search for Flights using Flexible Dates
@@ -59,7 +59,7 @@ Feature: Search for Flights using Flexible Dates
       | PDX     | ORD         | this month        | 1 adult            | Business or First | Yes      |
       | Seattle | San Diego   | 2 months from now | 2 adults, 1 infant | Economy           | No       |
 
-@dev
+
 # This is an example of using test data sourced from the Flight_Searches worksheet in /features/support/test_data/data.xls.
 # The itinerary_name value is the row_name in the worksheet.
   Scenario Outline: Search for flights with flexible dates using externally sourced data

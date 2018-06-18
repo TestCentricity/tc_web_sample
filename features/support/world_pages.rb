@@ -4,9 +4,11 @@ module WorldPages
   # by the TestCentricity™ PageManager. Page Object class definitions are contained in the features/support/pages folder.
   #
   def page_objects
-    { :portal_page                => GenericPortalPage,
-      :flight_booking_page        => FlightBookingPage,
-      :flight_search_results_page => FlightSearchResultsPage }
+    {
+        portal_page:                GenericPortalPage,
+        flight_booking_page:        FlightBookingPage,
+        flight_search_results_page: FlightSearchResultsPage
+    }
   end
 end
 
