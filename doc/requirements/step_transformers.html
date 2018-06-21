@@ -67,7 +67,7 @@
   <div class="title">Step Definitions &amp; Transforms</div>
 
   <div class="summary">
-    <div>0<a href="#step_definitions">Step Definitions</a></div>
+    <div>16<a href="#step_definitions">Step Definitions</a></div>
     <div>0<a href="#step_transforms">Step Transforms</a></div>
     <div>0<a href="#undefined_steps">Undefined Steps</a></div>
   </div>
@@ -82,6 +82,1249 @@
     <a name="step_definitions">
   
   <div class="name">Step Definitions</div>
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        
+                        ">
+  <a name="step_definition6-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">Given</span>
+    <span class="name">/^I am (?:on|viewing) the ([^\"]*) page$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+am+(%3F:on%7Cviewing)+the+([%5E%5C%22]*)+page$%2F" target="_blank">Rubular</a>
+      
+      
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:17</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">17
+18
+19
+20
+21</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>Given</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I am (?:on|viewing) the ([^\&quot;]*) page$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_page_name'>page_name</span><span class='op'>|</span>
+  <span class='comment'># find and load the specified target page
+</span>  <span class='id identifier rubyid_target_page'>target_page</span> <span class='op'>=</span> <span class='const'>PageManager</span><span class='period'>.</span><span class='id identifier rubyid_find_page'>find_page</span><span class='lparen'>(</span><span class='id identifier rubyid_page_name'>page_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_load_page'>load_page</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+      <div class='showSteps'>
+        [<a href='#' class='toggleSteps' alt="7 steps">Hide 7 steps</a>]
+      </div>
+    
+    <div class="steps">
+      
+      
+      <div class="step odd">
+        <div>
+          <span class="predicate">
+            Given 
+          </span>
+          <span class="defined">
+            I am on the <span class='match'>Flight Booking Home</span> page
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:15</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:40</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:66</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:79</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:15</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:40</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:66</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        
+                        ">
+  <a name="step_definition4-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">Then</span>
+    <span class="name">/^I should( not)? see search results on the ([^\"]*) page$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+should(+not)%3F+see+search+results+on+the+([%5E%5C%22]*)+page$%2F" target="_blank">Rubular</a>
+      
+      
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/search_steps.rb:17</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">17
+18
+19
+20
+21
+22</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>Then</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I should( not)? see search results on the ([^\&quot;]*) page$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_negate'>negate</span><span class='comma'>,</span> <span class='id identifier rubyid_page_name'>page_name</span><span class='op'>|</span>
+  <span class='comment'># find and verify that the specified target page is loaded
+</span>  <span class='id identifier rubyid_target_page'>target_page</span> <span class='op'>=</span> <span class='const'>PageManager</span><span class='period'>.</span><span class='id identifier rubyid_find_page'>find_page</span><span class='lparen'>(</span><span class='id identifier rubyid_page_name'>page_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_verify_page_exists'>verify_page_exists</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_verify_search_results'>verify_search_results</span><span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_negate'>negate</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+      <div class='showSteps'>
+        [<a href='#' class='toggleSteps' alt="7 steps">Hide 7 steps</a>]
+      </div>
+    
+    <div class="steps">
+      
+      
+      <div class="step odd">
+        <div>
+          <span class="predicate">
+            Then 
+          </span>
+          <span class="defined">
+            I should see search results on the <span class='match'>Flight Search Results</span> page
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:26</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:50</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:68</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:26</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:50</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:68</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      <div class="step even">
+        <div>
+          <span class="predicate">
+            Then 
+          </span>
+          <span class="defined">
+            I should<span class='match'> not</span> see search results on the <span class='match'>Flight Search Results</span> page
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:89</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        
+                        ">
+  <a name="step_definition2-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I perform a search using:$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+perform+a+search+using:$%2F" target="_blank">Rubular</a>
+      
+      
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/search_steps.rb:7</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">7
+8
+9</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I perform a search using:$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_table'>table</span><span class='op'>|</span>
+  <span class='id identifier rubyid_flight_booking_page'>flight_booking_page</span><span class='period'>.</span><span class='id identifier rubyid_enter_search_data'>enter_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_table'>table</span><span class='period'>.</span><span class='id identifier rubyid_rows_hash'>rows_hash</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+      <div class='showSteps'>
+        [<a href='#' class='toggleSteps' alt="5 steps">Hide 5 steps</a>]
+      </div>
+    
+    <div class="steps">
+      
+      
+      <div class="step odd">
+        <div>
+          <span class="predicate">
+            And 
+          </span>
+          <span class="defined">
+            I perform a search using:
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:17</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:42</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:81</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:17</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:42</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        
+                        ">
+  <a name="step_definition1-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I select a search type of ([^\"]*)$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+select+a+search+type+of+([%5E%5C%22]*)$%2F" target="_blank">Rubular</a>
+      
+      
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/search_steps.rb:2</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">2
+3
+4</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I select a search type of ([^\&quot;]*)$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_search_type'>search_type</span><span class='op'>|</span>
+  <span class='id identifier rubyid_flight_booking_page'>flight_booking_page</span><span class='period'>.</span><span class='id identifier rubyid_select_search_type'>select_search_type</span><span class='lparen'>(</span><span class='id identifier rubyid_search_type'>search_type</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+      <div class='showSteps'>
+        [<a href='#' class='toggleSteps' alt="5 steps">Hide 5 steps</a>]
+      </div>
+    
+    <div class="steps">
+      
+      
+      <div class="step odd">
+        <div>
+          <span class="predicate">
+            When 
+          </span>
+          <span class="defined">
+            I select a search type of <span class='match'>Round Trip</span>
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:16</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:80</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:16</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      <div class="step even">
+        <div>
+          <span class="predicate">
+            When 
+          </span>
+          <span class="defined">
+            I select a search type of <span class='match'>One Way</span>
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:41</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:41</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        
+                        ">
+  <a name="step_definition3-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I perform a search using ([^\"]*)$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+perform+a+search+using+([%5E%5C%22]*)$%2F" target="_blank">Rubular</a>
+      
+      
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/search_steps.rb:12</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">12
+13
+14</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I perform a search using ([^\&quot;]*)$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_row_name'>row_name</span><span class='op'>|</span>
+  <span class='id identifier rubyid_flight_booking_page'>flight_booking_page</span><span class='period'>.</span><span class='id identifier rubyid_enter_search_data'>enter_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_row_name'>row_name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+      <div class='showSteps'>
+        [<a href='#' class='toggleSteps' alt="2 steps">Hide 2 steps</a>]
+      </div>
+    
+    <div class="steps">
+      
+      
+      <div class="step odd">
+        <div>
+          <span class="predicate">
+            When 
+          </span>
+          <span class="defined">
+            I perform a search using <span class='match'>CA_CA_fixed</span>
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:67</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      <div class="step even">
+        <div>
+          <span class="predicate">
+            When 
+          </span>
+          <span class="defined">
+            I perform a search using <span class='match'>US_US_flexible</span>
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:67</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        
+                        ">
+  <a name="step_definition5-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">Given</span>
+    <span class="name">/^I am on the UAL portal$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+am+on+the+UAL+portal$%2F" target="_blank">Rubular</a>
+      
+      
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:4</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>Given</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I am on the UAL portal$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='comment'># split the specified locale into language and country codes
+</span>  <span class='id identifier rubyid_current_locale'>current_locale</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>LOCALE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>en-US</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_locale'>locale</span> <span class='op'>=</span> <span class='id identifier rubyid_current_locale'>current_locale</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>-</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_language'>language</span> <span class='op'>=</span> <span class='id identifier rubyid_locale'>locale</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_country'>country</span>  <span class='op'>=</span> <span class='id identifier rubyid_locale'>locale</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+  <span class='comment'># set the URL append value to include language and country codes
+</span>  <span class='const'>Environ</span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_append'>append</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_language'>language</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_country'>country</span><span class='embexpr_end'>}</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span>
+  <span class='comment'># open the UAL web portal for the specified locale
+</span>  <span class='id identifier rubyid_portal_page'>portal_page</span><span class='period'>.</span><span class='id identifier rubyid_open_portal'>open_portal</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+      <div class='showSteps'>
+        [<a href='#' class='toggleSteps' alt="2 steps">Hide 2 steps</a>]
+      </div>
+    
+    <div class="steps">
+      
+      
+      <div class="step odd">
+        <div>
+          <span class="predicate">
+            Given 
+          </span>
+          <span class="defined">
+            I am on the UAL portal
+          </span>
+        </div>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/fixed_date_search.html">features/flight_booking/fixed_date_search.feature:11</a>
+        
+        <a class="definition" style="clear: right;" href="features/flight_booking/flexible_date_search.html">features/flight_booking/flexible_date_search.feature:11</a>
+        
+        <div style="clear: both;"></div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition12-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I close the previous browser window$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+close+the+previous+browser+window$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:63</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">63
+64
+65</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I close the previous browser window$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_close_old_browser_instance'>close_old_browser_instance</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition13-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I refresh the current page$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+refresh+the+current+page$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:68</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">68
+69
+70</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I refresh the current page$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_refresh_browser'>refresh_browser</span> <span class='kw'>unless</span> <span class='const'>Environ</span><span class='period'>.</span><span class='id identifier rubyid_driver'>driver</span> <span class='op'>==</span> <span class='symbol'>:appium</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition14-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I navigate back$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+navigate+back$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:73</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">73
+74
+75</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I navigate back$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_navigate_back'>navigate_back</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition15-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I navigate forward$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+navigate+forward$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:78</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">78
+79
+80</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I navigate forward$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_navigate_forward'>navigate_forward</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition16-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I set device orientation to ([^\"]*)$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+set+device+orientation+to+([%5E%5C%22]*)$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:83</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">83
+84
+85</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I set device orientation to ([^\&quot;]*)$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_orientation'>orientation</span><span class='op'>|</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_set_device_orientation'>set_device_orientation</span><span class='lparen'>(</span><span class='id identifier rubyid_orientation'>orientation</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition7-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">Given</span>
+    <span class="name">/^I (?:go|navigate) to the ([^\"]*) page$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+(%3F:go%7Cnavigate)+to+the+([%5E%5C%22]*)+page$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:24</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">24
+25
+26
+27
+28
+29</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>Given</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I (?:go|navigate) to the ([^\&quot;]*) page$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_page_name'>page_name</span><span class='op'>|</span>
+  <span class='comment'># find and navigate to the specified target page
+</span>  <span class='id identifier rubyid_target_page'>target_page</span> <span class='op'>=</span> <span class='const'>PageManager</span><span class='period'>.</span><span class='id identifier rubyid_find_page'>find_page</span><span class='lparen'>(</span><span class='id identifier rubyid_page_name'>page_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_navigate_to'>navigate_to</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_verify_page_exists'>verify_page_exists</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition8-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">Then</span>
+    <span class="name">/^I should see the ([^\"]*) page$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+should+see+the+([%5E%5C%22]*)+page$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:32</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">32
+33
+34
+35
+36</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>Then</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I should see the ([^\&quot;]*) page$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_page_name'>page_name</span><span class='op'>|</span>
+  <span class='comment'># find and verify that the specified target page is loaded
+</span>  <span class='id identifier rubyid_target_page'>target_page</span> <span class='op'>=</span> <span class='const'>PageManager</span><span class='period'>.</span><span class='id identifier rubyid_find_page'>find_page</span><span class='lparen'>(</span><span class='id identifier rubyid_page_name'>page_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_verify_page_exists'>verify_page_exists</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition9-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">Then</span>
+    <span class="name">/^I expect the ([^\"]*) page to be correctly displayed$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+expect+the+([%5E%5C%22]*)+page+to+be+correctly+displayed$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:39</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">39
+40
+41
+42
+43
+44
+45</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>Then</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I expect the ([^\&quot;]*) page to be correctly displayed$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_page_name'>page_name</span><span class='op'>|</span>
+  <span class='comment'># find and verify that the specified target page is loaded
+</span>  <span class='id identifier rubyid_target_page'>target_page</span> <span class='op'>=</span> <span class='const'>PageManager</span><span class='period'>.</span><span class='id identifier rubyid_find_page'>find_page</span><span class='lparen'>(</span><span class='id identifier rubyid_page_name'>page_name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_verify_page_exists'>verify_page_exists</span>
+  <span class='comment'># verify that target page is correctly displayed
+</span>  <span class='id identifier rubyid_target_page'>target_page</span><span class='period'>.</span><span class='id identifier rubyid_verify_page_ui'>verify_page_ui</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition10-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I (?:access|switch to) the new browser tab$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+(%3F:access%7Cswitch+to)+the+new+browser+tab$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:48</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">48
+49
+50</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I (?:access|switch to) the new browser tab$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_switch_to_new_browser_instance'>switch_to_new_browser_instance</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
+</div>
+
+
+
+<div class="transformer stepdefinition
+                        nodefinitions
+                        ">
+  <a name="step_definition11-stepdefinition"></a>
+  <div class="title">
+    <span class="pre">When</span>
+    <span class="name">/^I close the current browser window$/</span>
+    <div style="float: right;">
+      <a href="http://rubular.com/?regex=%2F%5EI+close+the+current+browser+window$%2F" target="_blank">Rubular</a>
+      
+      | UNUSED
+      <a class="stepdef" href="#">[Collapse]</a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="details">
+    
+    <div class="meta" style="clear: right;">
+      <div class="file">features/step_definitions/generic_steps.rb:53</div>
+    </div>
+    
+    <!-- Comments -->
+    <div>
+      
+    </div>
+    
+
+    <!-- Source Code -->
+    <div class="method_details_list">
+      <table class="source_code">
+        <tr>
+          <td>
+            <pre class="lines">53
+54
+55
+56
+57
+58
+59
+60</pre>
+          </td>
+          <td>
+            <pre class="code"><span class='const'>When</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^I close the current browser window$</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='const'>Browsers</span><span class='period'>.</span><span class='id identifier rubyid_close_current_browser_window'>close_current_browser_window</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_page'>page</span><span class='period'>.</span><span class='id identifier rubyid_driver'>driver</span><span class='period'>.</span><span class='id identifier rubyid_browser'>browser</span><span class='period'>.</span><span class='id identifier rubyid_switch_to'>switch_to</span><span class='period'>.</span><span class='id identifier rubyid_alert'>alert</span><span class='period'>.</span><span class='id identifier rubyid_accept'>accept</span>
+    <span class='id identifier rubyid_switch_to_new_browser_instance'>switch_to_new_browser_instance</span>
+  <span class='kw'>rescue</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Matching Step Instances -->
+    
+    <div class="steps">
+      
+      <div class="undefined">No steps were found to match this step definition.</div>
+      
+    </div>
+    
+  </div>
+
+  <div style="margin: 30px 20px; border-top: 1px dotted #AAA;"></div>
+
 </div>
 
 <div class="title">
@@ -117,7 +1360,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri May 18 09:30:19 2018 by
+  Generated on Thu Jun 21 09:16:48 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

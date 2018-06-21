@@ -63,7 +63,10 @@ chrome_headless:    WEB_BROWSER=chrome_headless  <%= desktop %>
 firefox_headless:   WEB_BROWSER=firefox_headless <%= desktop %>
 firefox_legacy:     WEB_BROWSER=firefox_legacy <%= desktop %>
 
-chrome_remote:      WEB_BROWSER=chrome SELENIUM=remote REMOTE_ENDPOINT="http://localhost:4444/wd/hub"
+#==============
+# profile for Selenium Grid and Dockerized Selenium Grid hosted desktop web browsers
+#==============
+grid:               SELENIUM=remote REMOTE_ENDPOINT="http://localhost:4444/wd/hub"
 
 
 #==============

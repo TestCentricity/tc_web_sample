@@ -10,6 +10,6 @@ class PopupCalendar < TestCentricity::PageSection
   label    :month_year_label,  'div.ui-datepicker-title'
 
   def select_date(date_value)
-
+    #TODO need to add code for making date selections from calendar
   end
 end

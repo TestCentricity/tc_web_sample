@@ -170,15 +170,19 @@ features/support/pages folder.</p>
 7
 8
 9
-10</pre>
+10
+11
+12</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/world_pages.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_page_objects'>page_objects</span>
-  <span class='lbrace'>{</span> <span class='symbol'>:portal_page</span>                <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="GenericPortalPage.html" title="GenericPortalPage (class)">GenericPortalPage</a></span></span><span class='comma'>,</span>
-    <span class='symbol'>:flight_booking_page</span>        <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="FlightBookingPage.html" title="FlightBookingPage (class)">FlightBookingPage</a></span></span><span class='comma'>,</span>
-    <span class='symbol'>:flight_search_results_page</span> <span class='op'>=&gt;</span> <span class='const'><span class='object_link'><a href="FlightSearchResultsPage.html" title="FlightSearchResultsPage (class)">FlightSearchResultsPage</a></span></span> <span class='rbrace'>}</span>
+  <span class='lbrace'>{</span>
+      <span class='label'>portal_page:</span>                <span class='const'><span class='object_link'><a href="GenericPortalPage.html" title="GenericPortalPage (class)">GenericPortalPage</a></span></span><span class='comma'>,</span>
+      <span class='label'>flight_booking_page:</span>        <span class='const'><span class='object_link'><a href="FlightBookingPage.html" title="FlightBookingPage (class)">FlightBookingPage</a></span></span><span class='comma'>,</span>
+      <span class='label'>flight_search_results_page:</span> <span class='const'><span class='object_link'><a href="FlightSearchResultsPage.html" title="FlightSearchResultsPage (class)">FlightSearchResultsPage</a></span></span>
+  <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -190,7 +194,7 @@ features/support/pages folder.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri May 18 09:23:52 2018 by
+  Generated on Thu Jun 21 09:16:47 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.4.1).
 </div>

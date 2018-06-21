@@ -1,18 +1,7 @@
 
 def run_first_once
   # HTML report header information if reporting is enabled
-  if ENV['REPORTING']
-    report_header = "\n<b><u>TEST ENVIRONMENT</u>:</b> #{ENV['TEST_ENVIRONMENT']}\n"\
-      "\n  <b>Browser:</b>\t #{Environ.browser.capitalize}\n"
-    report_header = "#{report_header}  <b>Device:</b>\t\t #{Environ.device_name}\n" if Environ.device_name
-    report_header = "#{report_header}  <b>Device o/s:</b>\t #{Environ.device_os}\n" if Environ.device_os
-    report_header = "#{report_header}  <b>Device type:</b>\t #{Environ.device_type}\n" if Environ.device_type
-    report_header = "#{report_header}  <b>Device type:</b>\t #{Environ.driver}\n"
-    report_header = "#{report_header}  <b>Language:</b>\t #{ENV['LANGUAGE']}\n" if ENV['LANGUAGE']
-    report_header = "#{report_header}  <b>Country:</b>\t #{ENV['COUNTRY']}\n" if ENV['COUNTRY']
-    report_header = "#{report_header}\n\n"
-    puts report_header
-  end
+  puts Environ.report_header if ENV['REPORTING']
   # start Appium Server if command line option was specified and target browser is mobile simulator or device
   if ENV['APPIUM_SERVER'] == 'run' && (Environ.driver == :appium || ENV['WEB_BROWSER'] == 'appium')
     $server = TestCentricity::AppiumServer.new
@@ -100,10 +89,10 @@ end
 
 # block feature/scenario execution if running against Browserstack cloud-hosted service
 Around('@!browserstack') do |scenario, block|
-  if Capybara.default_driver != :browserstack
+  if Environ.grid != :browserstack
     block.call
   else
-    puts "Scenario '#{scenario.name}' cannot be executed with the BrowserStack service."
+    puts "Scenario '#{scenario.name}' cannot be executed on the BrowserStack service."
     skip_this_scenario
   end
 end
@@ -111,10 +100,21 @@ end
 
 # block feature/scenario execution if running against Sauce Labs cloud-hosted service
 Around('@!saucelabs') do |scenario, block|
-  if Capybara.default_driver != :saucelabs
+  if Environ.grid != :saucelabs
     block.call
   else
-    puts "Scenario '#{scenario.name}' cannot be executed with the SauceLabs service."
+    puts "Scenario '#{scenario.name}' cannot be executed on the SauceLabs service."
+    skip_this_scenario
+  end
+end
+
+
+# block feature/scenario execution if running against Sauce Labs cloud-hosted service
+Around('@!gridlastic') do |scenario, block|
+  if Environ.grid != :gridlastic
+    block.call
+  else
+    puts "Scenario '#{scenario.name}' cannot be executed on the Gridlastic service."
     skip_this_scenario
   end
 end

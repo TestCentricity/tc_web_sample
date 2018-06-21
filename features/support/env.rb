@@ -29,9 +29,6 @@ WorldData.instantiate_data_objects
 include WorldPages
 WorldPages.instantiate_page_objects
 
-# set the WebDriver path for locally hosted Chrome, Firefox, or IE browsers
-TestCentricity::WebDriverConnect.set_webdriver_path(File.absolute_path('../..', File.dirname(__FILE__)))
-
 # establish connection to WebDriver, target web browser, and target test environment
 environs.find_environ(ENV['TEST_ENVIRONMENT'], :excel)
 TestCentricity::WebDriverConnect.initialize_web_driver
