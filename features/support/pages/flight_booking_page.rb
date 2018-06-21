@@ -42,7 +42,7 @@ class FlightBookingPage < GenericPortalPage
     end
   end
 
-  # select the search type (either Round trip or One way)
+  # select the search type (either Round Trip or One Way)
   def select_search_type(search_type)
     # make sure Search form is visible
     open_search_form

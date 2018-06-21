@@ -4,6 +4,9 @@ This is a Cucumber based sample test suite and framework utilizing the TestCentr
 functional testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing
 multiple language/locale combinations.
 
+Detailed HTML documentation for this project can be accessed by opening `/tc_web_sample/doc/index.html` in a web browser (after downloading or cloning from the Github
+[repository](https://github.com/TestCentricity/tc_web_sample.git)).
+
 
 ## Gem Dependencies:
 
@@ -65,6 +68,10 @@ Automated tests may be targeted at one of 7 supported desktop web browsers, whic
 `safari`           | OS X only
 `ie`               | Windows only (IE version 10.x or greater only)
 
+Automated tests may also be executed on desktop browsers (Chrome, Firefox, Safari, Edge, or IE) hosted on Selenium Grid or Dockerized Selenium Grid environments. See
+instructions below.
+
+
 Automated tests may also be targeted at one of 44 supported emulated mobile web browsers, hosted within a local instance of the Chrome desktop browser. The specified mobile
 browser's user agent, CSS screen dimensions, and default screen orientation will be automatically set in the local Chrome browser instance. Supported mobile browsers are:
 
@@ -120,7 +127,7 @@ To change the emulated device's screen orientation from the default setting, set
 Automated tests may also be targeted to run on cloud hosted desktop or mobile web browsers using the [Browserstack](https://www.browserstack.com/list-of-browsers-and-platforms?product=automate),
 [Sauce Labs](https://saucelabs.com/open-source#automated-testing-platform), [CrossBrowserTesting](https://crossbrowsertesting.com/selenium-testing), 
 [TestingBot](https://testingbot.com/features), or [Gridlastic](https://www.gridlastic.com/test-environments.html) services. For instructions on using these
-cloud hosted services, refer to the [Remotely hosted desktop and mobile web browsers](https://www.rubydoc.info/gems/testcentricity_web/3.0.6#Remotely_hosted_desktop_and_mobile_web_browsers) section
+cloud hosted services, refer to the [Remotely hosted desktop and mobile web browsers](https://www.rubydoc.info/gems/testcentricity_web/3.0.7#Remotely_hosted_desktop_and_mobile_web_browsers) section
 of the TestCentricity gem documentation. 
 
 
@@ -136,7 +143,8 @@ button to open the `tc_web_sample` project.
 3.  Select values from above for the `target_test_environment`, `target_browser`, and `test_context` command line parameters.
 
 4.  To run Cucumber, execute the following command in the Terminal:
-  `bundle exec cucumber -p target_test_environment -p target_browser -p test_context`
+
+        `bundle exec cucumber -p target_test_environment -p target_browser -p test_context`
   
     **NOTE:**  To have Cucumber generate HTML formatted test results, append `-p report` to the above command line arguments.
 
@@ -145,14 +153,22 @@ button to open the `tc_web_sample` project.
 
     For example, to execute the entire regression suite against the TEST environment on a locally hosted Chrome browser, with test results being logged to an HTML test results
     file, execute the following command in the Terminal:
+    
         `bundle exec cucumber -p test -p chrome -p regress -p report`
 
     To execute the regression suite against the TEST environment on a locally hosted headless Firefox browser, with test results being logged to an HTML test results
     file, execute the following command in the Terminal:
+    
         `bundle exec cucumber -p test -p firefox_headless -p regress -p report`
+    
+    To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid or Dockerized Selenium Grid environments, include
+    `-p grid` in the command line, as in the following command:
+    
+        `bundle exec cucumber -p prod -p bat -p chrome -p grid`
 
     To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro Mobile Safari web browser in Portrait orientation, execute the following
     command in the Terminal:
+    
         `bundle exec cucumber -p prod -p ipad_pro -p portrait -p bat`
 
 5.  As the Cucumber tests are executing, the Terminal will display the lines of each feature file and scenario as they run in real-time.
@@ -177,6 +193,7 @@ to open the `tc_web_sample` project.
 3. Select values from above for the `target_test_environment`, `target_browser`, and `test_context` command line parameters.
 
 4. To run Cucumber tests in a specific test context, execute the following command in the Terminal:
+
     `bundle exec parallel_cucumber features/ -o "-p parallel -p target_test_environment -p target_browser -p test_context" --group-by scenarios`
     
     **NOTE:** If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device by including `-p landscape` or `-p portrait` to
@@ -184,9 +201,11 @@ to open the `tc_web_sample` project.
     
     For example, to execute the entire regression suite against the TEST environment on multiple locally emulated iPad Pro Mobile Safari web browsers in Portrait orientation,
     execute the following command in the Terminal:
+    
         `bundle exec parallel_cucumber features/ -o "-p parallel -p test -p regress -p ipad_pro -p portrait" --group-by scenarios`
    
     To execute the regression suite against the TEST environment on multiple locally hosted Firefox web browsers, execute the following command in the Terminal:
+    
         `bundle exec parallel_cucumber features/ -o "-p parallel -p test -p regress -p firefox" --group-by scenarios`
 
 5. As your Cucumber tests are executing, the Terminal window will display the lines of each feature file and scenario as they run in real-time.
