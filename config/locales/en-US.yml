@@ -3,14 +3,15 @@
 en-US:
   search_results:
     search_nearby: "Search nearby airports"
-    nearby_search_error: "Flights may be available at nearby airports."
-    no_flights_found: "There are no flights that match your search criteria"
+    no_flights_found: "We couldn't find a flight but we can still help"
+    search: "Search"
   time:
     formats:
       default: "%m/%d/%Y"
       long: "%B %d, %Y"
       short: "%b %d"
       abbrev: "%b %d, %Y"
+      abbrev_month: "%b"
       month_year: "%B %Y"
   date:
     abbr_day_names:

@@ -1,16 +1,13 @@
-# Localization file for French/France locale.
+# Localization file for French/Canada locale.
 
-fr-FR:
-  search_results:
-    search_nearby: "Rechercher les aéroports à proximité"
-    nearby_search_error: "Des vols peuvent être disponibles dans les aéroports à proximité."
-    no_flights_found: "Aucun vol ne correspond à vos critères de recherche"
+fr-CA:
   time:
     formats:
       default: "%d/%m/%Y"
       long: "%d %B %Y"
       short: "%y-%m-%d"
       abbrev: "%d %b, %Y"
+      abbrev_month: "%b"
       month_year: "%B %Y"
   date:
     abbr_day_names:

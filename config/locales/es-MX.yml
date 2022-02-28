@@ -1,16 +1,13 @@
 # Localization file for Spanish/Mexico locale.
 
 es-MX:
-  search_results:
-    search_nearby: "Buscar aeropuertos cercanos"
-    nearby_search_error: "Puede haber vuelos disponibles en los aeropuertos cercanos."
-    no_flights_found: "No existen vuelos que concuerden con sus criterios de búsqueda"
   time:
     formats:
       default: "%d/%m/%Y"
       long: "%A, %d de %B de %Y"
       short: "%d de %b"
       abbrev: "%d %b., %Y"
+      abbrev_month: "%b"
       month_year: "%B %Y"
   date:
     abbr_day_names:

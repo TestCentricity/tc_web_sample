@@ -2,26 +2,27 @@
 # both the Flight Booking Home page and the Book A Flight page.
 
 class TravelersSelector < TestCentricity::PageSection
-  trait(:section_locator)     { 'div#travelers-select' }
-  trait(:section_name)        { 'Travelers selector' }
+  trait(:section_locator) { 'div#passengerMenuId' }
+  trait(:section_name)    { 'Travelers selector' }
 
   # Travelers selector UI elements
-  button      :close_button,          'button.modalCloseImg.dropdown-close'
-  textfields  num_adults_field:       '#NumOfAdults',
-              num_seniors_field:      '#NumOfSeniors',
-              num_child_16_17_field:  '#NumOfChildren04',
-              num_child_12_15_field:  '#NumOfChildren03',
-              num_child_5_11_field:   '#NumOfChildren02',
-              num_child_2_4_field:    '#NumOfChildren01',
-              num_infants_field:      '#NumOfInfants',
-              num_lap_infants_field:  '#NumOfLapInfants'
+  buttons    clear_all_button:      "button[class*='clearButton']",
+             close_button:          "button[class*='atm-c-btn--bare']"
+  textfields num_adults_field:      "div[class*='passengers__fieldset']:nth-of-type(1) > div[class*='passengerRow']:nth-of-type(1) input",
+             num_seniors_field:     "div[class*='passengers__fieldset']:nth-of-type(1) > div[class*='passengerRow']:nth-of-type(2) input",
+             num_infants_field:     "div[class*='passengers__fieldset']:nth-of-type(1) > div[class*='passengerRow']:nth-of-type(3) input",
+             num_lap_infants_field: "div[class*='passengers__fieldset']:nth-of-type(1) > div[class*='passengerRow']:nth-of-type(4) input",
+             num_child_15_17_field: "div[class*='passengers__fieldset']:nth-of-type(2) > div[class*='passengerRow']:nth-of-type(1) input",
+             num_child_12_14_field: "div[class*='passengers__fieldset']:nth-of-type(2) > div[class*='passengerRow']:nth-of-type(2) input",
+             num_child_5_11_field:  "div[class*='passengers__fieldset']:nth-of-type(2) > div[class*='passengerRow']:nth-of-type(3) input",
+             num_child_2_4_field:   "div[class*='passengers__fieldset']:nth-of-type(2) > div[class*='passengerRow']:nth-of-type(4) input"
 
   # travelers_data argument is a comma-delimited string, each segment specifying the number and type of traveler(s).
   # Valid traveler type descriptors are:
   #    Adult          or  Adults
   #    Senior         or  Seniors
-  #    Child (16-17)  or  Children (16-17)
-  #    Child (12-15)  or  Children (12-15)
+  #    Child (15-17)  or  Children (15-17)
+  #    Child (12-14)  or  Children (12-14)
   #    Child (5-11)   or  Children (5-11)
   #    Child (2-4)    or  Children (2-4)
   #    Infant         or  Infants
@@ -29,7 +30,8 @@ class TravelersSelector < TestCentricity::PageSection
   #
   def select_travelers(travelers_data)
     num_adults_field.wait_until_visible(5)
-    num_adults_field.clear
+    clear_all_button.click
+    sleep(2)
     total_travelers = 0
     # iterate through each type of traveler specified
     travelers_data.split(', ').each do |travelers|
@@ -40,28 +42,27 @@ class TravelersSelector < TestCentricity::PageSection
       type_travelers  = segment.join(' ')
       total_travelers = total_travelers + num_travelers
       # find traveler type object
-      case type_travelers.downcase
-      when 'adult', 'adults'
-        traveler_type_obj = num_adults_field
-      when 'senior', 'seniors'
-        traveler_type_obj = num_seniors_field
-      when 'child (16-17)', 'children (16-17)'
-        traveler_type_obj = num_child_16_17_field
-      when 'child (12-15)', 'children (12-15)'
-        traveler_type_obj = num_child_12_15_field
-      when 'child (5-11)', 'children (5-11)'
-        traveler_type_obj = num_child_5_11_field
-      when 'child (2-4)', 'children (2-4)'
-        traveler_type_obj = num_child_2_4_field
-      when 'infant', 'infants'
-        traveler_type_obj = num_infants_field
-      when 'infant on lap', 'infants on lap'
-        traveler_type_obj = num_lap_infants_field
-      else
-        raise "'#{type_travelers}' is not a valid traveler type"
-      end
+      traveler_type_obj = case type_travelers.downcase
+                          when 'adult', 'adults'
+                            num_adults_field
+                          when 'senior', 'seniors'
+                            num_seniors_field
+                          when 'child (15-17)', 'children (15-17)'
+                            num_child_15_17_field
+                          when 'child (12-14)', 'children (12-14)'
+                            num_child_12_14_field
+                          when 'child (5-11)', 'children (5-11)'
+                            num_child_5_11_field
+                          when 'child (2-4)', 'children (2-4)'
+                            num_child_2_4_field
+                          when 'infant', 'infants'
+                            num_infants_field
+                          when 'infant on lap', 'infants on lap'
+                            num_lap_infants_field
+                          else
+                            raise "'#{type_travelers}' is not a valid traveler type"
+                          end
       # set the number of travelers for the selected traveler type
-      traveler_type_obj.clear
       traveler_type_obj.set(num_travelers)
     end
     # save the total number of travelers

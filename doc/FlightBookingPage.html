@@ -6,17 +6,17 @@
 <title>
   Class: FlightBookingPage
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.27
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/cucumber.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "FlightBookingPage";
   relpath = '';
 </script>
@@ -136,6 +136,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#clear_field-instance_method" title="#clear_field (instance method)">#<strong>clear_field</strong>(field_object)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>clear existing data from specified text field using associated Clear button.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#enter_search_data-instance_method" title="#enter_search_data (instance method)">#<strong>enter_search_data</strong>(search_data)  &#x21d2; Object </a>
     
 
@@ -160,12 +184,14 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#open_search_form-instance_method" title="#open_search_form (instance method)">#<strong>open_search_form</strong>  &#x21d2; Object </a>
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>  &#x21d2; FlightBookingPage </a>
     
 
     
   </span>
   
+  
+    <span class="note title constructor">constructor</span>
   
   
   
@@ -175,7 +201,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>make sure the Search form is visible.</p>
+<p>define the custom element components for selectlist, radio button, and checkbox objects.</p>
 </div></span>
   
 </li>
@@ -218,18 +244,15 @@
   
   
   <h3 class="inherited">Methods inherited from <span class='object_link'><a href="GenericPortalPage.html" title="GenericPortalPage (class)">GenericPortalPage</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="GenericPortalPage.html#wait_not_busy-instance_method" title="GenericPortalPage#wait_not_busy (method)">#wait_not_busy</a></span></p>
+  <p class="inherited"><span class='object_link'><a href="GenericPortalPage.html#open_portal-instance_method" title="GenericPortalPage#open_portal (method)">#open_portal</a></span>, <span class='object_link'><a href="GenericPortalPage.html#wait_not_busy-instance_method" title="GenericPortalPage#wait_not_busy (method)">#wait_not_busy</a></span></p>
 
+  <div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
   
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="enter_search_data-instance_method">
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>enter_search_data</strong>(search_data)  &#x21d2; <tt>Object</tt> 
+    #<strong>initialize</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="FlightBookingPage (class)">FlightBookingPage</a></span></tt> 
   
 
   
@@ -238,10 +261,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>enter search criteria and execute search. search_data argument will either
-contain a hash from a data table in a test scenario, or will be a string
-containing the row name of a corresponding row in Flight_Searches worksheet
-in features/test_data/data.xls</p>
+<p>define the custom element components for selectlist, radio button, and checkbox objects</p>
 
 
   </div>
@@ -255,7 +275,139 @@ in features/test_data/data.xls</p>
       <pre class="lines">
 
 
-61
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='comment'># define the custom list element components for the Month, Duration, and Cabin Type selectlist objects
+</span>  <span class='id identifier rubyid_list_spec'>list_spec</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='label'>selected_item:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>li[class*=&#39;listBoxOptionSelected&#39;]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='label'>list_item:</span>     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>li[class*=&#39;listBoxOption&#39;]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='label'>list_trigger:</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>button[class*=&#39;listBoxMainButton&#39;]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+    <span class='label'>options_list:</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ul[class*=&#39;ListBox&#39;]</span><span class='tstring_end'>&quot;</span></span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_month_select'>month_select</span><span class='period'>.</span><span class='id identifier rubyid_define_list_elements'>define_list_elements</span><span class='lparen'>(</span><span class='id identifier rubyid_list_spec'>list_spec</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_duration_select'>duration_select</span><span class='period'>.</span><span class='id identifier rubyid_define_list_elements'>define_list_elements</span><span class='lparen'>(</span><span class='id identifier rubyid_list_spec'>list_spec</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_cabin_type_select'>cabin_type_select</span><span class='period'>.</span><span class='id identifier rubyid_define_list_elements'>define_list_elements</span><span class='lparen'>(</span><span class='id identifier rubyid_list_spec'>list_spec</span><span class='rparen'>)</span>
+  <span class='comment'># define the custom element components for the Round Trip radio button
+</span>  <span class='id identifier rubyid_radio_spec'>radio_spec</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>proxy:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>label[for=&#39;roundtrip&#39;]</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_roundtrip_radio'>roundtrip_radio</span><span class='period'>.</span><span class='id identifier rubyid_define_custom_elements'>define_custom_elements</span><span class='lparen'>(</span><span class='id identifier rubyid_radio_spec'>radio_spec</span><span class='rparen'>)</span>
+  <span class='comment'># define the custom element components for the One Way radio button
+</span>  <span class='id identifier rubyid_radio_spec'>radio_spec</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>proxy:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>label[for=&#39;oneway&#39;]</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_one_way_radio'>one_way_radio</span><span class='period'>.</span><span class='id identifier rubyid_define_custom_elements'>define_custom_elements</span><span class='lparen'>(</span><span class='id identifier rubyid_radio_spec'>radio_spec</span><span class='rparen'>)</span>
+  <span class='comment'># define the custom element components for the Flexible Date checkbox
+</span>  <span class='id identifier rubyid_check_spec'>check_spec</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>proxy:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>label#flexDatesLabel</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_flexible_check'>flexible_check</span><span class='period'>.</span><span class='id identifier rubyid_define_custom_elements'>define_custom_elements</span><span class='lparen'>(</span><span class='id identifier rubyid_check_spec'>check_spec</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="clear_field-instance_method">
+  
+    #<strong>clear_field</strong>(field_object)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>clear existing data from specified text field using associated Clear button</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_clear_field'>clear_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field_object'>field_object</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_field_object'>field_object</span><span class='period'>.</span><span class='id identifier rubyid_hidden?'>hidden?</span>
+
+  <span class='id identifier rubyid_field_object'>field_object</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span>
+  <span class='id identifier rubyid_clear_button'>clear_button</span><span class='period'>.</span><span class='id identifier rubyid_wait_until_visible'>wait_until_visible</span><span class='lparen'>(</span><span class='int'>1</span><span class='comma'>,</span> <span class='id identifier rubyid_post_exception'>post_exception</span> <span class='op'>=</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_clear_button'>clear_button</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>if</span> <span class='id identifier rubyid_clear_button'>clear_button</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="enter_search_data-instance_method">
+  
+    #<strong>enter_search_data</strong>(search_data)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>enter search criteria and execute search. search_data argument will either contain a hash from a data table in a test scenario, or will be a string containing the row name of a corresponding row in Flight_Searches worksheet in features/test_data/data.xls</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
 62
 63
 64
@@ -323,50 +475,19 @@ in features/test_data/data.xls</p>
 126
 127
 128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158</pre>
+129</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 61</span>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_enter_search_data'>enter_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span>
-  <span class='comment'># make sure Search form is visible
-</span>  <span class='id identifier rubyid_open_search_form'>open_search_form</span>
-
+  <span class='comment'># clear existing data from text fields
+</span>  <span class='id identifier rubyid_clear_field'>clear_field</span><span class='lparen'>(</span><span class='id identifier rubyid_origin_field'>origin_field</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_clear_field'>clear_field</span><span class='lparen'>(</span><span class='id identifier rubyid_destination_field'>destination_field</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_clear_field'>clear_field</span><span class='lparen'>(</span><span class='id identifier rubyid_depart_date_field'>depart_date_field</span><span class='rparen'>)</span>
   <span class='comment'># if search data in scenario data table hash, map the hash to FlightSearch data object
 </span>  <span class='comment'># else read the search data from corresponding row in Flight_Searches worksheet in data.xls
-</span>  <span class='id identifier rubyid_search_data'>search_data</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span>
-      <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='id identifier rubyid_flight_searches'>flight_searches</span><span class='period'>.</span><span class='id identifier rubyid_map_search_data'>map_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span> <span class='op'>:</span>
-      <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='id identifier rubyid_flight_searches'>flight_searches</span><span class='period'>.</span><span class='id identifier rubyid_find_search'>find_search</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span>
-
+</span>  <span class='id identifier rubyid_search'>search</span> <span class='op'>=</span> <span class='id identifier rubyid_search_data'>search_data</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_flight_searches'>flight_searches</span><span class='period'>.</span><span class='id identifier rubyid_map_search_data'>map_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_flight_searches'>flight_searches</span><span class='period'>.</span><span class='id identifier rubyid_find_search'>find_search</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span>
   <span class='comment'># parse the departure date into a meaningful date value
 </span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_depart_date'>depart_date</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
     <span class='id identifier rubyid_depart_date_value'>depart_date_value</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_depart_date'>depart_date</span><span class='rparen'>)</span>
@@ -374,7 +495,6 @@ in features/test_data/data.xls</p>
 </span>    <span class='const'><span class='object_link'><a href="FlightSearch.html" title="FlightSearch (class)">FlightSearch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_depart_date'>depart_date</span> <span class='op'>=</span> <span class='id identifier rubyid_depart_date_value'>depart_date_value</span>
     <span class='id identifier rubyid_depart_date_value'>depart_date_value</span> <span class='op'>=</span> <span class='id identifier rubyid_depart_date_value'>depart_date_value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_format_date_time'>format_date_time</span><span class='lparen'>(</span><span class='symbol'>:default</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-
   <span class='comment'># parse the return date into a meaningful date value
 </span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_return_date'>return_date</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
     <span class='id identifier rubyid_return_date_value'>return_date_value</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_return_date'>return_date</span><span class='rparen'>)</span>
@@ -382,139 +502,51 @@ in features/test_data/data.xls</p>
 </span>    <span class='const'><span class='object_link'><a href="FlightSearch.html" title="FlightSearch (class)">FlightSearch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_return_date'>return_date</span> <span class='op'>=</span> <span class='id identifier rubyid_return_date_value'>return_date_value</span>
     <span class='id identifier rubyid_return_date_value'>return_date_value</span> <span class='op'>=</span> <span class='id identifier rubyid_return_date_value'>return_date_value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_format_date_time'>format_date_time</span><span class='lparen'>(</span><span class='symbol'>:default</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-
   <span class='comment'># parse the flex month into a meaningful date value
 </span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
     <span class='id identifier rubyid_month_value'>month_value</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_month'>month</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_month_value'>month_value</span> <span class='op'>=</span> <span class='id identifier rubyid_month_value'>month_value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_format_date_time'>format_date_time</span><span class='lparen'>(</span><span class='symbol'>:month_year</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_month_value'>month_value</span> <span class='op'>=</span> <span class='id identifier rubyid_month_value'>month_value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_format_date_time'>format_date_time</span><span class='lparen'>(</span><span class='symbol'>:abbrev_month</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
-
-  <span class='comment'># if search type is specified, select it before entering search criteria
-</span>  <span class='id identifier rubyid_select_search_type'>select_search_type</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_search_type'>search_type</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_search_type'>search_type</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-
-  <span class='comment'># select flexible dates, if specified
-</span>  <span class='id identifier rubyid_flexible_checkbox'>flexible_checkbox</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>if</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_flexible'>flexible</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span>
-
-  <span class='kw'>if</span> <span class='id identifier rubyid_depart_date_field'>depart_date_field</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_depart_date_field'>depart_date_field</span><span class='period'>.</span><span class='id identifier rubyid_read_only?'>read_only?</span>
-    <span class='comment'># populate the origin and destination fields with their associated search parameters
-</span>    <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-        <span class='id identifier rubyid_origin_field'>origin_field</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span>
-        <span class='id identifier rubyid_destination_field'>destination_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_destination'>destination</span>
-    <span class='rbrace'>}</span>
-    <span class='id identifier rubyid_populate_data_fields'>populate_data_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_fields'>fields</span><span class='rparen'>)</span>
-    <span class='comment'># enter departure and return dates using the popup calendar
-</span>    <span class='id identifier rubyid_depart_date_field'>depart_date_field</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>unless</span> <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
-    <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_select_date'>select_date</span><span class='lparen'>(</span><span class='id identifier rubyid_depart_date_value'>depart_date_value</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_return_date_field'>return_date_field</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>unless</span> <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
-    <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_select_date'>select_date</span><span class='lparen'>(</span><span class='id identifier rubyid_return_date_value'>return_date_value</span><span class='rparen'>)</span>
-  <span class='kw'>else</span>
-    <span class='comment'># populate the search data fields with their associated search parameters
-</span>    <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='lbrace'>{</span>
-        <span class='id identifier rubyid_origin_field'>origin_field</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span>
-        <span class='id identifier rubyid_destination_field'>destination_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_destination'>destination</span><span class='comma'>,</span>
-        <span class='id identifier rubyid_depart_date_field'>depart_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_depart_date_value'>depart_date_value</span><span class='comma'>,</span>
-        <span class='id identifier rubyid_return_date_field'>return_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_return_date_value'>return_date_value</span><span class='comma'>,</span>
-        <span class='id identifier rubyid_month_select'>month_select</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_month_value'>month_value</span>
-    <span class='rbrace'>}</span>
-    <span class='id identifier rubyid_populate_data_fields'>populate_data_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_fields'>fields</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
-  <span class='comment'># tab out of departure date field if the popup calendar remains visible
-</span>  <span class='kw'>if</span> <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span> <span class='op'>&amp;&amp;</span> <span class='const'>Environ</span><span class='period'>.</span><span class='id identifier rubyid_browser'>browser</span> <span class='op'>!=</span> <span class='symbol'>:safari</span>
-    <span class='id identifier rubyid_depart_date_field'>depart_date_field</span><span class='period'>.</span><span class='id identifier rubyid_send_keys'>send_keys</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_calendar_popup'>calendar_popup</span><span class='period'>.</span><span class='id identifier rubyid_wait_until_gone'>wait_until_gone</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_sleep'>sleep</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
-  <span class='comment'># invoke the Travelers selector and make selection(s)
-</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_travelers'>travelers</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-    <span class='id identifier rubyid_travelers_select'>travelers_select</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span>
-    <span class='id identifier rubyid_travelers_selector'>travelers_selector</span><span class='period'>.</span><span class='id identifier rubyid_select_travelers'>select_travelers</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_travelers'>travelers</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
-
   <span class='comment'># select duration if specified - use option value since option text will be localized
 </span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_duration'>duration</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
     <span class='id identifier rubyid_number_of_days'>number_of_days</span> <span class='op'>=</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_duration'>duration</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_duration_select'>duration_select</span><span class='period'>.</span><span class='id identifier rubyid_choose_option'>choose_option</span><span class='lparen'>(</span><span class='label'>value:</span> <span class='id identifier rubyid_number_of_days'>number_of_days</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_number_of_days'>number_of_days</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>value:</span> <span class='id identifier rubyid_number_of_days'>number_of_days</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbrace'>}</span>
   <span class='kw'>end</span>
-
   <span class='comment'># select cabin type if specified - use option value since option text will be localized
 </span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_cabin_type'>cabin_type</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
-    <span class='kw'>case</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_cabin_type'>cabin_type</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>economy</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_cabin_value'>cabin_value</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>econ</span><span class='tstring_end'>&#39;</span></span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>business or first</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_cabin_value'>cabin_value</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>businessFirst</span><span class='tstring_end'>&#39;</span></span>
-    <span class='kw'>end</span>
-    <span class='id identifier rubyid_cabin_type_select'>cabin_type_select</span><span class='period'>.</span><span class='id identifier rubyid_choose_option'>choose_option</span><span class='lparen'>(</span><span class='label'>value:</span> <span class='id identifier rubyid_cabin_value'>cabin_value</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_cabin_value'>cabin_value</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_cabin_type'>cabin_type</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+                  <span class='kw'>when</span> <span class='symbol'>:economy</span>
+                    <span class='int'>1</span>
+                  <span class='kw'>when</span> <span class='symbol'>:premium_economy</span>
+                    <span class='int'>2</span>
+                  <span class='kw'>when</span> <span class='symbol'>:business_or_first</span>
+                    <span class='int'>3</span>
+                  <span class='kw'>else</span>
+                    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_cabin_type'>cabin_type</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not a valid cabin type</span><span class='tstring_end'>&quot;</span></span>
+                  <span class='kw'>end</span>
+    <span class='id identifier rubyid_cabin_value'>cabin_value</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='label'>index:</span> <span class='id identifier rubyid_cabin_value'>cabin_value</span><span class='rbrace'>}</span>
   <span class='kw'>end</span>
-
-  <span class='comment'># click non-stop checkbox if specified
-</span>  <span class='id identifier rubyid_nonstop_checkbox'>nonstop_checkbox</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>if</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_non_stop'>non_stop</span><span class='period'>.</span><span class='id identifier rubyid_to_bool'>to_bool</span>
-
+  <span class='comment'># if search type is specified, select it before entering search criteria
+</span>  <span class='id identifier rubyid_select_search_type'>select_search_type</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_search_type'>search_type</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_search_type'>search_type</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+  <span class='comment'># populate the search data fields with their associated search parameters
+</span>  <span class='id identifier rubyid_fields'>fields</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='id identifier rubyid_flexible_check'>flexible_check</span>    <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_flexible'>flexible</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_origin_field'>origin_field</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_destination_field'>destination_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_destination'>destination</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_month_select'>month_select</span>      <span class='op'>=&gt;</span> <span class='id identifier rubyid_month_value'>month_value</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_duration_select'>duration_select</span>   <span class='op'>=&gt;</span> <span class='id identifier rubyid_number_of_days'>number_of_days</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_cabin_type_select'>cabin_type_select</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_cabin_value'>cabin_value</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_depart_date_field'>depart_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_depart_date_value'>depart_date_value</span><span class='comma'>,</span>
+    <span class='id identifier rubyid_return_date_field'>return_date_field</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_return_date_value'>return_date_value</span>
+  <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_populate_data_fields'>populate_data_fields</span><span class='lparen'>(</span><span class='id identifier rubyid_fields'>fields</span><span class='rparen'>)</span>
+  <span class='comment'># invoke the Travelers selector and make selection(s)
+</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_travelers'>travelers</span><span class='period'>.</span><span class='id identifier rubyid_blank?'>blank?</span>
+    <span class='id identifier rubyid_open_travelers'>open_travelers</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span>
+    <span class='id identifier rubyid_travelers_select'>travelers_select</span><span class='period'>.</span><span class='id identifier rubyid_select_travelers'>select_travelers</span><span class='lparen'>(</span><span class='id identifier rubyid_search'>search</span><span class='period'>.</span><span class='id identifier rubyid_travelers'>travelers</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
   <span class='comment'># execute the search
 </span>  <span class='id identifier rubyid_search_button'>search_button</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="open_search_form-instance_method">
-  
-    #<strong>open_search_form</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>make sure the Search form is visible</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 31</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_open_search_form'>open_search_form</span>
-  <span class='comment'># dismiss the Locale Selector modal if it is visible
-</span>  <span class='id identifier rubyid_locale_selector'>locale_selector</span><span class='period'>.</span><span class='id identifier rubyid_dismiss'>dismiss</span> <span class='kw'>if</span> <span class='id identifier rubyid_locale_selector'>locale_selector</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
-
-  <span class='comment'># dismiss mobile app banner if visible
-</span>  <span class='id identifier rubyid_app_banner_close'>app_banner_close</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span> <span class='kw'>if</span> <span class='id identifier rubyid_mobile_app_banner'>mobile_app_banner</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
-
-  <span class='comment'># click the Book Travel tile if the Search form is not visible
-</span>  <span class='kw'>unless</span> <span class='id identifier rubyid_search_form'>search_form</span><span class='period'>.</span><span class='id identifier rubyid_visible?'>visible?</span>
-    <span class='id identifier rubyid_book_travel_tile'>book_travel_tile</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span>
-    <span class='id identifier rubyid_search_form'>search_form</span><span class='period'>.</span><span class='id identifier rubyid_wait_until_visible'>wait_until_visible</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span>
-  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -547,7 +579,6 @@ in features/test_data/data.xls</p>
       <pre class="lines">
 
 
-46
 47
 48
 49
@@ -557,20 +588,21 @@ in features/test_data/data.xls</p>
 53
 54
 55
-56</pre>
+56
+57</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 47</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_select_search_type'>select_search_type</span><span class='lparen'>(</span><span class='id identifier rubyid_search_type'>search_type</span><span class='rparen'>)</span>
-  <span class='comment'># make sure Search form is visible
-</span>  <span class='id identifier rubyid_open_search_form'>open_search_form</span>
   <span class='comment'># select type of search
 </span>  <span class='kw'>case</span> <span class='id identifier rubyid_search_type'>search_type</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\s+</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
   <span class='kw'>when</span> <span class='symbol'>:round_trip</span>
     <span class='id identifier rubyid_roundtrip_radio'>roundtrip_radio</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span>
   <span class='kw'>when</span> <span class='symbol'>:one_way</span>
     <span class='id identifier rubyid_one_way_radio'>one_way_radio</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span>
+  <span class='kw'>else</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_search_type'>search_type</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not a valid trip type</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -583,9 +615,9 @@ in features/test_data/data.xls</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Jun 21 09:16:47 2018 by
+  Generated on Mon Feb 28 10:33:13 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.1).
+  0.9.27 (ruby-2.7.5).
 </div>
 
     </div>

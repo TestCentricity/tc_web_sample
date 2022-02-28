@@ -6,17 +6,17 @@
 <title>
   Module: WorldPages
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.27
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/cucumber.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "WorldPages";
   relpath = '';
 </script>
@@ -120,9 +120,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>page_objects method returns a hash table of your web app&#39;s page objects
-and associated page classes to be instantiated by the TestCentricity™
-PageManager.</p>
+<p>page_objects method returns a hash table of your web app&#39;s page objects and associated page classes to be instantiated by the TestCentricity™ PageManager.</p>
 </div></span>
   
 </li>
@@ -149,10 +147,7 @@ PageManager.</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>page_objects method returns a hash table of your web app&#39;s page objects
-and associated page classes to be instantiated by the TestCentricity™
-PageManager. Page Object class definitions are contained in the
-features/support/pages folder.</p>
+<p>page_objects method returns a hash table of your web app&#39;s page objects and associated page classes to be instantiated by the TestCentricity™ PageManager. Page Object class definitions are contained in the features/support/pages folder.</p>
 
 
   </div>
@@ -172,16 +167,18 @@ features/support/pages folder.</p>
 9
 10
 11
-12</pre>
+12
+13</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/world_pages.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_page_objects'>page_objects</span>
   <span class='lbrace'>{</span>
-      <span class='label'>portal_page:</span>                <span class='const'><span class='object_link'><a href="GenericPortalPage.html" title="GenericPortalPage (class)">GenericPortalPage</a></span></span><span class='comma'>,</span>
-      <span class='label'>flight_booking_page:</span>        <span class='const'><span class='object_link'><a href="FlightBookingPage.html" title="FlightBookingPage (class)">FlightBookingPage</a></span></span><span class='comma'>,</span>
-      <span class='label'>flight_search_results_page:</span> <span class='const'><span class='object_link'><a href="FlightSearchResultsPage.html" title="FlightSearchResultsPage (class)">FlightSearchResultsPage</a></span></span>
+    <span class='label'>portal_page:</span>             <span class='const'><span class='object_link'><a href="GenericPortalPage.html" title="GenericPortalPage (class)">GenericPortalPage</a></span></span><span class='comma'>,</span>
+    <span class='label'>flight_booking_page:</span>     <span class='const'><span class='object_link'><a href="FlightBookingPage.html" title="FlightBookingPage (class)">FlightBookingPage</a></span></span><span class='comma'>,</span>
+    <span class='label'>fixed_date_results_page:</span> <span class='const'><span class='object_link'><a href="FixedDateResultsPage.html" title="FixedDateResultsPage (class)">FixedDateResultsPage</a></span></span><span class='comma'>,</span>
+    <span class='label'>flex_date_results_page:</span>  <span class='const'><span class='object_link'><a href="FlexDateResultsPage.html" title="FlexDateResultsPage (class)">FlexDateResultsPage</a></span></span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -194,9 +191,9 @@ features/support/pages folder.</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Jun 21 09:16:47 2018 by
+  Generated on Mon Feb 28 10:33:13 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.1).
+  0.9.27 (ruby-2.7.5).
 </div>
 
     </div>

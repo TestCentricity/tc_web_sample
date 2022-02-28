@@ -5,9 +5,10 @@ module WorldPages
   #
   def page_objects
     {
-        portal_page:                GenericPortalPage,
-        flight_booking_page:        FlightBookingPage,
-        flight_search_results_page: FlightSearchResultsPage
+      portal_page:             GenericPortalPage,
+      flight_booking_page:     FlightBookingPage,
+      fixed_date_results_page: FixedDateResultsPage,
+      flex_date_results_page:  FlexDateResultsPage
     }
   end
 end
