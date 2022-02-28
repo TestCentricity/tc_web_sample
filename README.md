@@ -1,11 +1,11 @@
 # tc_web_sample
 
-This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and responsive mobile web
-functional testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data from an Excel file and support for testing
-multiple language/locale combinations.
+This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and
+responsive mobile web functional testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data
+from an Excel `.xls`, a `.yml` or a `.json` data file.
 
-Detailed HTML documentation for this project can be accessed by opening `/tc_web_sample/doc/index.html` in a web browser (after downloading or cloning from the Github
-[repository](https://github.com/TestCentricity/tc_web_sample.git)).
+Detailed HTML documentation for this project can be accessed by opening `/tc_web_sample/doc/index.html` in a web browser (after downloading or
+cloning from the Github [repository](https://github.com/TestCentricity/tc_web_sample.git)).
 
 
 ## Gem Dependencies:
@@ -27,8 +27,8 @@ testcentricity_web  [![Gem Version](https://badge.fury.io/rb/testcentricity_web.
 
 ## Prerequisites to running tests:
 
-In order for Cucumber to execute features or scenarios from the tc_web_sample test automation project, a minimum of 3 conditions must be specified in the
-Cucumber command line at runtime. These conditions include `target_test_environment`, `target_browser`, and `test_context`.
+In order for Cucumber to execute features or scenarios from the tc_web_sample test automation project, a minimum of 3 conditions must be specified
+in the Cucumber command line at runtime. These conditions include `target_test_environment`, `target_browser`, and `test_context`.
 
 ### `target_test_environment`:
 
@@ -36,7 +36,7 @@ Automated tests may be targeted at one of 2 test environments. Those test enviro
 
 **Value** | **Description**
 ----------|----------------
-`test`    | TEST environment
+`qa`      | QA environment
 `prod`    | PRODUCTION environment
 
 **NOTE:**  Both environments point to the same UAL Booking portal at http://www.united.com/ual/
@@ -56,137 +56,84 @@ Automated tests may be targeted at one of 4 test contexts. Those test contexts a
 
 ### `target_browser`:
 
-Automated tests may be targeted at one of 7 supported desktop web browsers, which must already be locally installed on your test workstation. Supported desktop browsers are:
+Automated tests may be targeted at one of 5 supported desktop web browsers, which must already be locally installed on your test workstation.
+Supported desktop browsers are:
 
-**Value**          | **Description**
--------------------|----------------
-`chrome`           | OS X or Windows
-`chrome_headless`  | OS X or Windows (headless - no visible UI)
-`firefox`          | OS X or Windows (Firefox version 55 or greater only)
-`firefox_headless` | OS X or Windows (headless - no visible UI)
-`firefox_legacy`   | OS X or Windows (Firefox version 47.0.1 only)
-`safari`           | OS X only
-`ie`               | Windows only (IE version 10.x or greater only)
+**Value** | **Description**
+----------|----------------
+`chrome`  | OS X or Windows
+`firefox` | OS X or Windows
+`edge`    | OS X or Windows
+`safari`  | OS X only
+`ie`      | Windows only
 
-Automated tests may also be executed on desktop browsers (Chrome, Firefox, Safari, Edge, or IE) hosted on Selenium Grid or Dockerized Selenium Grid environments. See
+Automated tests may also be executed on desktop browsers (Chrome or Firefox) hosted on Selenium Grid or Dockerized Selenium Grid environments. See
 instructions below.
-
-
-Automated tests may also be targeted at one of 44 supported emulated mobile web browsers, hosted within a local instance of the Chrome desktop browser. The specified mobile
-browser's user agent, CSS screen dimensions, and default screen orientation will be automatically set in the local Chrome browser instance. Supported mobile browsers are:
-
-**Value**             | **CSS Screen Dimensions** | **Default Orientation**  | **OS Version**
-----------------------|---------------------------|--------------------------|---------------
-`ipad`                |1024 x 768  |landscape |iOS 10
-`ipad_pro`            |1366 x 1024 |landscape |iOS 11
-`ipad_pro_10_5`       |1112 x 834  |landscape |iOS 11
-`ipad_chrome`         |1024 x 768  |landscape |iOS 10 - Mobile Chrome browser for iOS
-`ipad_firefox`        |1024 x 768  |landscape |iOS 10 - Mobile Firefox browser for iOS
-`ipad_edge`           |1024 x 768  |landscape |iOS 10 - Mobile Edge browser for iOS
-`android_tablet`      |1024 x 768  |landscape |Android 3.0
-`kindle_fire`         |1024 x 600  |landscape |
-`kindle_firehd7`      |800 x 480   |landscape |Fire OS 3
-`kindle_firehd8`      |1280 x 800  |landscape |Fire OS 5
-`kindle_firehd10`     |1920 x 1200 |landscape |Fire OS 5
-`surface`             |1366 x 768  |landscape |
-`blackberry_playbook` |1024 x 600  |landscape |BlackBerry Tablet OS
-`samsung_galaxy_tab`  |1280 x 800  |landscape |Android 4.0.4
-`google_nexus7`       |960 x 600   |landscape |Android 4.4.4
-`google_nexus9`       |1024 x 768  |landscape |Android 5.1
-`google_nexus10`      |1280 x 800  |landscape |Android 5.1
-`iphone`              |320 x 480   |portrait  |iOS 9.1
-`iphone4`             |320 x 480   |portrait  |iOS 9.1
-`iphone5`             |320 x 568   |portrait  |iOS 9.1
-`iphone6`             |375 x 667   |portrait  |iOS 9.1
-`iphone6_plus`        |414 x 736   |portrait  |iOS 9.1
-`iphone7`             |375 x 667   |portrait  |iOS 10
-`iphone7_plus`        |414 x 736   |portrait  |iOS 10
-`iphone7_chrome`      |375 x 667   |portrait  |iOS 11 - Mobile Chrome browser for iOS
-`iphone7_firefox`     |375 x 667   |portrait  |iOS 11 - Mobile Firefox browser for iOS
-`iphone7_edge`        |375 x 667   |portrait  |iOS 11 - Microsoft Edge browser for iOS
-`iphone8`             |375 x 667   |portrait  |iOS 11
-`iphone8_plus`        |414 x 736   |portrait  |iOS 11
-`iphonex`             |375 x 812   |portrait  |iOS 11
-`android_phone`       |360 x 640   |portrait  |Android 4.2.1
-`nexus6`              |411 x 731   |portrait  |Android 6
-`pixel`               |411 x 731   |portrait  |Android 8
-`pixel_xl`            |411 x 731   |portrait  |Android 8
-`samsung_galaxy_s4`   |360 x 640   |portrait  |Android 5.0.1
-`samsung_galaxy_s5`   |360 x 640   |portrait  |Android 6.0.1
-`samsung_galaxy_s6`   |360 x 640   |portrait  |Android 6.0.1
-`windows_phone7`      |320 x 480   |portrait  |Windows Phone OS 7.5
-`windows_phone8`      |320 x 480   |portrait  |Windows Phone OS 8.0
-`lumia_950_xl`        |360 x 640   |portrait  |Windows Phone OS 10
-`blackberry_z10`      |384 x 640   |portrait  |BlackBerry 10 OS
-`blackberry_z30`      |360 x 640   |portrait  |BlackBerry 10 OS
-`blackberry_leap`     |360 x 640   |portrait  |BlackBerry 10 OS
-`blackberry_passport` |504 x 504   |square    |BlackBerry 10 OS
-
-To change the emulated device's screen orientation from the default setting, set the `ORIENTATION` Environment Variable to either `portrait` or `landscape`.
 
 Automated tests may also be targeted to run on cloud hosted desktop or mobile web browsers using the [Browserstack](https://www.browserstack.com/list-of-browsers-and-platforms?product=automate),
 [Sauce Labs](https://saucelabs.com/open-source#automated-testing-platform), [CrossBrowserTesting](https://crossbrowsertesting.com/selenium-testing), 
-[TestingBot](https://testingbot.com/features), or [Gridlastic](https://www.gridlastic.com/test-environments.html) services. For instructions on using these
-cloud hosted services, refer to the [Remotely hosted desktop and mobile web browsers](https://www.rubydoc.info/gems/testcentricity_web/3.0.7#Remotely_hosted_desktop_and_mobile_web_browsers) section
-of the TestCentricity gem documentation. 
+[TestingBot](https://testingbot.com/features), or [Gridlastic](https://www.gridlastic.com/test-environments.html) services. For instructions on
+using these cloud hosted services, refer to the [Remotely hosted desktop and mobile web browsers](https://www.rubydoc.info/gems/testcentricity_web/3.0.7#Remotely_hosted_desktop_and_mobile_web_browsers) section
+of the TestCentricity gem documentation.
 
 
 ## Instructions for running tests sequentially:
 
 These instruction are for the sequential execution of features/scenarios. Tests will be executed within a single browser instance.
 
-1.  Launch RubyMine, select the File/Open... menu item, navigate to the `tc_web_sample` folder on your drive's Home directory or your C: drive, and click the OK
-button to open the `tc_web_sample` project.
+1. Launch RubyMine, select the File/Open... menu item, navigate to the `tc_web_sample` folder on your drive's Home directory or your C: drive,
+and click the OK button to open the `tc_web_sample` project.
 
-2.  Open the Terminal window by selecting the View/Tool Windows/Terminal menu item.
+2. Open the Terminal window by selecting the View/Tool Windows/Terminal menu item.
 
-3.  Select values from above for the `target_test_environment`, `target_browser`, and `test_context` command line parameters.
+3. Select values from above for the `target_test_environment`, `target_browser`, and `test_context` command line parameters.
 
-4.  To run Cucumber, execute the following command in the Terminal:
+4. To run Cucumber, execute the following command in the Terminal:
 
         `bundle exec cucumber -p target_test_environment -p target_browser -p test_context`
   
     **NOTE:**  To have Cucumber generate HTML formatted test results, append `-p report` to the above command line arguments.
 
-    **NOTE:**  If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device by appending `-p landscape` or `-p portrait`
-    to the above command line arguments.
+    **NOTE:**  If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device by appending
+    `-p landscape` or `-p portrait` to the above command line arguments.
 
-    For example, to execute the entire regression suite against the TEST environment on a locally hosted Chrome browser, with test results being logged to an HTML test results
-    file, execute the following command in the Terminal:
+    For example, to execute the entire regression suite against the QA environment on a locally hosted Chrome browser, with test results being logged
+    to an HTML test results file, execute the following command in the Terminal:
     
-        `bundle exec cucumber -p test -p chrome -p regress -p report`
+        `bundle exec cucumber -p qa -p chrome -p regress -p report`
 
-    To execute the regression suite against the TEST environment on a locally hosted headless Firefox browser, with test results being logged to an HTML test results
-    file, execute the following command in the Terminal:
+    To execute the regression suite against the QA environment on a locally hosted Firefox browser, with test results being logged to an
+    HTML test results file, execute the following command in the Terminal:
     
-        `bundle exec cucumber -p test -p firefox_headless -p regress -p report`
+        `bundle exec cucumber -p qa -p firefox -p regress -p report`
     
-    To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid or Dockerized Selenium Grid environments, include
-    `-p grid` in the command line, as in the following command:
+    To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid or Dockerized Selenium Grid
+    environments, include `-p grid` in the command line, as in the following command:
     
         `bundle exec cucumber -p prod -p bat -p chrome -p grid`
 
-    To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro Mobile Safari web browser in Portrait orientation, execute the following
-    command in the Terminal:
+    To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro 12.9" Mobile Safari web browser in Portrait
+    orientation, execute the following command in the Terminal:
     
-        `bundle exec cucumber -p prod -p ipad_pro -p portrait -p bat`
+        `bundle exec cucumber -p prod -p ipad_pro_12_9 -p portrait -p bat`
 
-5.  As the Cucumber tests are executing, the Terminal will display the lines of each feature file and scenario as they run in real-time.
+5. As the Cucumber tests are executing, the Terminal will display the lines of each feature file and scenario as they run in real-time.
 
-6.  Upon completion of test execution, the Terminal will display the final results.
+6. Upon completion of test execution, the Terminal will display the final results.
 
-7.  If you specified in the command line that HTML formatted test results should be generated, you can view them by opening the `reports` folder in the `tc_web_sample` project
-directory, and selecting the `test_results.html` file. Right-clicking on the `test_results.html` file will display a popup menu. Select the **Open in Browser** menu item, and
-then select a web browser from the popup sub menu that appears. The formatted test results will open in the web browser that you selected.
+7. If you specified in the command line that HTML formatted test results should be generated, you can view them by opening the `reports` folder in
+the `tc_web_sample` project directory, and selecting the `test_results.html` file. Right-clicking on the `test_results.html` file will display a popup
+menu. Select the **Open in Browser** menu item, and then select a web browser from the popup sub menu that appears. The formatted test results will open
+in the web browser that you selected.
 
 
 ## Instructions for running tests concurrently (parallel test execution)
 
-These instruction are for the concurrent execution of features/scenarios, which reduces total test execution time by executing feature/scenarios in parallel across multiple
-browser instances.
+These instruction are for the concurrent execution of features/scenarios, which reduces total test execution time by executing feature/scenarios in
+parallel across multiple browser instances.
 
-1. Launch RubyMine, select the File/Open... menu item, navigate to the `tc_web_sample` folder on your drive's Home directory or your C: drive, and click the OK button
-to open the `tc_web_sample` project.
+1. Launch RubyMine, select the File/Open... menu item, navigate to the `tc_web_sample` folder on your drive's Home directory or your C: drive, and
+click the OK button to open the `tc_web_sample` project.
 
 2. Open the Terminal window by selecting the View/Tool Windows/Terminal menu item.
 
@@ -196,41 +143,35 @@ to open the `tc_web_sample` project.
 
     `bundle exec parallel_cucumber features/ -o "-p parallel -p target_test_environment -p target_browser -p test_context" --group-by scenarios`
     
-    **NOTE:** If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device by including `-p landscape` or `-p portrait` to
-    the above command line argument.
+    **NOTE:** If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device by including
+    `-p landscape` or `-p portrait` to the above command line argument.
     
-    For example, to execute the entire regression suite against the TEST environment on multiple locally emulated iPad Pro Mobile Safari web browsers in Portrait orientation,
-    execute the following command in the Terminal:
+    For example, to execute the entire regression suite against the QA environment on multiple locally emulated iPad Pro Mobile Safari web
+    browsers in Portrait orientation, execute the following command in the Terminal:
     
-        `bundle exec parallel_cucumber features/ -o "-p parallel -p test -p regress -p ipad_pro -p portrait" --group-by scenarios`
+        `bundle exec parallel_cucumber features/ -o "-p parallel -p qa -p regress -p ipad_pro_12_9 -p portrait" --group-by scenarios`
    
-    To execute the regression suite against the TEST environment on multiple locally hosted Firefox web browsers, execute the following command in the Terminal:
+    To execute the regression suite against the QA environment on multiple locally hosted Firefox web browsers, execute the following command
+    in the Terminal:
     
-        `bundle exec parallel_cucumber features/ -o "-p parallel -p test -p regress -p firefox" --group-by scenarios`
+        `bundle exec parallel_cucumber features/ -o "-p parallel -p qa -p regress -p firefox" --group-by scenarios`
 
 5. As your Cucumber tests are executing, the Terminal window will display the lines of each feature file and scenario as they run in real-time.
 
-6. Upon completion of test execution, multiple HTML formatted test results can be reviewed by opening the `reports` folder in the `tc_web_sample` project, and selecting and
-opening each of the `test_results.html` files individually.
+6. Upon completion of test execution, multiple HTML formatted test results can be reviewed by opening the `reports` folder in the `tc_web_sample`
+project, and selecting and opening each of the `test_results.html` files individually.
 
 
-## Multiple Language/Locale Testing
+## Detailed Documentation
 
-This sample test framework includes support for test execution against 7 language/locale combinations. The supported `target_locale` options are:
+Detailed HTML documentation of the features, scenarios, step definitions, classes, and methods for the `tc_web_sample` project can be accessed from
+the `index.html` file within the `doc` folder in the `tc_web_sample` project folder:
 
-**Value** | **Language** | **Country**
-----------|--------------|------------
-`en-us`   | English      | United States *(default)*
-`en-us`   | English      | Canada
-`es-mx`   | Spanish      | Mexico
-`es-es`   | Spanish      | Spain
-`de-de`   | German       | Germany
-`fr-ca`   | French       | Canada
-`fr-fr`   | French       | France
+    tc_web_sample
+        ├── config
+        ├── doc
+        │   └── index.html
+        ├── features
+        └── reports
 
-To specify one of the 7 supported language/locale combinations at runtime, include `-p target_locale` as one of the command line arguments. For instance, to execute the
-Build Acceptance Test suite against the TEST environment on a locally hosted Chrome browser as a French Canadian user, execute the following command in the Terminal:
-
-    `bundle exec cucumber -p test -p chrome -p bat -p fr-ca`
-
-**NOTE:**  If you do not specify a target locale, the default target locale will be `en-us` (U.S./English).
+To view this documentation, navigate to the `index.html` file, right click on it, and select *Open in Browser*

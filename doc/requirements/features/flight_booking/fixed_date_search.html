@@ -6,17 +6,17 @@
 <title>
   Feature: Search for Flights using Fixed Dates
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.27
   
 </title>
 
-  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" />
 
-  <link rel="stylesheet" href="../../../css/cucumber.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/cucumber.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "requirements::features::flight_booking::fixed_date_search";
   relpath = '../../../';
 </script>
@@ -145,7 +145,32 @@ $(function() {
         <span class="defined">
           I am on the UAL portal
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition5-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">And </span>
+
+    
+
+      
+        <span class="defined">
+          I am on the <span class='match'>Flight Booking Home</span> page
+          <div class="definition developer">
+            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -178,7 +203,7 @@ $(function() {
     <div style="float: left;">
       <a class="toggle"> - </a>
       <span class="pre">Scenario Outline:</span>
-      <span class="name">Search for Round Trip flight with fixed dates</span>
+      <span class="name">Search for flight with fixed dates</span>
     </div>
     <a class="link" style="float:right; clear:right;" href="#scenario_0">link</a>
   </div>
@@ -189,7 +214,7 @@ $(function() {
 
   <div class="details">
     <div class="meta developer">
-      <div class="file">features/flight_booking/fixed_date_search.feature:14</div>
+      <div class="file">features/flight_booking/fixed_date_search.feature:15</div>
       
       <div style="clear: both;"></div>
     </div>
@@ -201,39 +226,7 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-      I am on the Flight Booking Home page
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
     <span class="predicate">When </span>
-
-    
-      I select a search type of Round Trip
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
 
     
       I perform a search using:
@@ -246,9 +239,9 @@ $(function() {
     <thead>
       <tr>
         
-          <th class="odd">From</th>
+          <th class="odd">Search Type</th>
         
-          <th class="even">&lt;origin&gt;</th>
+          <th class="even">&lt;type&gt;</th>
         
       </tr>
     </thead>
@@ -256,13 +249,21 @@ $(function() {
     
       <tr class="odd">
         
+          <td>From</td>
+        
+          <td>&lt;origin&gt;</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
           <td>To</td>
         
           <td>&lt;destination&gt;</td>
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Flexible</td>
         
@@ -270,7 +271,7 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Depart</td>
         
@@ -278,7 +279,7 @@ $(function() {
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Return</td>
         
@@ -286,7 +287,7 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Travelers</td>
         
@@ -294,19 +295,11 @@ $(function() {
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Cabin</td>
         
           <td>&lt;cabin type&gt;</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Nonstop</td>
-        
-          <td>&lt;non stop&gt;</td>
         
       </tr>
     
@@ -324,7 +317,7 @@ $(function() {
     <span class="predicate">Then </span>
 
     
-      I should see search results on the Flight Search Results page
+      I should see search results on the Fixed Date Search Results page
     
   </div>
 
@@ -349,160 +342,13 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
     <span class="predicate">When </span>
 
     
 
       
         <span class="defined">
-          I select a search type of <span class='match'>Round Trip</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-
-      
-        <span class="defined">
           I perform a search using:
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  <div class="multiline">
-  <table style="">
-
-    <thead>
-      <tr>
-        
-          <th class="odd">From</th>
-        
-          <th class="even">PDX</th>
-        
-      </tr>
-    </thead>
-
-    
-      <tr class="odd">
-        
-          <td>To</td>
-        
-          <td>ORD</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Flexible</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Depart</td>
-        
-          <td>2 weeks from now</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Return</td>
-        
-          <td>3 weeks from now</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Travelers</td>
-        
-          <td>1 adult</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Cabin</td>
-        
-          <td>Business or First</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Nonstop</td>
-        
-          <td>Yes</td>
-        
-      </tr>
-    
-  </table>
-</div>
-
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">Then </span>
-
-    
-
-      
-        <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
           <div class="definition developer">
             <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
@@ -512,101 +358,15 @@ $(function() {
     
   </div>
 
-  
-  
-
-
-
-
-      
-      
-    </div>
-  
-
-  
-    <div style="display: none;" class="steps example2-1">
-      
-      
-      
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>Round Trip</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using:
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
   <div class="multiline">
   <table style="">
 
     <thead>
       <tr>
         
-          <th class="odd">From</th>
+          <th class="odd">Search Type</th>
         
-          <th class="even">Seattle</th>
+          <th class="even">Round trip</th>
         
       </tr>
     </thead>
@@ -614,664 +374,7 @@ $(function() {
     
       <tr class="odd">
         
-          <td>To</td>
-        
-          <td>San Diego</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Flexible</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Depart</td>
-        
-          <td>10 days from now</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Return</td>
-        
-          <td>14 days from now</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Travelers</td>
-        
-          <td>2 adults, 1 infant</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Cabin</td>
-        
-          <td>Economy</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Nonstop</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-  </table>
-</div>
-
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">Then </span>
-
-    
-
-      
-        <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-      
-    </div>
-  
-    <div style="display: none;" class="steps example2-2">
-      
-      
-      
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>Round Trip</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using:
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  <div class="multiline">
-  <table style="">
-
-    <thead>
-      <tr>
-        
-          <th class="odd">From</th>
-        
-          <th class="even">DTW</th>
-        
-      </tr>
-    </thead>
-
-    
-      <tr class="odd">
-        
-          <td>To</td>
-        
-          <td>PHX</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Flexible</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Depart</td>
-        
-          <td>1 week from now</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Return</td>
-        
-          <td>12 days from now</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Travelers</td>
-        
-          <td>2 seniors</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Cabin</td>
-        
-          <td>Economy</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Nonstop</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-  </table>
-</div>
-
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">Then </span>
-
-    
-
-      
-        <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-      
-    </div>
-  
-
-
-
-<div class="outline">
-  
-  
-    
-    
-      <div class="keyword">
-        Examples
-      </div>
-      <div class="example-group-name"></div>
-      <br style="clear: both;"/>
-      <table>
-        <thead>
-          <tr>
-            
-              <th>origin</th>
-            
-              <th>destination</th>
-            
-              <th>depart date</th>
-            
-              <th>return date</th>
-            
-              <th>travelers</th>
-            
-              <th>cabin type</th>
-            
-              <th>non stop</th>
-            
-          </tr>
-        </thead>
-        
-          
-          <tr class="odd example1-1">
-            
-              <td>PDX</td>
-            
-              <td>ORD</td>
-            
-              <td>2 weeks from now</td>
-            
-              <td>3 weeks from now</td>
-            
-              <td>1 adult</td>
-            
-              <td>Business or First</td>
-            
-              <td>Yes</td>
-            
-          </tr>
-          
-        
-      </table>
-    
-      <div class="keyword">
-        Examples
-      </div>
-      <div class="example-group-name"></div>
-      <br style="clear: both;"/>
-      <table>
-        <thead>
-          <tr>
-            
-              <th>origin</th>
-            
-              <th>destination</th>
-            
-              <th>depart date</th>
-            
-              <th>return date</th>
-            
-              <th>travelers</th>
-            
-              <th>cabin type</th>
-            
-              <th>non stop</th>
-            
-          </tr>
-        </thead>
-        
-          
-          <tr class="odd example2-1">
-            
-              <td>Seattle</td>
-            
-              <td>San Diego</td>
-            
-              <td>10 days from now</td>
-            
-              <td>14 days from now</td>
-            
-              <td>2 adults, 1 infant</td>
-            
-              <td>Economy</td>
-            
-              <td>No</td>
-            
-          </tr>
-          
-          <tr class="even example2-2">
-            
-              <td>DTW</td>
-            
-              <td>PHX</td>
-            
-              <td>1 week from now</td>
-            
-              <td>12 days from now</td>
-            
-              <td>2 seniors</td>
-            
-              <td>Economy</td>
-            
-              <td>No</td>
-            
-          </tr>
-          
-        
-      </table>
-    
-    
-  
-</div>
-
-
-  </div>
-  
-  <div class="attributes" style="display:none;">
-    <input type="hidden" name="collapsed" value="false">
-  </div>
-
-</div>
-<div class="scenario scenario_1">
-  <a name="scenario_1" />
-  <div class="title">
-    <div style="float: left;">
-      <a class="toggle"> - </a>
-      <span class="pre">Scenario Outline:</span>
-      <span class="name">Search for One Way flight with fixed date</span>
-    </div>
-    <a class="link" style="float:right; clear:right;" href="#scenario_1">link</a>
-  </div>
-
-  
-
-  
-
-  <div class="details">
-    <div class="meta developer">
-      <div class="file">features/flight_booking/fixed_date_search.feature:39</div>
-      
-      <div style="clear: both;"></div>
-    </div>
-
-    <div class="steps">
-      
-        
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-      I am on the Flight Booking Home page
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-      I select a search type of One Way
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-      I perform a search using:
-    
-  </div>
-
-  <div class="multiline">
-  <table style="">
-
-    <thead>
-      <tr>
-        
-          <th class="odd">From</th>
-        
-          <th class="even">&lt;origin&gt;</th>
-        
-      </tr>
-    </thead>
-
-    
-      <tr class="odd">
-        
-          <td>To</td>
-        
-          <td>&lt;destination&gt;</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Flexible</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Depart</td>
-        
-          <td>&lt;depart date&gt;</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Travelers</td>
-        
-          <td>&lt;travelers&gt;</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Cabin</td>
-        
-          <td>&lt;cabin type&gt;</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Nonstop</td>
-        
-          <td>&lt;non stop&gt;</td>
-        
-      </tr>
-    
-  </table>
-</div>
-
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">Then </span>
-
-    
-      I should see search results on the Flight Search Results page
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-    </div>
-
-
-    
-
-  
-    <div style="display: none;" class="steps example1-1">
-      
-      
-      
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>One Way</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using:
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  <div class="multiline">
-  <table style="">
-
-    <thead>
-      <tr>
-        
-          <th class="odd">From</th>
-        
-          <th class="even">ORD</th>
-        
-      </tr>
-    </thead>
-
-    
-      <tr class="odd">
-        
-          <td>To</td>
+          <td>From</td>
         
           <td>PDX</td>
         
@@ -1279,17 +382,33 @@ $(function() {
     
       <tr class="even">
         
+          <td>To</td>
+        
+          <td>ORD</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
           <td>Flexible</td>
         
           <td>No</td>
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Depart</td>
         
-          <td>2 weeks from now</td>
+          <td>4 weeks from now</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Return</td>
+        
+          <td>5 weeks from now</td>
         
       </tr>
     
@@ -1305,193 +424,10 @@ $(function() {
         
           <td>Cabin</td>
         
-          <td>Business or First</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Nonstop</td>
-        
-          <td>Yes</td>
-        
-      </tr>
-    
-  </table>
-</div>
-
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">Then </span>
-
-    
-
-      
-        <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-      
-    </div>
-  
-
-  
-    <div style="display: none;" class="steps example2-1">
-      
-      
-      
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>One Way</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using:
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  <div class="multiline">
-  <table style="">
-
-    <thead>
-      <tr>
-        
-          <th class="odd">From</th>
-        
-          <th class="even">Calgary</th>
-        
-      </tr>
-    </thead>
-
-    
-      <tr class="odd">
-        
-          <td>To</td>
-        
-          <td>San Antonio</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Flexible</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Depart</td>
-        
-          <td>10 days from now</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Travelers</td>
-        
-          <td>2 adults, 1 infant</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Cabin</td>
-        
           <td>Economy</td>
         
       </tr>
     
-      <tr class="even">
-        
-          <td>Nonstop</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
   </table>
 </div>
 
@@ -1509,471 +445,9 @@ $(function() {
 
       
         <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-      
-    </div>
-  
-    <div style="display: none;" class="steps example2-2">
-      
-      
-      
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
+          I should see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
             <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>One Way</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using:
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  <div class="multiline">
-  <table style="">
-
-    <thead>
-      <tr>
-        
-          <th class="odd">From</th>
-        
-          <th class="even">IND</th>
-        
-      </tr>
-    </thead>
-
-    
-      <tr class="odd">
-        
-          <td>To</td>
-        
-          <td>Tucson</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Flexible</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Depart</td>
-        
-          <td>next month</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Travelers</td>
-        
-          <td>2 seniors</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Cabin</td>
-        
-          <td>Economy</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Nonstop</td>
-        
-          <td>No</td>
-        
-      </tr>
-    
-  </table>
-</div>
-
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">Then </span>
-
-    
-
-      
-        <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-      
-    </div>
-  
-
-
-
-<div class="outline">
-  
-  
-    
-    
-      <div class="keyword">
-        Examples
-      </div>
-      <div class="example-group-name"></div>
-      <br style="clear: both;"/>
-      <table>
-        <thead>
-          <tr>
-            
-              <th>origin</th>
-            
-              <th>destination</th>
-            
-              <th>depart date</th>
-            
-              <th>travelers</th>
-            
-              <th>cabin type</th>
-            
-              <th>non stop</th>
-            
-          </tr>
-        </thead>
-        
-          
-          <tr class="odd example1-1">
-            
-              <td>ORD</td>
-            
-              <td>PDX</td>
-            
-              <td>2 weeks from now</td>
-            
-              <td>1 adult</td>
-            
-              <td>Business or First</td>
-            
-              <td>Yes</td>
-            
-          </tr>
-          
-        
-      </table>
-    
-      <div class="keyword">
-        Examples
-      </div>
-      <div class="example-group-name"></div>
-      <br style="clear: both;"/>
-      <table>
-        <thead>
-          <tr>
-            
-              <th>origin</th>
-            
-              <th>destination</th>
-            
-              <th>depart date</th>
-            
-              <th>travelers</th>
-            
-              <th>cabin type</th>
-            
-              <th>non stop</th>
-            
-          </tr>
-        </thead>
-        
-          
-          <tr class="odd example2-1">
-            
-              <td>Calgary</td>
-            
-              <td>San Antonio</td>
-            
-              <td>10 days from now</td>
-            
-              <td>2 adults, 1 infant</td>
-            
-              <td>Economy</td>
-            
-              <td>No</td>
-            
-          </tr>
-          
-          <tr class="even example2-2">
-            
-              <td>IND</td>
-            
-              <td>Tucson</td>
-            
-              <td>next month</td>
-            
-              <td>2 seniors</td>
-            
-              <td>Economy</td>
-            
-              <td>No</td>
-            
-          </tr>
-          
-        
-      </table>
-    
-    
-  
-</div>
-
-
-  </div>
-  
-  <div class="attributes" style="display:none;">
-    <input type="hidden" name="collapsed" value="false">
-  </div>
-
-</div>
-<div class="scenario scenario_2">
-  <a name="scenario_2" />
-  <div class="title">
-    <div style="float: left;">
-      <a class="toggle"> - </a>
-      <span class="pre">Scenario Outline:</span>
-      <span class="name">Search for flights with fixed dates using externally sourced data</span>
-    </div>
-    <a class="link" style="float:right; clear:right;" href="#scenario_2">link</a>
-  </div>
-
-  
-
-  
-
-  <div class="details">
-    <div class="meta developer">
-      <div class="file">features/flight_booking/fixed_date_search.feature:65</div>
-      
-      <div style="clear: both;"></div>
-    </div>
-
-    <div class="steps">
-      
-        
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-      I am on the Flight Booking Home page
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-      I perform a search using &lt;itinerary_name&gt;
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Then </span>
-
-    
-      I should see search results on the Flight Search Results page
-    
-  </div>
-
-  
-  
-
-
-
-
-      
-    </div>
-
-
-    
-
-  
-    <div style="display: none;" class="steps example1-1">
-      
-      
-      
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using <span class='match'>CA_CA_fixed</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition3-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">Then </span>
-
-    
-
-      
-        <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -1999,15 +473,15 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
+    <span class="predicate">When </span>
 
     
 
       
         <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
+          I perform a search using:
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2015,7 +489,79 @@ $(function() {
     
   </div>
 
-  
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Search Type</th>
+        
+          <th class="even">One way</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>From</td>
+        
+          <td>ORD</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>To</td>
+        
+          <td>PDX</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Flexible</td>
+        
+          <td>No</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Depart</td>
+        
+          <td>3 weeks from now</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Return</td>
+        
+          <td></td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Travelers</td>
+        
+          <td>1 adult</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Cabin</td>
+        
+          <td>Premium Economy</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
   
 
 
@@ -2024,40 +570,15 @@ $(function() {
 
   
   <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using <span class='match'>UK_UK_fixed</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition3-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
     <span class="predicate">Then </span>
 
     
 
       
         <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
+          I should see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2075,7 +596,9 @@ $(function() {
       
     </div>
   
-    <div style="display: none;" class="steps example1-3">
+
+  
+    <div style="display: none;" class="steps example2-1">
       
       
       
@@ -2083,15 +606,15 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
+    <span class="predicate">When </span>
 
     
 
       
         <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
+          I perform a search using:
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2099,7 +622,79 @@ $(function() {
     
   </div>
 
-  
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Search Type</th>
+        
+          <th class="even">Round trip</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>From</td>
+        
+          <td>SEA</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>To</td>
+        
+          <td>SAN</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Flexible</td>
+        
+          <td>No</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Depart</td>
+        
+          <td>16 days from now</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Return</td>
+        
+          <td>24 days from now</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Travelers</td>
+        
+          <td>2 adults, 1 infant</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Cabin</td>
+        
+          <td>Economy</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
   
 
 
@@ -2108,40 +703,15 @@ $(function() {
 
   
   <div class="step even">
-    <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I perform a search using <span class='match'>US_FR_fixed</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition3-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
     <span class="predicate">Then </span>
 
     
 
       
         <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
+          I should see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2159,7 +729,7 @@ $(function() {
       
     </div>
   
-    <div style="display: none;" class="steps example1-4">
+    <div style="display: none;" class="steps example2-2">
       
       
       
@@ -2167,15 +737,363 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
+    <span class="predicate">When </span>
 
     
 
       
         <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
+          I perform a search using:
+          <div class="definition developer">
+            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  <div class="multiline">
+  <table style="">
+
+    <thead>
+      <tr>
+        
+          <th class="odd">Search Type</th>
+        
+          <th class="even">One way</th>
+        
+      </tr>
+    </thead>
+
+    
+      <tr class="odd">
+        
+          <td>From</td>
+        
+          <td>LAS</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>To</td>
+        
+          <td>TUS</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Flexible</td>
+        
+          <td>No</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Depart</td>
+        
+          <td>2 months from now</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Return</td>
+        
+          <td></td>
+        
+      </tr>
+    
+      <tr class="even">
+        
+          <td>Travelers</td>
+        
+          <td>2 seniors</td>
+        
+      </tr>
+    
+      <tr class="odd">
+        
+          <td>Cabin</td>
+        
+          <td>Business or First</td>
+        
+      </tr>
+    
+  </table>
+</div>
+
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I should see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
             <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+
+      
+      
+    </div>
+  
+
+
+
+<div class="outline">
+  
+  
+    
+    
+      <div class="keyword">
+        Examples
+      </div>
+      <div class="example-group-name"></div>
+      <br style="clear: both;"/>
+      <table>
+        <thead>
+          <tr>
+            
+              <th>type</th>
+            
+              <th>origin</th>
+            
+              <th>destination</th>
+            
+              <th>depart date</th>
+            
+              <th>return date</th>
+            
+              <th>travelers</th>
+            
+              <th>cabin type</th>
+            
+          </tr>
+        </thead>
+        
+          
+          <tr class="odd example1-1">
+            
+              <td>Round trip</td>
+            
+              <td>PDX</td>
+            
+              <td>ORD</td>
+            
+              <td>4 weeks from now</td>
+            
+              <td>5 weeks from now</td>
+            
+              <td>1 adult</td>
+            
+              <td>Economy</td>
+            
+          </tr>
+          
+          <tr class="even example1-2">
+            
+              <td>One way</td>
+            
+              <td>ORD</td>
+            
+              <td>PDX</td>
+            
+              <td>3 weeks from now</td>
+            
+              <td></td>
+            
+              <td>1 adult</td>
+            
+              <td>Premium Economy</td>
+            
+          </tr>
+          
+        
+      </table>
+    
+      <div class="keyword">
+        Examples
+      </div>
+      <div class="example-group-name"></div>
+      <br style="clear: both;"/>
+      <table>
+        <thead>
+          <tr>
+            
+              <th>type</th>
+            
+              <th>origin</th>
+            
+              <th>destination</th>
+            
+              <th>depart date</th>
+            
+              <th>return date</th>
+            
+              <th>travelers</th>
+            
+              <th>cabin type</th>
+            
+          </tr>
+        </thead>
+        
+          
+          <tr class="odd example2-1">
+            
+              <td>Round trip</td>
+            
+              <td>SEA</td>
+            
+              <td>SAN</td>
+            
+              <td>16 days from now</td>
+            
+              <td>24 days from now</td>
+            
+              <td>2 adults, 1 infant</td>
+            
+              <td>Economy</td>
+            
+          </tr>
+          
+          <tr class="even example2-2">
+            
+              <td>One way</td>
+            
+              <td>LAS</td>
+            
+              <td>TUS</td>
+            
+              <td>2 months from now</td>
+            
+              <td></td>
+            
+              <td>2 seniors</td>
+            
+              <td>Business or First</td>
+            
+          </tr>
+          
+        
+      </table>
+    
+    
+  
+</div>
+
+
+  </div>
+  
+  <div class="attributes" style="display:none;">
+    <input type="hidden" name="collapsed" value="false">
+  </div>
+
+</div>
+<div class="scenario scenario_1">
+  <a name="scenario_1" />
+  <div class="title">
+    <div style="float: left;">
+      <a class="toggle"> - </a>
+      <span class="pre">Scenario Outline:</span>
+      <span class="name">Search for flights with fixed dates using externally sourced data</span>
+    </div>
+    <a class="link" style="float:right; clear:right;" href="#scenario_1">link</a>
+  </div>
+
+  
+
+  
+
+  <div class="details">
+    <div class="meta developer">
+      <div class="file">features/flight_booking/fixed_date_search.feature:41</div>
+      
+      <div style="clear: both;"></div>
+    </div>
+
+    <div class="steps">
+      
+        
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+      I perform a search using the &lt;itinerary_name&gt; itinerary
+    
+  </div>
+
+  
+  
+
+
+
+  
+
+  
+  <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+      I should see search results on the Fixed Date Search Results page
+    
+  </div>
+
+  
+  
+
+
+
+
+      
+    </div>
+
+
+    
+
+  
+    <div style="display: none;" class="steps example1-1">
+      
+      
+      
+  
+
+  
+  <div class="step odd">
+    <span class="predicate">When </span>
+
+    
+
+      
+        <span class="defined">
+          I perform a search using the <span class='match'>US_CA_fixed</span> itinerary
+          <div class="definition developer">
+            <a href="../../step_transformers.html#step_definition5-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2192,15 +1110,49 @@ $(function() {
 
   
   <div class="step even">
+    <span class="predicate">Then </span>
+
+    
+
+      
+        <span class="defined">
+          I should see search results on the <span class='match'>Fixed Date Search Results</span> page
+          <div class="definition developer">
+            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
+          </div>
+        </span>
+      
+
+    
+  </div>
+
+  
+  
+
+
+
+
+      
+      
+    </div>
+  
+    <div style="display: none;" class="steps example1-2">
+      
+      
+      
+  
+
+  
+  <div class="step odd">
     <span class="predicate">When </span>
 
     
 
       
         <span class="defined">
-          I perform a search using <span class='match'>DE_ES_fixed</span>
+          I perform a search using the <span class='match'>US_FR_fixed</span> itinerary
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition3-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition5-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2216,16 +1168,16 @@ $(function() {
   
 
   
-  <div class="step odd">
+  <div class="step even">
     <span class="predicate">Then </span>
 
     
 
       
         <span class="defined">
-          I should see search results on the <span class='match'>Flight Search Results</span> page
+          I should see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2268,25 +1220,13 @@ $(function() {
           
           <tr class="odd example1-1">
             
-              <td>CA_CA_fixed</td>
+              <td>US_CA_fixed</td>
             
           </tr>
           
           <tr class="even example1-2">
             
-              <td>UK_UK_fixed</td>
-            
-          </tr>
-          
-          <tr class="odd example1-3">
-            
               <td>US_FR_fixed</td>
-            
-          </tr>
-          
-          <tr class="even example1-4">
-            
-              <td>DE_ES_fixed</td>
             
           </tr>
           
@@ -2305,15 +1245,15 @@ $(function() {
   </div>
 
 </div>
-<div class="scenario scenario_3">
-  <a name="scenario_3" />
+<div class="scenario scenario_2">
+  <a name="scenario_2" />
   <div class="title">
     <div style="float: left;">
       <a class="toggle"> - </a>
       <span class="pre">Scenario Outline:</span>
-      <span class="name">No results returned for search with invalid criteria</span>
+      <span class="name">Verify no flights found for search with criteria that cannot be satisfied</span>
     </div>
-    <a class="link" style="float:right; clear:right;" href="#scenario_3">link</a>
+    <a class="link" style="float:right; clear:right;" href="#scenario_2">link</a>
   </div>
 
   
@@ -2322,7 +1262,7 @@ $(function() {
 
   <div class="details">
     <div class="meta developer">
-      <div class="file">features/flight_booking/fixed_date_search.feature:78</div>
+      <div class="file">features/flight_booking/fixed_date_search.feature:51</div>
       
       <div style="clear: both;"></div>
     </div>
@@ -2334,39 +1274,7 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-      I am on the Flight Booking Home page
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
     <span class="predicate">When </span>
-
-    
-      I select a search type of Round Trip
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
 
     
       I perform a search using:
@@ -2379,9 +1287,9 @@ $(function() {
     <thead>
       <tr>
         
-          <th class="odd">From</th>
+          <th class="odd">Search Type</th>
         
-          <th class="even">&lt;origin&gt;</th>
+          <th class="even">&lt;type&gt;</th>
         
       </tr>
     </thead>
@@ -2389,13 +1297,21 @@ $(function() {
     
       <tr class="odd">
         
+          <td>From</td>
+        
+          <td>&lt;origin&gt;</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
           <td>To</td>
         
           <td>&lt;destination&gt;</td>
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Flexible</td>
         
@@ -2403,7 +1319,7 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Depart</td>
         
@@ -2411,7 +1327,7 @@ $(function() {
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Return</td>
         
@@ -2419,19 +1335,11 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Travelers</td>
         
           <td>&lt;travelers&gt;</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Nonstop</td>
-        
-          <td>yes</td>
         
       </tr>
     
@@ -2449,7 +1357,7 @@ $(function() {
     <span class="predicate">Then </span>
 
     
-      I should not see search results on the Flight Search Results page
+      I should not see search results on the Fixed Date Search Results page
     
   </div>
 
@@ -2474,57 +1382,7 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
     <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>Round Trip</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
 
     
 
@@ -2532,7 +1390,7 @@ $(function() {
         <span class="defined">
           I perform a search using:
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2546,9 +1404,9 @@ $(function() {
     <thead>
       <tr>
         
-          <th class="odd">From</th>
+          <th class="odd">Search Type</th>
         
-          <th class="even">SEA</th>
+          <th class="even">Round trip</th>
         
       </tr>
     </thead>
@@ -2556,13 +1414,21 @@ $(function() {
     
       <tr class="odd">
         
+          <td>From</td>
+        
+          <td>EUG</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
           <td>To</td>
         
           <td>EVN</td>
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Flexible</td>
         
@@ -2570,7 +1436,7 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Depart</td>
         
@@ -2578,7 +1444,7 @@ $(function() {
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Return</td>
         
@@ -2586,19 +1452,11 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Travelers</td>
         
-          <td>4 seniors</td>
-        
-      </tr>
-    
-      <tr class="even">
-        
-          <td>Nonstop</td>
-        
-          <td>yes</td>
+          <td>10 seniors</td>
         
       </tr>
     
@@ -2619,9 +1477,9 @@ $(function() {
 
       
         <span class="defined">
-          I should<span class='match'> not</span> see search results on the <span class='match'>Flight Search Results</span> page
+          I should<span class='match'> not</span> see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2647,57 +1505,7 @@ $(function() {
 
   
   <div class="step odd">
-    <span class="predicate">Given </span>
-
-    
-
-      
-        <span class="defined">
-          I am on the <span class='match'>Flight Booking Home</span> page
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step even">
     <span class="predicate">When </span>
-
-    
-
-      
-        <span class="defined">
-          I select a search type of <span class='match'>Round Trip</span>
-          <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition1-stepdefinition"><div class="valid">&nbsp;</div></a>
-          </div>
-        </span>
-      
-
-    
-  </div>
-
-  
-  
-
-
-
-  
-
-  
-  <div class="step odd">
-    <span class="predicate">And </span>
 
     
 
@@ -2705,7 +1513,7 @@ $(function() {
         <span class="defined">
           I perform a search using:
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition2-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2719,9 +1527,9 @@ $(function() {
     <thead>
       <tr>
         
-          <th class="odd">From</th>
+          <th class="odd">Search Type</th>
         
-          <th class="even">YWG</th>
+          <th class="even">One way</th>
         
       </tr>
     </thead>
@@ -2729,13 +1537,21 @@ $(function() {
     
       <tr class="odd">
         
+          <td>From</td>
+        
+          <td>YWG</td>
+        
+      </tr>
+    
+      <tr class="even">
+        
           <td>To</td>
         
           <td>PNK</td>
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Flexible</td>
         
@@ -2743,7 +1559,7 @@ $(function() {
         
       </tr>
     
-      <tr class="odd">
+      <tr class="even">
         
           <td>Depart</td>
         
@@ -2751,27 +1567,19 @@ $(function() {
         
       </tr>
     
-      <tr class="even">
+      <tr class="odd">
         
           <td>Return</td>
         
-          <td>4 days from now</td>
-        
-      </tr>
-    
-      <tr class="odd">
-        
-          <td>Travelers</td>
-        
-          <td>2 adults, 1 child (2-4), 1 infant</td>
+          <td></td>
         
       </tr>
     
       <tr class="even">
         
-          <td>Nonstop</td>
+          <td>Travelers</td>
         
-          <td>yes</td>
+          <td>6 adults, 1 child (2-4), 1 infant</td>
         
       </tr>
     
@@ -2792,9 +1600,9 @@ $(function() {
 
       
         <span class="defined">
-          I should<span class='match'> not</span> see search results on the <span class='match'>Flight Search Results</span> page
+          I should<span class='match'> not</span> see search results on the <span class='match'>Fixed Date Search Results</span> page
           <div class="definition developer">
-            <a href="../../step_transformers.html#step_definition4-stepdefinition"><div class="valid">&nbsp;</div></a>
+            <a href="../../step_transformers.html#step_definition6-stepdefinition"><div class="valid">&nbsp;</div></a>
           </div>
         </span>
       
@@ -2829,6 +1637,8 @@ $(function() {
         <thead>
           <tr>
             
+              <th>type</th>
+            
               <th>origin</th>
             
               <th>destination</th>
@@ -2845,7 +1655,9 @@ $(function() {
           
           <tr class="odd example1-1">
             
-              <td>SEA</td>
+              <td>Round trip</td>
+            
+              <td>EUG</td>
             
               <td>EVN</td>
             
@@ -2853,11 +1665,13 @@ $(function() {
             
               <td>3 days from now</td>
             
-              <td>4 seniors</td>
+              <td>10 seniors</td>
             
           </tr>
           
           <tr class="even example1-2">
+            
+              <td>One way</td>
             
               <td>YWG</td>
             
@@ -2865,9 +1679,9 @@ $(function() {
             
               <td>today</td>
             
-              <td>4 days from now</td>
+              <td></td>
             
-              <td>2 adults, 1 child (2-4), 1 infant</td>
+              <td>6 adults, 1 child (2-4), 1 infant</td>
             
           </tr>
           
@@ -2889,9 +1703,9 @@ $(function() {
 </div>
 
       <div id="footer">
-  Generated on Thu Jun 21 09:16:48 2018 by
+  Generated on Mon Feb 28 10:33:13 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.1).
+  0.9.27 (ruby-2.7.5).
 </div>
 
     </div>

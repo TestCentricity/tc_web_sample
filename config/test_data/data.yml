@@ -1,0 +1,49 @@
+# -------------------------------------------------------------
+# This is the generic test data required to run the UAL Flight Booking test suites against the QA and PROD test environments.
+# -------------------------------------------------------------
+
+# This section is populated with Environment data required to execute automated test suites on all supported environments
+Environments:
+  QA:
+    PROTOCOL: "https"
+    BASE_URL: "www.united.com/ual/"
+  PROD:
+    PROTOCOL: "https"
+    BASE_URL: "www.united.com/ual/"
+
+# This section contains search data used by the test scenarios that demonstrate using externally sourced test data
+Flight_Searches:
+  US_CA_fixed:
+    Search_Type: "One way"
+    From: "PDX"
+    To: "YVR"
+    Flexible: "No"
+    Depart: "10 days from now"
+    Travelers: "2 adults"
+    Cabin: "Economy"
+  US_FR_fixed:
+    Search_Type: "Round trip"
+    From: "SFO"
+    To: "LYS"
+    Flexible: "No"
+    Depart: "18 days from now"
+    Return: "30 days from now"
+    Travelers: "2 adults"
+    Cabin: "Economy"
+  US_US_flexible:
+    Search_Type: "Round trip"
+    From: "ORD"
+    To: "SFO"
+    Flexible: "Yes"
+    Month: "next month"
+    Duration: "5 days"
+    Travelers: "2 adults"
+    Cabin: "Business or First"
+  US_CA_flexible:
+    Search_Type: "One way"
+    From: "SFO"
+    To: "YVR"
+    Flexible: "Yes"
+    Month: "3 month from now"
+    Travelers: "1 adult, 2 children (12-14)"
+    Cabin: "Economy"

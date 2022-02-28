@@ -6,17 +6,17 @@
 <title>
   Class: FlightSearch
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.27
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/cucumber.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "FlightSearch";
   relpath = '';
 </script>
@@ -494,7 +494,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns a new instance of FlightSearch</p>
+<p>Returns a new instance of FlightSearch.</p>
 
 
   </div>
@@ -508,12 +508,6 @@
       <pre class="lines">
 
 
-31
-32
-33
-34
-35
-36
 37
 38
 39
@@ -521,13 +515,19 @@
 41
 42
 43
-44</pre>
+44
+45
+46
+47
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
-  <span class='ivar'>@search_type</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Search Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
+  <span class='ivar'>@search_type</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Search Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Search_Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@origin</span>      <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>From</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@destination</span> <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>To</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
   <span class='ivar'>@flexible</span>    <span class='op'>=</span> <span class='id identifier rubyid_data'>data</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Flexible</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -564,7 +564,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute cabin_type</p>
+<p>Returns the value of attribute cabin_type.</p>
 
 
   </div>
@@ -578,12 +578,12 @@
       <pre class="lines">
 
 
-27
-28
-29</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 27</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 33</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cabin_type'>cabin_type</span>
   <span class='ivar'>@cabin_type</span>
@@ -607,7 +607,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute depart_date</p>
+<p>Returns the value of attribute depart_date.</p>
 
 
   </div>
@@ -621,12 +621,12 @@
       <pre class="lines">
 
 
-22
-23
-24</pre>
+28
+29
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 22</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 28</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_depart_date'>depart_date</span>
   <span class='ivar'>@depart_date</span>
@@ -650,7 +650,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute destination</p>
+<p>Returns the value of attribute destination.</p>
 
 
   </div>
@@ -664,12 +664,12 @@
       <pre class="lines">
 
 
-20
-21
-22</pre>
+26
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_destination'>destination</span>
   <span class='ivar'>@destination</span>
@@ -693,7 +693,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute duration</p>
+<p>Returns the value of attribute duration.</p>
 
 
   </div>
@@ -707,12 +707,12 @@
       <pre class="lines">
 
 
-25
-26
-27</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_duration'>duration</span>
   <span class='ivar'>@duration</span>
@@ -736,7 +736,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute flexible</p>
+<p>Returns the value of attribute flexible.</p>
 
 
   </div>
@@ -750,12 +750,12 @@
       <pre class="lines">
 
 
-21
-22
-23</pre>
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 27</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_flexible'>flexible</span>
   <span class='ivar'>@flexible</span>
@@ -779,7 +779,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute month</p>
+<p>Returns the value of attribute month.</p>
 
 
   </div>
@@ -793,12 +793,12 @@
       <pre class="lines">
 
 
-24
-25
-26</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_month'>month</span>
   <span class='ivar'>@month</span>
@@ -822,7 +822,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute non_stop</p>
+<p>Returns the value of attribute non_stop.</p>
 
 
   </div>
@@ -836,12 +836,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+34
+35
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_non_stop'>non_stop</span>
   <span class='ivar'>@non_stop</span>
@@ -865,7 +865,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute origin</p>
+<p>Returns the value of attribute origin.</p>
 
 
   </div>
@@ -879,12 +879,12 @@
       <pre class="lines">
 
 
-19
-20
-21</pre>
+25
+26
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 25</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_origin'>origin</span>
   <span class='ivar'>@origin</span>
@@ -908,7 +908,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute return_date</p>
+<p>Returns the value of attribute return_date.</p>
 
 
   </div>
@@ -922,12 +922,12 @@
       <pre class="lines">
 
 
-23
-24
-25</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 23</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_return_date'>return_date</span>
   <span class='ivar'>@return_date</span>
@@ -951,7 +951,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute search_type</p>
+<p>Returns the value of attribute search_type.</p>
 
 
   </div>
@@ -965,12 +965,12 @@
       <pre class="lines">
 
 
-18
-19
-20</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 18</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search_type'>search_type</span>
   <span class='ivar'>@search_type</span>
@@ -994,7 +994,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute total_travelers</p>
+<p>Returns the value of attribute total_travelers.</p>
 
 
   </div>
@@ -1008,12 +1008,12 @@
       <pre class="lines">
 
 
-29
-30
-31</pre>
+35
+36
+37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_total_travelers'>total_travelers</span>
   <span class='ivar'>@total_travelers</span>
@@ -1037,7 +1037,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute travelers</p>
+<p>Returns the value of attribute travelers.</p>
 
 
   </div>
@@ -1051,12 +1051,12 @@
       <pre class="lines">
 
 
-26
-27
-28</pre>
+32
+33
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 26</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_travelers'>travelers</span>
   <span class='ivar'>@travelers</span>
@@ -1072,9 +1072,9 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Jun 21 09:16:47 2018 by
+  Generated on Mon Feb 28 10:33:13 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.1).
+  0.9.27 (ruby-2.7.5).
 </div>
 
     </div>

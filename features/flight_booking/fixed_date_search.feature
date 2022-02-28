@@ -9,86 +9,57 @@ Feature: Search for Flights using Fixed Dates
 
   Background:
     Given I am on the UAL portal
+    And I am on the Flight Booking Home page
 
 
-  Scenario Outline: Search for Round Trip flight with fixed dates
-    Given I am on the Flight Booking Home page
-    When I select a search type of Round Trip
-    And I perform a search using:
-      | From      | <origin>      |
-      | To        | <destination> |
-      | Flexible  | No            |
-      | Depart    | <depart date> |
-      | Return    | <return date> |
-      | Travelers | <travelers>   |
-      | Cabin     | <cabin type>  |
-      | Nonstop   | <non stop>    |
-    Then I should see search results on the Flight Search Results page
-
-@bat
-    Examples:
-      | origin | destination | depart date      | return date      | travelers | cabin type        | non stop |
-      | PDX    | ORD         | 2 weeks from now | 3 weeks from now | 1 adult   | Business or First | Yes      |
-
-    Examples:
-      | origin  | destination | depart date      | return date      | travelers          | cabin type | non stop |
-      | Seattle | San Diego   | 10 days from now | 14 days from now | 2 adults, 1 infant | Economy    | No       |
-      | DTW     | PHX         | 1 week from now  | 12 days from now | 2 seniors          | Economy    | No       |
-
-
-  Scenario Outline: Search for One Way flight with fixed date
-    Given I am on the Flight Booking Home page
-    When I select a search type of One Way
-    And I perform a search using:
-      | From      | <origin>      |
-      | To        | <destination> |
-      | Flexible  | No            |
-      | Depart    | <depart date> |
-      | Travelers | <travelers>   |
-      | Cabin     | <cabin type>  |
-      | Nonstop   | <non stop>    |
-    Then I should see search results on the Flight Search Results page
+  Scenario Outline: Search for flight with fixed dates
+    When I perform a search using:
+      |Search Type |<type>        |
+      |From        |<origin>      |
+      |To          |<destination> |
+      |Flexible    |No            |
+      |Depart      |<depart date> |
+      |Return      |<return date> |
+      |Travelers   |<travelers>   |
+      |Cabin       |<cabin type>  |
+    Then I should see search results on the Fixed Date Search Results page
 
 @bat
     Examples:
-      | origin | destination | depart date      | travelers | cabin type        | non stop |
-      | ORD    | PDX         | 2 weeks from now | 1 adult   | Business or First | Yes      |
+      |type       |origin |destination |depart date      |return date      |travelers |cabin type      |
+      |Round trip |PDX    |ORD         |4 weeks from now |5 weeks from now |1 adult   |Economy         |
+      |One way    |ORD    |PDX         |3 weeks from now |                 |1 adult   |Premium Economy |
 
     Examples:
-      | origin  | destination | depart date      | travelers          | cabin type | non stop |
-      | Calgary | San Antonio | 10 days from now | 2 adults, 1 infant | Economy    | No       |
-      | IND     | Tucson      | next month       | 2 seniors          | Economy    | No       |
+      |type       |origin |destination |depart date       |return date      |travelers          |cabin type        |
+      |Round trip |SEA    |SAN         |16 days from now  |24 days from now |2 adults, 1 infant |Economy           |
+      |One way    |LAS    |TUS         |2 months from now |                 |2 seniors          |Business or First |
 
 
-# This is an example of using test data sourced from the Flight_Searches worksheet in /features/support/test_data/data.xls.
+# This is an example of using externally sourced test data from the Flight_Searches worksheet in /config/test_data/data.xls.
 # The itinerary_name value is the row_name in the worksheet.
   Scenario Outline: Search for flights with fixed dates using externally sourced data
-    Given I am on the Flight Booking Home page
-    When I perform a search using <itinerary_name>
-    Then I should see search results on the Flight Search Results page
+    When I perform a search using the <itinerary_name> itinerary
+    Then I should see search results on the Fixed Date Search Results page
 
     Examples:
-      | itinerary_name |
-      | CA_CA_fixed    |
-      | UK_UK_fixed    |
-      | US_FR_fixed    |
-      | DE_ES_fixed    |
+      |itinerary_name |
+      |US_CA_fixed    |
+      |US_FR_fixed    |
 
 
-  Scenario Outline: No results returned for search with invalid criteria
-    Given I am on the Flight Booking Home page
-    When I select a search type of Round Trip
-    And I perform a search using:
-      | From      | <origin>      |
-      | To        | <destination> |
-      | Flexible  | No            |
-      | Depart    | <depart date> |
-      | Return    | <return date> |
-      | Travelers | <travelers>   |
-      | Nonstop   | yes           |
-    Then I should not see search results on the Flight Search Results page
+  Scenario Outline: Verify no flights found for search with criteria that cannot be satisfied
+    When I perform a search using:
+      |Search Type |<type>        |
+      |From        |<origin>      |
+      |To          |<destination> |
+      |Flexible    |No            |
+      |Depart      |<depart date> |
+      |Return      |<return date> |
+      |Travelers   |<travelers>   |
+    Then I should not see search results on the Fixed Date Search Results page
 
     Examples:
-      | origin | destination | depart date | return date     | travelers                         |
-      | SEA    | EVN         | tomorrow    | 3 days from now | 4 seniors                         |
-      | YWG    | PNK         | today       | 4 days from now | 2 adults, 1 child (2-4), 1 infant |
+      |type       |origin |destination |depart date |return date     |travelers                         |
+      |Round trip |EUG    |EVN         |tomorrow    |3 days from now |10 seniors                        |
+      |One way    |YWG    |PNK         |today       |                |6 adults, 1 child (2-4), 1 infant |

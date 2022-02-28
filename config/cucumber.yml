@@ -1,50 +1,53 @@
-<% desktop          = "--tags @desktop --require features BROWSER_TILE=true BROWSER_SIZE=1500,1000" %>
-<% tablet           = "--tags @desktop --require features BROWSER_TILE=true" %>
-<% mobile           = "--tags @mobile  --require features BROWSER_TILE=true" %>
-<% regression       = "--tags ~@wip --tags ~@failing --tags @regression --require features" %>
-<% acceptance       = "--tags ~@wip --tags ~@failing --tags @bat --require features" %>
-<% jenkins_reports  = "--require features --format pretty --format html --out reports/test_results.html --format junit --out reports --format json --out reports/test_results.json" %>
-<% test_only        = "--tags ~@wip --tags ~@failing --tags ~@!prod" %>
+<% desktop         = "--tags @desktop --require features BROWSER_TILE=true BROWSER_SIZE=1500,1000 --publish-quiet" %>
+<% tablet          = "--tags @desktop --require features BROWSER_TILE=true --publish-quiet" %>
+<% mobile          = "--tags @mobile  --require features BROWSER_TILE=true --publish-quiet" %>
+<% regression      = "--tags '@regression and (not @wip and not @failing)' --require features" %>
+<% acceptance      = "--tags '@bat and (not @wip and not @failing)' --require features" %>
+<% jenkins_reports = "--require features --format pretty --format html --out reports/test_results.html --format junit --out reports --format json --out reports/test_results.json" %>
+<% test_only       = "--tags 'not @wip and not @failing and not @!prod'" %>
 
 
 #==============
 # target_test_environment profiles
 #==============
 
-test:               TEST_ENVIRONMENT=TEST
-prod:               <%= test_only %> TEST_ENVIRONMENT=PROD
+qa:   TEST_ENVIRONMENT=QA
+prod: <%= test_only %> TEST_ENVIRONMENT=PROD
+
+
+#==============
+# test data source profiles
+#==============
+
+excel: DATA_SOURCE=Excel
+yaml:  DATA_SOURCE=yaml
+json:  DATA_SOURCE=json
 
 
 #==============
 # generic test context profiles
 #==============
 
-failing:            --tags @failing --tags ~@wip
-wip:                --tags @wip --tags ~@failing
-dev:                --tags @dev --tags ~@wip --tags ~@failing
-regress:            <%= regression %> TEST_CONTEXT="REGRESSION" AUTOMATE_PROJECT="TC_Web_Sample"
-bat:                <%= acceptance %> TEST_CONTEXT="BAT" AUTOMATE_PROJECT="TC_Web_Sample"
+failing: --tags '@failing and not @wip'
+wip:     --tags '@wip and not @failing'
+dev:     --tags '@dev and (not @wip and not @failing)'
+regress: <%= regression %> TEST_CONTEXT="REGRESSION" AUTOMATE_PROJECT="TC_Web_Sample"
+bat:     <%= acceptance %> TEST_CONTEXT="BAT" AUTOMATE_PROJECT="TC_Web_Sample"
 
 
 #==============
 # profiles for I18n/L10n Language/Locale selections
 #==============
-en-us:              LOCALE="en-US" LANGUAGE="English" COUNTRY="United States"
-en-ca:              LOCALE="en-CA" LANGUAGE="English" COUNTRY="Canada"
-es-mx:              LOCALE="es-MX" LANGUAGE="Spanish" COUNTRY="Mexico"
-es-es:              LOCALE="es-ES" LANGUAGE="Spanish" COUNTRY="Spain"
-de-de:              LOCALE="de-DE" LANGUAGE="German" COUNTRY="Germany"
-fr-ca:              LOCALE="fr-CA" LANGUAGE="French" COUNTRY="Canada"
-fr-fr:              LOCALE="fr-FR" LANGUAGE="French" COUNTRY="France"
+en-us: LOCALE="en-US" LANGUAGE="English" COUNTRY="United States"
 
 
 #==============
 # test reporting profiles
 #==============
 
-report:             <%= jenkins_reports %> REPORTING=true
-jenkins:            <%= jenkins_reports %> REPORTING=true JENKINS=true
-parallel:           PARALLEL=true REPORTING=true --require features --format pretty --format html --out reports/test_results<%= ENV['TEST_ENV_NUMBER'] %>.html --format junit --out reports --format json --out reports/test_results<%= ENV['TEST_ENV_NUMBER'] %>.json
+report:   <%= jenkins_reports %> REPORTING=true
+jenkins:  <%= jenkins_reports %> REPORTING=true JENKINS=true
+parallel: PARALLEL=true REPORTING=true --require features --format pretty --format html --out reports/test_results<%= ENV['TEST_ENV_NUMBER'] %>.html --format junit --out reports --format json --out reports/test_results<%= ENV['TEST_ENV_NUMBER'] %>.json
 
 
 #==============
@@ -55,197 +58,37 @@ parallel:           PARALLEL=true REPORTING=true --require features --format pre
 # profiles for locally hosted desktop web browsers
 #==============
 
-firefox:            WEB_BROWSER=firefox <%= desktop %>
-safari:             WEB_BROWSER=safari  <%= desktop %>
-chrome:             WEB_BROWSER=chrome  <%= desktop %>
-ie:                 WEB_BROWSER=ie      <%= desktop %>
-chrome_headless:    WEB_BROWSER=chrome_headless  <%= desktop %>
-firefox_headless:   WEB_BROWSER=firefox_headless <%= desktop %>
-firefox_legacy:     WEB_BROWSER=firefox_legacy <%= desktop %>
+chrome:  WEB_BROWSER=chrome <%= desktop %>
+firefox: WEB_BROWSER=firefox <%= desktop %>
+edge:    WEB_BROWSER=edge <%= desktop %>
+safari:  WEB_BROWSER=safari <%= desktop %>
+ie:      WEB_BROWSER=ie <%= desktop %>
+
 
 #==============
 # profile for Selenium Grid and Dockerized Selenium Grid hosted desktop web browsers
 #==============
-grid:               SELENIUM=remote REMOTE_ENDPOINT="http://localhost:4444/wd/hub"
+grid:     SELENIUM=remote REMOTE_ENDPOINT="http://localhost:4444/wd/hub"
+grid-aws: SELENIUM=remote REMOTE_ENDPOINT="http://hub.selenium:4444/wd/hub"
 
 
 #==============
 # profiles for locally hosted mobile web browsers (emulated locally in Chrome browser)
 #==============
 
-ipad:                WEB_BROWSER=ipad                HOST_BROWSER=chrome <%= tablet %>
-ipad_pro:            WEB_BROWSER=ipad_pro            HOST_BROWSER=chrome <%= tablet %>
-ipad_pro_10_5:       WEB_BROWSER=ipad_pro_10_5       HOST_BROWSER=chrome <%= tablet %>
-ipad_chrome:         WEB_BROWSER=ipad_chrome         HOST_BROWSER=chrome <%= tablet %>
-ipad_firefox:        WEB_BROWSER=ipad_firefox        HOST_BROWSER=chrome <%= tablet %>
-ipad_edge:           WEB_BROWSER=ipad_edge           HOST_BROWSER=chrome <%= tablet %>
-iphone:              WEB_BROWSER=iphone              HOST_BROWSER=chrome <%= mobile %>
-iphone4:             WEB_BROWSER=iphone4             HOST_BROWSER=chrome <%= mobile %>
-iphone5:             WEB_BROWSER=iphone5             HOST_BROWSER=chrome <%= mobile %>
-iphone6:             WEB_BROWSER=iphone6             HOST_BROWSER=chrome <%= mobile %>
-iphone6_plus:        WEB_BROWSER=iphone6_plus        HOST_BROWSER=chrome <%= mobile %>
-iphone7:             WEB_BROWSER=iphone7             HOST_BROWSER=chrome <%= mobile %>
-iphone7_plus:        WEB_BROWSER=iphone7_plus        HOST_BROWSER=chrome <%= mobile %>
-iphone7_chrome:      WEB_BROWSER=iphone7_chrome      HOST_BROWSER=chrome <%= mobile %>
-iphone7_firefox:     WEB_BROWSER=iphone7_firefox     HOST_BROWSER=chrome <%= mobile %>
-iphone7_edge:        WEB_BROWSER=iphone7_edge        HOST_BROWSER=chrome <%= mobile %>
-iphone8:             WEB_BROWSER=iphone8             HOST_BROWSER=chrome <%= mobile %>
-iphone8_plus:        WEB_BROWSER=iphone8_plus        HOST_BROWSER=chrome <%= mobile %>
-iphoneX:             WEB_BROWSER=iphonex             HOST_BROWSER=chrome <%= mobile %>
-android_phone:       WEB_BROWSER=android_phone       HOST_BROWSER=chrome <%= mobile %>
-nexus6:              WEB_BROWSER=nexus6              HOST_BROWSER=chrome <%= mobile %>
-android_tablet:      WEB_BROWSER=android_tablet      HOST_BROWSER=chrome <%= tablet %>
-kindle_fire:         WEB_BROWSER=kindle_fire         HOST_BROWSER=chrome <%= tablet %>
-kindle_firehd7:      WEB_BROWSER=kindle_firehd7      HOST_BROWSER=chrome <%= tablet %>
-kindle_firehd8:      WEB_BROWSER=kindle_firehd8      HOST_BROWSER=chrome <%= tablet %>
-kindle_firehd10:     WEB_BROWSER=kindle_firehd10     HOST_BROWSER=chrome <%= tablet %>
-surface:             WEB_BROWSER=surface             HOST_BROWSER=chrome <%= tablet %>
-blackberry_playbook: WEB_BROWSER=blackberry_playbook HOST_BROWSER=chrome <%= tablet %>
-samsung_galaxy_tab:  WEB_BROWSER=samsung_galaxy_tab  HOST_BROWSER=chrome <%= tablet %>
-google_nexus7:       WEB_BROWSER=google_nexus7       HOST_BROWSER=chrome <%= tablet %>
-google_nexus9:       WEB_BROWSER=google_nexus9       HOST_BROWSER=chrome <%= tablet %>
-google_nexus10:      WEB_BROWSER=google_nexus10      HOST_BROWSER=chrome <%= tablet %>
-samsung_galaxy_s4:   WEB_BROWSER=samsung_galaxy_s4   HOST_BROWSER=chrome <%= mobile %>
-samsung_galaxy_s5:   WEB_BROWSER=samsung_galaxy_s5   HOST_BROWSER=chrome <%= mobile %>
-samsung_galaxy_s6:   WEB_BROWSER=samsung_galaxy_s6   HOST_BROWSER=chrome <%= mobile %>
-pixel:               WEB_BROWSER=pixel               HOST_BROWSER=chrome <%= mobile %>
-pixel_xl:            WEB_BROWSER=pixel_xl            HOST_BROWSER=chrome <%= mobile %>
-windows_phone7:      WEB_BROWSER=windows_phone7      HOST_BROWSER=chrome <%= mobile %>
-windows_phone8:      WEB_BROWSER=windows_phone8      HOST_BROWSER=chrome <%= mobile %>
-lumia_950_xl:        WEB_BROWSER=lumia_950_xl        HOST_BROWSER=chrome <%= mobile %>
-blackberry_z10:      WEB_BROWSER=blackberry_z10      HOST_BROWSER=chrome <%= mobile %>
-blackberry_z30:      WEB_BROWSER=blackberry_z30      HOST_BROWSER=chrome <%= mobile %>
-blackberry_leap:     WEB_BROWSER=blackberry_leap     HOST_BROWSER=chrome <%= mobile %>
-blackberry_passport: WEB_BROWSER=blackberry_passport HOST_BROWSER=chrome <%= mobile %>
+ipad_pro_11:   WEB_BROWSER=ipad_pro_11   HOST_BROWSER=chrome <%= tablet %>
+ipad_pro_12_9: WEB_BROWSER=ipad_pro_12_9 HOST_BROWSER=chrome <%= tablet %>
+ipad_chrome:   WEB_BROWSER=ipad_chrome   HOST_BROWSER=chrome <%= tablet %>
+ipad_firefox:  WEB_BROWSER=ipad_firefox  HOST_BROWSER=chrome <%= tablet %>
+ipad_edge:     WEB_BROWSER=ipad_edge     HOST_BROWSER=chrome <%= tablet %>
 
 
 #==============
 # profiles for mobile device screen orientation
 #==============
 
-portrait:           ORIENTATION=portrait
-landscape:          ORIENTATION=landscape
-
-
-#==============
-# profiles for remotely hosted web browsers on the BrowserStack service
-#==============
-
-browserstack:       WEB_BROWSER=browserstack BS_USERNAME=<INSERT USER NAME HERE> BS_AUTHKEY=<INSERT PASSWORD HERE> AUTOMATE_PROJECT="TC_Web_Sample"
-bs_desktop:         --profile browserstack <%= desktop %> RESOLUTION="1920x1080"
-bs_mobile:          --profile browserstack <%= mobile %>
-bs_firefox:         BS_BROWSER="Firefox" SELENIUM_VERSION="3.11.0" WD_VERSION="0.19.1"
-bs_chrome:          BS_BROWSER="Chrome"  SELENIUM_VERSION="3.11.0"
-bs_safari:          BS_BROWSER="Safari"  SELENIUM_VERSION="2.53.0" WD_VERSION="2.48"
-
-# BrowserStack OS X desktop browser profiles
-bs_macos_high_sierra:  --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="High Sierra"
-bs_ff_high_sierra:     --profile bs_macos_high_sierra --profile bs_firefox
-bs_chrome_high_sierra: --profile bs_macos_high_sierra --profile bs_chrome
-bs_safari_high_sierra: --profile bs_macos_high_sierra --profile bs_safari
-
-bs_macos_sierra:    --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="Sierra"
-bs_ff_sierra:       --profile bs_macos_sierra --profile bs_firefox
-bs_chrome_sierra:   --profile bs_macos_sierra --profile bs_chrome
-bs_safari_sierra:   --profile bs_macos_sierra --profile bs_safari
-
-bs_osx_el_capitan:  --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="El Capitan"
-bs_ff_el_cap:       --profile bs_osx_el_capitan --profile bs_firefox
-bs_chrome_el_cap:   --profile bs_osx_el_capitan --profile bs_chrome
-bs_safari_el_cap:   --profile bs_osx_el_capitan --profile bs_safari
-
-bs_osx_yosemite:    --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="Yosemite"
-bs_ff_yos:          --profile bs_osx_yosemite --profile bs_firefox
-bs_chrome_yos:      --profile bs_osx_yosemite --profile bs_chrome
-bs_safari_yos:      --profile bs_osx_yosemite --profile bs_safari
-
-# BrowserStack Windows desktop browser profiles
-bs_win8:            --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="8"
-bs_win10:           --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="10"
-bs_ff_win8:         --profile bs_win8  --profile bs_firefox
-bs_ff_win10:        --profile bs_win10 --profile bs_firefox
-bs_chrome_win8:     --profile bs_win8  --profile bs_chrome
-bs_chrome_win10:    --profile bs_win10 --profile bs_chrome
-
-bs_ie10_win8:       --profile bs_win8 BS_BROWSER="IE" BS_VERSION="10.0"
-bs_ie11_win8:       --profile bs_desktop BS_OS="Windows" BS_OS_VERSION="8.1" BS_BROWSER="IE" BS_VERSION="11.0"
-bs_ie11_win10:      --profile bs_win10 BS_BROWSER="IE" BS_VERSION="11.0"
-bs_edge_win10:      --profile bs_win10 BS_BROWSER="Edge" BS_VERSION="15.0"
-
-# BrowserStack iOS mobile browser profiles
-bs_iphone:          --profile bs_mobile BS_PLATFORM=MAC BS_OS=ios BS_BROWSER=iPhone DEVICE_TYPE=phone
-bs_iphone6s_plus:   --profile bs_iphone BS_DEVICE="iPhone 6S Plus"
-bs_iphone6s:        --profile bs_iphone BS_DEVICE="iPhone 6S"
-bs_iphone6_plus:    --profile bs_iphone BS_DEVICE="iPhone 6 Plus"
-bs_iphone6:         --profile bs_iphone BS_DEVICE="iPhone 6"
-bs_iphone5s:        --profile bs_iphone BS_DEVICE="iPhone 5S"
-bs_iphone4s:        --profile bs_iphone BS_DEVICE="iPhone 4S (6.0)"
-
-bs_ipad:            --profile bs_mobile BS_PLATFORM=MAC BS_BROWSER=iPad DEVICE_TYPE=tablet
-bs_ipad_pro:        --profile bs_ipad BS_DEVICE="iPad Pro"
-bs_ipad_air2:       --profile bs_ipad BS_DEVICE="iPad Air 2"
-bs_ipad_air:        --profile bs_ipad BS_DEVICE="iPad Air"
-bs_ipad_mini:       --profile bs_ipad BS_DEVICE="iPad Mini 4"
-
-# BrowserStack iOS real device mobile browser profiles
-bs_iphone_device:   --profile bs_iphone BS_REAL_MOBILE="true"
-bs_iphoneX:         --profile bs_iphone_device BS_OS_VERSION="11.0" BS_DEVICE="iPhone X"
-bs_iphone8_plus:    --profile bs_iphone_device BS_OS_VERSION="11.0" BS_DEVICE="iPhone 8 Plus"
-bs_iphone8:         --profile bs_iphone_device BS_OS_VERSION="11.0" BS_DEVICE="iPhone 8"
-bs_iphone7_plus:    --profile bs_iphone_device BS_OS_VERSION="10.3" BS_DEVICE="iPhone 7 Plus"
-bs_iphone7:         --profile bs_iphone_device BS_OS_VERSION="10.3" BS_DEVICE="iPhone 7"
-
-bs_ipad_device:     --profile bs_ipad BS_REAL_MOBILE="true"
-bs_ipad5:           --profile bs_ipad_device BS_OS_VERSION="11.0" BS_DEVICE="iPad 5th"
-
-# BrowserStack Android mobile browser profiles
-bs_android:          --profile bs_mobile BS_PLATFORM=ANDROID BS_BROWSER=android BS_OS=android
-bs_android_phone:    --profile bs_android DEVICE_TYPE=phone
-bs_galaxy_s5:        --profile bs_android_phone BS_DEVICE="Samsung Galaxy S5"
-bs_nexus5:           --profile bs_android_phone BS_DEVICE="Google Nexus 5"
-bs_moto_razr:        --profile bs_android_phone BS_DEVICE="Motorola Razr"
-bs_sony_xperia:      --profile bs_android_phone BS_DEVICE="Sony Xperia Tipo"
-
-bs_android_tablet:   --profile bs_android DEVICE_TYPE=tablet
-bs_kindle_fire_hd89: --profile bs_android_tablet BS_DEVICE="Amazon Kindle Fire HD 8.9"
-bs_kindle_fire_hdx7: --profile bs_android_tablet BS_DEVICE="Amazon Kindle Fire HDX 7"
-bs_kindle_fire2:     --profile bs_android_tablet BS_DEVICE="Amazon Kindle Fire 2"
-bs_nexus7:           --profile bs_android_tablet BS_DEVICE="Google Nexus 7"
-
-# BrowserStack Android real device mobile browser profiles
-bs_android_device:   --profile bs_mobile BS_BROWSER=android BS_OS=android BS_REAL_MOBILE="true"
-bs_google_pixel8:    --profile bs_android_device BS_DEVICE="Google Pixel" BS_OS_VERSION="8.0" DEVICE_TYPE=phone
-bs_google_pixel71:   --profile bs_android_device BS_DEVICE="Google Pixel" BS_OS_VERSION="7.1" DEVICE_TYPE=phone
-bs_nexus6:           --profile bs_android_device BS_DEVICE="Google Nexus 6" DEVICE_TYPE=phone
-bs_galaxy_s8_plus:   --profile bs_android_device BS_DEVICE="Samsung Galaxy S8 Plus" DEVICE_TYPE=phone
-bs_galaxy_s8:        --profile bs_android_device BS_DEVICE="Samsung Galaxy S8" DEVICE_TYPE=phone
-bs_galaxy_s7:        --profile bs_android_device BS_DEVICE="Samsung Galaxy S7" DEVICE_TYPE=phone
-bs_galaxy_s6:        --profile bs_android_device BS_DEVICE="Samsung Galaxy S6" DEVICE_TYPE=phone
-bs_galaxy_note4:     --profile bs_android_device BS_DEVICE="Samsung Galaxy Note 4" DEVICE_TYPE=tablet
-bs_nexus9:           --profile bs_android_device BS_DEVICE="Google Nexus 9" DEVICE_TYPE=tablet
-
-# BrowserStack iOS real device native app profiles
-bs_app_ios:            --profile browserstack --profile ios BS_REAL_MOBILE="true" BS_OS=ios BS_PLATFORM=MAC <%= mobile %>
-bs_app_iphone:         --profile bs_app_ios DEVICE_TYPE=phone
-bs_app_iphoneX:        --profile bs_app_iphone BS_OS_VERSION="11.0" BS_DEVICE="iPhone X"
-bs_app_iphone8_plus:   --profile bs_app_iphone BS_OS_VERSION="11.0" BS_DEVICE="iPhone 8 Plus"
-bs_app_iphone8:        --profile bs_app_iphone BS_OS_VERSION="11.0" BS_DEVICE="iPhone 8"
-bs_app_iphone7_plus:   --profile bs_app_iphone BS_OS_VERSION="10.3" BS_DEVICE="iPhone 7 Plus"
-bs_app_iphone7:        --profile bs_app_iphone BS_OS_VERSION="10.3" BS_DEVICE="iPhone 7"
-
-bs_app_ipad:           --profile bs_app_ios DEVICE_TYPE=tablet
-bs_app_ipad5:          --profile bs_app_ipad BS_OS_VERSION="11.0" BS_DEVICE="iPad 5th"
-bs_app_ipad_pro:       --profile bs_app_ipad BS_OS_VERSION="11.2" BS_DEVICE="iPad Pro"
-
-# BrowserStack Android real device native app profiles
-bs_app_android:        --profile browserstack --profile android BS_REAL_MOBILE="true" BS_OS=android BS_PLATFORM=ANDROID <%= mobile %>
-bs_app_google_pixel8:  --profile bs_app_android BS_DEVICE="Google Pixel" BS_OS_VERSION="8.0" DEVICE_TYPE=phone
-bs_app_google_pixel71: --profile bs_app_android BS_DEVICE="Google Pixel" BS_OS_VERSION="7.1" DEVICE_TYPE=phone
-bs_app_nexus6:         --profile bs_app_android BS_DEVICE="Google Nexus 6" BS_OS_VERSION="6.0" DEVICE_TYPE=phone
-bs_app_galaxy_s8_plus: --profile bs_app_android BS_DEVICE="Samsung Galaxy S8 Plus" BS_OS_VERSION="7.0" DEVICE_TYPE=phone
-bs_app_galaxy_s8:      --profile bs_app_android BS_DEVICE="Samsung Galaxy S8" BS_OS_VERSION="7.0" DEVICE_TYPE=phone
-bs_app_galaxy_s7:      --profile bs_app_android BS_DEVICE="Samsung Galaxy S7" BS_OS_VERSION="6.0" DEVICE_TYPE=phone
-bs_app_galaxy_note4:   --profile bs_app_android BS_DEVICE="Samsung Galaxy Note 4" BS_OS_VERSION="6.0" DEVICE_TYPE=tablet
+landscape: ORIENTATION=landscape
+portrait:  ORIENTATION=portrait
 
 
 #==============
@@ -253,42 +96,10 @@ bs_app_galaxy_note4:   --profile bs_app_android BS_DEVICE="Samsung Galaxy Note 4
 # NOTE: Requires installation of XCode, iOS version specific target simulators, Appium, and the appium_capybara gem
 #==============
 
-appium_ios:            WEB_BROWSER=appium AUTOMATION_ENGINE=XCUITest APP_PLATFORM_NAME="ios" APP_BROWSER="Safari" <%= mobile %>
-app_ios_10:            --profile appium_ios APP_VERSION="10.3"
-app_ios_11:            --profile appium_ios APP_VERSION="11.2"
+appium_ios: WEB_BROWSER=appium AUTOMATION_ENGINE=XCUITest APP_PLATFORM_NAME="ios" APP_BROWSER="Safari" NEW_COMMAND_TIMEOUT=30 SHUTDOWN_OTHER_SIMS=true SHOW_SIM_KEYBOARD=false <%= desktop %>
+app_ios_15: --profile appium_ios APP_VERSION="15.2"
 
-iphone_7_plus_10_sim:  --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="iPhone 7 Plus"
-iphone_7_10_sim:       --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="iPhone 7"
-iphone_6_10_sim:       --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="iPhone 6"
-iphone_6s_plus_10_sim: --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="iPhone 6s Plus"
-iphone_6s_10_sim:      --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="iPhone 6s"
-iphone_se_10_sim:      --profile app_ios_10 DEVICE_TYPE=phone APP_DEVICE="iPhone SE"
-iphone_X_11_sim:       --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone X"
-iphone_8_11_sim:       --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 8"
-iphone_8_plus_11_sim:  --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 8 Plus"
-iphone_7_plus_11_sim:  --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 7 Plus"
-iphone_7_11_sim:       --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 7"
-iphone_6_11_sim:       --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 6"
-iphone_6s_plus_11_sim: --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 6s Plus"
-iphone_6s_11_sim:      --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone 6s"
-iphone_se_11_sim:      --profile app_ios_11 DEVICE_TYPE=phone APP_DEVICE="iPhone SE"
-
-ipad_pro_12_9_11_sim:  --profile app_ios_11 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (12.9-inch)"
-ipad_pro_12_9_10_sim:  --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (12.9-inch)"
-ipad_pro_10_5_11_sim:  --profile app_ios_11 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (10.5-inch)"
-ipad_pro_10_5_10_sim:  --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (10.5-inch)"
-ipad_pro_9_7_11_sim:   --profile app_ios_11 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (9.7-inch)"
-ipad_pro_9_7_10_sim:   --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (9.7-inch)"
-ipad_air_2_11_sim:     --profile app_ios_11 DEVICE_TYPE=tablet APP_DEVICE="iPad Air 2"
-ipad_air_2_10_sim:     --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="iPad Air 2"
-
-#==============
-# profiles for mobile Safari web browsers running on physically connected iOS devices
-# NOTE: Requires installation of XCode, Appium, and the appium_capybara gem
-#==============
-
-my_ios_11_3_iphone:    --profile app_ios_11 DEVICE_TYPE=phone  APP_DEVICE="My Test iPhoneX"  APP_UDID="INSERT YOUR DEVICE UDID"
-my_ios_10_3_ipad:      --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="My Test iPad Pro" APP_UDID="INSERT YOUR DEVICE UDID"
+ipad_pro_12_9_15_sim:  --profile app_ios_15 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (12.9-inch) (5th generation)"
 
 
 #==============
@@ -296,175 +107,42 @@ my_ios_10_3_ipad:      --profile app_ios_10 DEVICE_TYPE=tablet APP_DEVICE="My Te
 # NOTE: Requires installation of Android Studio, Android version specific virtual device simulators, Appium, and the appium_capybara gem
 #==============
 
-appium_android:        WEB_BROWSER=appium AUTOMATION_ENGINE=UiAutomator2 APP_PLATFORM_NAME="Android" <%= mobile %>
-android_8:             --profile appium_android APP_BROWSER="Chrome" APP_VERSION="8.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.31/chromedriver"
-android_7:             --profile appium_android APP_BROWSER="Chrome" APP_VERSION="7.1.1" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.28/chromedriver"
-android_6:             --profile appium_android APP_BROWSER="Browser" APP_VERSION="6.0" CHROMEDRIVER_EXECUTABLE="/Users/Shared/WebDrivers/2.20/chromedriver"
-pixel_xl_api26_sim:    --profile android_8 DEVICE_TYPE=phone APP_DEVICE="Pixel_XL_API_26"
-pixel_2_xl_api26_sim:  --profile android_8 DEVICE_TYPE=phone APP_DEVICE="Pixel_2_XL_API_26"
-pixel_api_25_sim:      --profile android_7 DEVICE_TYPE=phone APP_DEVICE="Pixel_API_25"
-pixel_xl_api25_sim:    --profile android_7 DEVICE_TYPE=phone APP_DEVICE="Pixel_XL_API_25"
-nexus_6_api23_sim:     --profile android_6 DEVICE_TYPE=phone APP_DEVICE="Nexus_6_API_23"
-
-nexus_10_api23_sim:    --profile android_6 DEVICE_TYPE=tablet APP_DEVICE="Nexus_10_API_23"
-nexus_9_api25_sim:     --profile android_7 DEVICE_TYPE=tablet APP_DEVICE="Nexus_9_API_25"
-nexus_10_api25_sim:    --profile android_7 DEVICE_TYPE=tablet APP_DEVICE="Nexus_10_API_25"
-pixel_c_api26_sim:     --profile android_8 DEVICE_TYPE=tablet APP_DEVICE="Pixel_C_API_26"
-
-run_appium:            APPIUM_SERVER=run
+appium_android:    WEB_BROWSER=appium APP_PLATFORM_NAME="Android" <%= desktop %>
+app_android_12:    --profile appium_android APP_BROWSER="Chrome" APP_VERSION="12.0"
+pixel_c_api31_sim: --profile app_android_12 DEVICE_TYPE=tablet APP_DEVICE="Pixel_C_API_31"
 
 
 #==============
-# profiles for remotely hosted web browsers on the CrossBrowserTesting service
+# profiles for remotely hosted web browsers on the BrowserStack service
 #==============
 
-crossbrowser:       WEB_BROWSER=crossbrowser CB_USERNAME=<INSERT USER NAME HERE> CB_AUTHKEY=<INSERT PASSWORD HERE>
-cb_desktop:         --profile crossbrowser <%= desktop %>
-cb_mobile:          --profile crossbrowser <%= mobile %>
+browserstack: WEB_BROWSER=browserstack BS_USERNAME="<INSERT USER NAME HERE>" BS_AUTHKEY="<INSERT PASSWORD HERE>" AUTOMATE_PROJECT="TC_Web_Sample"
+bs_desktop:   --profile browserstack <%= desktop %> RESOLUTION="1920x1080"
+bs_mobile:    --profile browserstack <%= mobile %>
 
-# CrossBrowserTesting OS X desktop browser profiles
-cb_osx:             --profile cb_desktop RESOLUTION="1920x1200"
-cb_osx_el_capitan:  --profile cb_osx CB_OS="Mac10.11"
-cb_ff_el_cap:       --profile cb_osx_el_capitan CB_BROWSER="FF44"
-cb_chrome_el_cap:   --profile cb_osx_el_capitan CB_BROWSER="Chrome48x64"
-cb_safari_el_cap:   --profile cb_osx_el_capitan CB_BROWSER="Safari9"
+# BrowserStack OS X desktop browser profiles
+bs_macos_monterey:  --profile bs_desktop BS_OS="OS X" BS_OS_VERSION="Monterey"
+bs_chrome_monterey: --profile bs_macos_monterey BS_BROWSER="Chrome" BS_VERSION="latest"
+bs_edge_monterey:   --profile bs_macos_monterey BS_BROWSER="Edge" BS_VERSION="latest"
+bs_safari_monterey: --profile bs_macos_monterey BS_BROWSER="Safari" BS_VERSION="latest"
 
-cb_osx_yosemite:    --profile cb_osx CB_OS="Mac10.10"
-cb_ff_yos:          --profile cb_osx_yosemite CB_BROWSER="FF44"
-cb_chrome_yos:      --profile cb_osx_yosemite CB_BROWSER="Chrome48x64"
-cb_safari_yos:      --profile cb_osx_yosemite CB_BROWSER="Safari8"
+# BrowserStack iOS mobile browser profiles
+bs_ipad:        --profile bs_mobile BS_OS=ios BS_BROWSER=Safari DEVICE_TYPE=tablet BS_REAL_MOBILE="true"
+bs_ipad_pro_12: --profile bs_ipad BS_DEVICE="iPad Pro 12.9 2018" BS_OS_VERSION="15"
 
-# CrossBrowserTesting Windows desktop browser profiles
-cb_win:             --profile cb_desktop RESOLUTION="1920x1080"
-cb_win8:            --profile cb_win CB_OS="Win8"
-cb_win10:           --profile cb_win CB_OS="Win10"
-cb_ff_win8:         --profile cb_win8 CB_BROWSER="FF44"
-cb_ff_win10:        --profile cb_win10 CB_BROWSER="FF44"
-cb_chrome_win8:     --profile cb_win8 CB_BROWSER="Chrome48x64"
-cb_chrome_win10:    --profile cb_win10 CB_BROWSER="Chrome48x64"
-
-cb_ie11_win8:       --profile cb_win8 CB_BROWSER="IE11"
-cb_ie10_win8:       --profile cb_win8 CB_BROWSER="IE10"
-cb_ie11_win10:      --profile cb_win10 CB_BROWSER="IE11"
-
-# CrossBrowserTesting iOS mobile browser profiles
-cb_iphone6_plus:    --profile cb_mobile CB_PLATFORM="iPhone6Plus-iOS8sim" CB_BROWSER="MblSafari8.0" RESOLUTION="1080x1920"
-cb_iphone6:         --profile cb_mobile CB_PLATFORM="iPhone6-iOS8sim" CB_BROWSER="MblSafari8.0" RESOLUTION="750x1334"
-cb_iphone5s:        --profile cb_mobile CB_PLATFORM="iPhone5s-iOS7sim" CB_BROWSER="MblSafari7.0" RESOLUTION="640x1136"
-cb_ipad_air:        --profile cb_mobile CB_PLATFORM="iPadAir-iOS8Sim" CB_BROWSER="MblSafari8.0" RESOLUTION="1024x768"
-cb_ipad_mini:       --profile cb_mobile CB_PLATFORM="iPadMiniRetina-iOS7Sim" CB_BROWSER="MblSafari7.0" RESOLUTION="1024x768"
-
-# CrossBrowserTesting Android mobile browser profiles
-cb_nexus7:          --profile cb_mobile CB_PLATFORM="Nexus7-And42" CB_BROWSER="MblChrome37" RESOLUTION="800x1280"
-cb_galaxy_tab2:     --profile cb_mobile CB_PLATFORM="GalaxyTab2-And41" CB_BROWSER="MblChrome38" RESOLUTION="1280x800"
-cb_galaxy_s5:       --profile cb_mobile CB_PLATFORM="GalaxyS5-And44" CB_BROWSER="MblChrome35" RESOLUTION="1080x1920"
-cb_galaxy_s4:       --profile cb_mobile CB_PLATFORM="GalaxyS4-And42" CB_BROWSER="MblChrome33" RESOLUTION="1080x1920"
-cb_galaxy_s3:       --profile cb_mobile CB_PLATFORM="GalaxyS3-And41" CB_BROWSER="MblChrome34" RESOLUTION="720x1280"
+# BrowserStack Android mobile browser profiles
+bs_android: --profile bs_mobile BS_OS=android BS_BROWSER=Chrome DEVICE_TYPE=tablet BS_REAL_MOBILE="true"
+bs_android_tablet: --profile bs_android BS_DEVICE="Samsung Galaxy Tab S7" BS_OS_VERSION="10.0"
 
 
 #==============
-# profiles for remotely hosted web browsers on the SauceLabs service
+# profiles for remotely hosted web browsers on the LambdaTest service
 #==============
 
-saucelabs:          WEB_BROWSER=saucelabs SL_USERNAME=<INSERT USER NAME HERE> SL_AUTHKEY=<INSERT PASSWORD HERE>
-sl_desktop:         --profile saucelabs <%= desktop %>
-sl_mobile:          --profile saucelabs <%= mobile %>
+lambdatest: WEB_BROWSER=lambdatest LT_USERNAME="<INSERT USER NAME HERE>" LT_AUTHKEY="<INSERT PASSWORD HERE>" AUTOMATE_PROJECT="TC_Web_Sample"
+lt_desktop: --profile lambdatest <%= desktop %> RESOLUTION="2560x1440"
 
-# SauceLabs OS X desktop browser profiles
-sl_osx_el_capitan:  --profile sl_desktop SL_OS="OS X 10.11"
-sl_ff_el_cap:       --profile sl_osx_el_capitan SL_BROWSER="firefox"
-sl_chrome_el_cap:   --profile sl_osx_el_capitan SL_BROWSER="chrome"
-sl_safari_el_cap:   --profile sl_osx_el_capitan SL_BROWSER="safari"
-
-sl_osx_yosemite:    --profile sl_desktop SL_OS="OS X 10.10" RESOLUTION="1920x1200"
-sl_ff_yos:          --profile sl_osx_yosemite SL_BROWSER="firefox"
-sl_chrome_yos:      --profile sl_osx_yosemite SL_BROWSER="chrome"
-sl_safari_yos:      --profile sl_osx_yosemite SL_BROWSER="safari"
-
-# SauceLabs Windows desktop browser profiles
-sl_win8:            --profile sl_desktop SL_OS="Windows 8.1" RESOLUTION="1280x1024"
-sl_win10:           --profile sl_desktop SL_OS="Windows 10" RESOLUTION="1280x1024"
-sl_ff_win8:         --profile sl_win8 SL_BROWSER="firefox"
-sl_ff_win10:        --profile sl_win10 SL_BROWSER="firefox"
-sl_chrome_win8:     --profile sl_win8 SL_BROWSER="chrome"
-sl_chrome_win10:    --profile sl_win10 SL_BROWSER="chrome"
-
-sl_ie11_win8:       --profile sl_win8 SL_BROWSER="internet explorer" SL_VERSION="11.0"
-sl_ie11_win10:      --profile sl_win10 SL_BROWSER="internet explorer"
-
-# SauceLabs iOS mobile browser profiles
-sl_ios:             --profile sl_mobile SL_PLATFORM=OS X 10.10 SL_BROWSER="iphone" SL_VERSION="9.2"
-sl_iphone6_plus:    --profile sl_ios SL_DEVICE="iPhone 6 Plus"
-sl_iphone6:         --profile sl_ios SL_DEVICE="iPhone 6"
-sl_iphone5s:        --profile sl_ios SL_DEVICE="iPhone 5s"
-sl_iphone4s:        --profile sl_ios SL_DEVICE="iPhone 4s"
-sl_ipad_air:        --profile sl_ios SL_DEVICE="iPad Air"
-sl_ipad_retina:     --profile sl_ios SL_DEVICE="iPad Retina"
-
-# SauceLabs Android mobile browser profiles
-sl_android:         --profile sl_mobile SL_PLATFORM=Linux SL_BROWSER="android" SL_VERSION="4.4"
-sl_android_phone:   --profile sl_android SL_DEVICE="Android Emulator" SL_DEVICE_TYPE="phone"
-sl_android_tablet:  --profile sl_android SL_DEVICE="Android Emulator" SL_DEVICE_TYPE="tablet"
-
-
-#==============
-# profiles for remotely hosted web browsers on the TestingBot service
-#==============
-
-testingbot:         WEB_BROWSER=testingbot TB_USERNAME=<INSERT USER NAME HERE> TB_AUTHKEY=<INSERT PASSWORD HERE>
-tb_desktop:         --profile testingbot <%= desktop %> RESOLUTION="1920x1200"
-tb_mobile:          --profile testingbot <%= mobile %>
-
-# TestingBot OS X desktop browser profiles
-tb_macos_sierra:    --profile tb_desktop TB_OS="SIERRA"
-tb_ff_sierra:       --profile tb_macos_sierra TB_BROWSER="firefox"
-tb_chrome_sierra:   --profile tb_macos_sierra TB_BROWSER="chrome"
-tb_safari_sierra:   --profile tb_macos_sierra TB_BROWSER="safari" TB_VERSION="10"
-
-tb_osx_el_capitan:  --profile tb_desktop TB_OS="CAPITAN"
-tb_ff_el_cap:       --profile tb_osx_el_capitan TB_BROWSER="firefox"
-tb_chrome_el_cap:   --profile tb_osx_el_capitan TB_BROWSER="chrome"
-tb_safari_el_cap:   --profile tb_osx_el_capitan TB_BROWSER="safari" TB_VERSION="9"
-
-tb_osx_yosemite:    --profile tb_desktop TB_OS="YOSEMITE"
-tb_ff_yos:          --profile tb_osx_yosemite TB_BROWSER="firefox"
-tb_chrome_yos:      --profile tb_osx_yosemite TB_BROWSER="chrome"
-tb_safari_yos:      --profile tb_osx_yosemite TB_BROWSER="safari" TB_VERSION="8"
-
-# TestingBot Windows desktop browser profiles
-tb_win8:            --profile tb_desktop TB_OS="WIN8"
-tb_win10:           --profile tb_desktop TB_OS="WIN10"
-tb_ff_win8:         --profile tb_win8 TB_BROWSER="firefox"
-tb_ff_win10:        --profile tb_win10 TB_BROWSER="firefox"
-tb_chrome_win8:     --profile tb_win8 TB_BROWSER="chrome"
-tb_chrome_win10:    --profile tb_win10 TB_BROWSER="chrome"
-
-tb_ie11_win8:       --profile tb_win8 TB_BROWSER="internet explorer" TB_VERSION="11"
-tb_ie10_win8:       --profile tb_win8 TB_BROWSER="internet explorer" TB_VERSION="10"
-tb_ie11_win10:      --profile tb_win10 TB_BROWSER="internet explorer" TB_VERSION="11"
-tb_edge_win10:      --profile tb_win10 TB_BROWSER="microsoftedge" TB_VERSION="13"
-
-
-#==============
-# profiles for remotely hosted web browsers on the Gridlastic service
-#==============
-
-gridlastic:         WEB_BROWSER=gridlastic GL_USERNAME=<INSERT USER NAME HERE> GL_AUTHKEY=<INSERT PASSWORD HERE> GL_SUBDOMAIN=<INSERT SUBDOMAIN HERE>
-gl_video:           RECORD_VIDEO="True" VIDEO_URL="<INSERT VIDEO URL HERE>"
-gl_desktop:         --profile gridlastic --profile gl_video <%= desktop %>
-
-# Gridlastic Windows desktop browser profiles
-gl_windows:         --profile gl_desktop GL_PLATFORM="windows"
-gl_win8:            --profile gl_windows GL_OS="WIN8"
-gl_win8_1:          --profile gl_windows GL_OS="WIN8_1"
-gl_win10:           --profile gl_windows GL_OS="WIN10"
-gl_ff_win8:         --profile gl_win8_1 GL_BROWSER="firefox" GL_VERSION="59"
-gl_ff_win10:        --profile gl_win10 GL_BROWSER="firefox" GL_VERSION="59"
-gl_chrome_win8:     --profile gl_win8_1 GL_BROWSER="chrome" GL_VERSION="latest"
-gl_chrome_win10:    --profile gl_win10 GL_BROWSER="chrome" GL_VERSION="latest"
-
-gl_ie11_win8:       --profile gl_win8_1 GL_BROWSER="internet explorer" GL_VERSION="11"
-gl_ie10_win8:       --profile gl_win8 GL_BROWSER="internet explorer" GL_VERSION="10"
-gl_ie11_win10:      --profile gl_win10 GL_BROWSER="internet explorer" GL_VERSION="11"
-
-gl_chrome_linux:    --profile gl_desktop GL_OS="LINUX" GL_BROWSER="chrome" GL_VERSION="latest"
+# LambdaTest OS X desktop browser profiles
+lt_macos_monterey:  --profile lt_desktop LT_OS="MacOS Monterey"
+lt_chrome_monterey: --profile lt_macos_monterey LT_BROWSER="Chrome" LT_VERSION="98.0"
+lt_edge_monterey:   --profile lt_macos_monterey LT_BROWSER="MicrosoftEdge" LT_VERSION="97.0"

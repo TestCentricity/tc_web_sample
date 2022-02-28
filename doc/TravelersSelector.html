@@ -6,17 +6,17 @@
 <title>
   Class: TravelersSelector
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.27
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
 
-  <link rel="stylesheet" href="css/cucumber.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="css/cucumber.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "TravelersSelector";
   relpath = '';
 </script>
@@ -108,8 +108,7 @@
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
     
-<p>Travelers Selector widget is implemented as a PageSection object because it
-is used on both the Flight Booking Home page and the Book A Flight page.</p>
+<p>Travelers Selector widget is implemented as a PageSection object because it is used on both the Flight Booking Home page and the Book A Flight page.</p>
 
 
   </div>
@@ -150,8 +149,7 @@ is used on both the Flight Booking Home page and the Book A Flight page.</p>
 
   
     <span class="summary_desc"><div class='inline'>
-<p>travelers_data argument is a comma-delimited string, each segment
-specifying the number and type of traveler(s).</p>
+<p>travelers_data argument is a comma-delimited string, each segment specifying the number and type of traveler(s).</p>
 </div></span>
   
 </li>
@@ -179,14 +177,12 @@ specifying the number and type of traveler(s).</p>
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>travelers_data argument is a comma-delimited string, each segment
-specifying the number and type of traveler(s). Valid traveler type
-descriptors are:</p>
+<p>travelers_data argument is a comma-delimited string, each segment specifying the number and type of traveler(s). Valid traveler type descriptors are:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'>Adult</span>          <span class='kw'>or</span>  <span class='const'>Adults</span>
 <span class='const'>Senior</span>         <span class='kw'>or</span>  <span class='const'>Seniors</span>
-<span class='const'>Child</span> <span class='lparen'>(</span><span class='int'>16</span><span class='op'>-</span><span class='int'>17</span><span class='rparen'>)</span>  <span class='kw'>or</span>  <span class='const'>Children</span> <span class='lparen'>(</span><span class='int'>16</span><span class='op'>-</span><span class='int'>17</span><span class='rparen'>)</span>
-<span class='const'>Child</span> <span class='lparen'>(</span><span class='int'>12</span><span class='op'>-</span><span class='int'>15</span><span class='rparen'>)</span>  <span class='kw'>or</span>  <span class='const'>Children</span> <span class='lparen'>(</span><span class='int'>12</span><span class='op'>-</span><span class='int'>15</span><span class='rparen'>)</span>
+<span class='const'>Child</span> <span class='lparen'>(</span><span class='int'>15</span><span class='op'>-</span><span class='int'>17</span><span class='rparen'>)</span>  <span class='kw'>or</span>  <span class='const'>Children</span> <span class='lparen'>(</span><span class='int'>15</span><span class='op'>-</span><span class='int'>17</span><span class='rparen'>)</span>
+<span class='const'>Child</span> <span class='lparen'>(</span><span class='int'>12</span><span class='op'>-</span><span class='int'>14</span><span class='rparen'>)</span>  <span class='kw'>or</span>  <span class='const'>Children</span> <span class='lparen'>(</span><span class='int'>12</span><span class='op'>-</span><span class='int'>14</span><span class='rparen'>)</span>
 <span class='const'>Child</span> <span class='lparen'>(</span><span class='int'>5</span><span class='op'>-</span><span class='int'>11</span><span class='rparen'>)</span>   <span class='kw'>or</span>  <span class='const'>Children</span> <span class='lparen'>(</span><span class='int'>5</span><span class='op'>-</span><span class='int'>11</span><span class='rparen'>)</span>
 <span class='const'>Child</span> <span class='lparen'>(</span><span class='int'>2</span><span class='op'>-</span><span class='int'>4</span><span class='rparen'>)</span>    <span class='kw'>or</span>  <span class='const'>Children</span> <span class='lparen'>(</span><span class='int'>2</span><span class='op'>-</span><span class='int'>4</span><span class='rparen'>)</span>
 <span class='const'>Infant</span>         <span class='kw'>or</span>  <span class='const'>Infants</span>
@@ -205,7 +201,6 @@ descriptors are:</p>
       <pre class="lines">
 
 
-30
 31
 32
 33
@@ -247,14 +242,16 @@ descriptors are:</p>
 69
 70
 71
-72</pre>
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/sections/travelers_selector.rb', line 30</span>
+      <pre class="code"><span class="info file"># File 'features/support/sections/travelers_selector.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_select_travelers'>select_travelers</span><span class='lparen'>(</span><span class='id identifier rubyid_travelers_data'>travelers_data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_num_adults_field'>num_adults_field</span><span class='period'>.</span><span class='id identifier rubyid_wait_until_visible'>wait_until_visible</span><span class='lparen'>(</span><span class='int'>5</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_num_adults_field'>num_adults_field</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_clear_all_button'>clear_all_button</span><span class='period'>.</span><span class='id identifier rubyid_click'>click</span>
+  <span class='id identifier rubyid_sleep'>sleep</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='int'>0</span>
   <span class='comment'># iterate through each type of traveler specified
 </span>  <span class='id identifier rubyid_travelers_data'>travelers_data</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>, </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_travelers'>travelers</span><span class='op'>|</span>
@@ -265,29 +262,28 @@ descriptors are:</p>
     <span class='id identifier rubyid_type_travelers'>type_travelers</span>  <span class='op'>=</span> <span class='id identifier rubyid_segment'>segment</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'> </span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>+</span> <span class='id identifier rubyid_num_travelers'>num_travelers</span>
     <span class='comment'># find traveler type object
-</span>    <span class='kw'>case</span> <span class='id identifier rubyid_type_travelers'>type_travelers</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>adult</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>adults</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_adults_field'>num_adults_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>senior</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>seniors</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_seniors_field'>num_seniors_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (16-17)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (16-17)</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_child_16_17_field'>num_child_16_17_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (12-15)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (12-15)</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_child_12_15_field'>num_child_12_15_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (5-11)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (5-11)</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_child_5_11_field'>num_child_5_11_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (2-4)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (2-4)</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_child_2_4_field'>num_child_2_4_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infant</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infants</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_infants_field'>num_infants_field</span>
-    <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infant on lap</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infants on lap</span><span class='tstring_end'>&#39;</span></span>
-      <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='id identifier rubyid_num_lap_infants_field'>num_lap_infants_field</span>
-    <span class='kw'>else</span>
-      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type_travelers'>type_travelers</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; is not a valid traveler type</span><span class='tstring_end'>&quot;</span></span>
-    <span class='kw'>end</span>
+</span>    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_type_travelers'>type_travelers</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>adult</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>adults</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_adults_field'>num_adults_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>senior</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>seniors</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_seniors_field'>num_seniors_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (15-17)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (15-17)</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_child_15_17_field'>num_child_15_17_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (12-14)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (12-14)</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_child_12_14_field'>num_child_12_14_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (5-11)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (5-11)</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_child_5_11_field'>num_child_5_11_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>child (2-4)</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>children (2-4)</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_child_2_4_field'>num_child_2_4_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infant</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infants</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_infants_field'>num_infants_field</span>
+                        <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infant on lap</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>infants on lap</span><span class='tstring_end'>&#39;</span></span>
+                          <span class='id identifier rubyid_num_lap_infants_field'>num_lap_infants_field</span>
+                        <span class='kw'>else</span>
+                          <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&#39;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_type_travelers'>type_travelers</span><span class='embexpr_end'>}</span><span class='tstring_content'>&#39; is not a valid traveler type</span><span class='tstring_end'>&quot;</span></span>
+                        <span class='kw'>end</span>
     <span class='comment'># set the number of travelers for the selected traveler type
-</span>    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
-    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_num_travelers'>num_travelers</span><span class='rparen'>)</span>
+</span>    <span class='id identifier rubyid_traveler_type_obj'>traveler_type_obj</span><span class='period'>.</span><span class='id identifier rubyid_set'>set</span><span class='lparen'>(</span><span class='id identifier rubyid_num_travelers'>num_travelers</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
   <span class='comment'># save the total number of travelers
 </span>  <span class='const'><span class='object_link'><a href="FlightSearch.html" title="FlightSearch (class)">FlightSearch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span><span class='period'>.</span><span class='id identifier rubyid_total_travelers'>total_travelers</span> <span class='op'>=</span> <span class='id identifier rubyid_total_travelers'>total_travelers</span>
@@ -305,9 +301,9 @@ descriptors are:</p>
 </div>
 
       <div id="footer">
-  Generated on Thu Jun 21 09:16:48 2018 by
+  Generated on Mon Feb 28 10:33:13 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.4.1).
+  0.9.27 (ruby-2.7.5).
 </div>
 
     </div>
