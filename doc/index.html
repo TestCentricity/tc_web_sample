@@ -212,16 +212,16 @@ HTML test results file, execute the following command in the Terminal:</p>
 <pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p qa -p firefox -p regress -p report</span><span class='tstring_end'>`</span></span>
 </code></pre>
 
-<p>To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid or Dockerized Selenium Grid
+<p>To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid 4 or Dockerized Selenium Grid 4
 environments, include <code>-p grid</code> in the command line, as in the following command:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p prod -p bat -p chrome -p grid</span><span class='tstring_end'>`</span></span>
 </code></pre>
 
-<p>To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro Mobile Safari web browser in Portrait
+<p>To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro 12.9&quot; Mobile Safari web browser in Portrait
 orientation, execute the following command in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p prod -p ipad_pro -p portrait -p bat</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p prod -p ipad_pro_12_9 -p portrait -p bat</span><span class='tstring_end'>`</span></span>
 </code></pre></li>
 <li><p>As the Cucumber tests are executing, the Terminal will display the lines of each feature file and scenario as they run in real-time.</p></li>
 <li><p>Upon completion of test execution, the Terminal will display the final results.</p></li>
@@ -243,7 +243,7 @@ click the OK button to open the <code>tc_web_sample</code> project.</p></li>
 <li><p>Select values from above for the <code>target_test_environment</code>, <code>target_browser</code>, and <code>test_context</code> command line parameters.</p></li>
 <li><p>To run Cucumber tests in a specific test context, execute the following command in the Terminal:</p>
 
-<p><code>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p target_test_environment -p target_browser -p test_context&quot; --group-by scenarios</code></p>
+<p><code>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p target_test_environment -p target_browser -p test_context&quot;</code></p>
 
 <p><strong>NOTE:</strong> If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device by including
 <code>-p landscape</code> or <code>-p portrait</code> to the above command line argument.</p>
@@ -251,13 +251,13 @@ click the OK button to open the <code>tc_web_sample</code> project.</p></li>
 <p>For example, to execute the entire regression suite against the QA environment on multiple locally emulated iPad Pro Mobile Safari web
 browsers in Portrait orientation, execute the following command in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p ipad_pro -p portrait&quot; --group-by scenarios</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p ipad_pro_12_9 -p portrait&quot;</span><span class='tstring_end'>`</span></span>
 </code></pre>
 
 <p>To execute the regression suite against the QA environment on multiple locally hosted Firefox web browsers, execute the following command
 in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p firefox&quot; --group-by scenarios</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p firefox&quot;</span><span class='tstring_end'>`</span></span>
 </code></pre></li>
 <li><p>As your Cucumber tests are executing, the Terminal window will display the lines of each feature file and scenario as they run in real-time.</p></li>
 <li><p>Upon completion of test execution, multiple HTML formatted test results can be reviewed by opening the <code>reports</code> folder in the <code>tc_web_sample</code>
@@ -281,7 +281,7 @@ the <code>index.html</code> file within the <code>doc</code> folder in the <code
 </div></div>
 
       <div id="footer">
-  Generated on Mon Feb 28 10:33:13 2022 by
+  Generated on Thu Mar  3 15:48:08 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.27 (ruby-2.7.5).
 </div>
