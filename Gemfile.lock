@@ -64,6 +64,8 @@ GEM
     cucumber-wire (6.2.1)
       cucumber-core (~> 10.1, >= 10.1.0)
       cucumber-cucumber-expressions (~> 14.0, >= 14.0.0)
+    cuke_modeler (3.15.0)
+      cucumber-gherkin (< 23.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.5.0)
@@ -114,7 +116,7 @@ GEM
       ffi (~> 1.1)
     test-unit (3.5.3)
       power_assert
-    testcentricity_web (4.1.0)
+    testcentricity_web (4.1.1)
       appium_lib
       browserstack-local
       capybara (>= 3.1, < 4)
@@ -123,7 +125,7 @@ GEM
       faker
       i18n
       os (~> 1.0)
-      selenium-webdriver
+      selenium-webdriver (>= 4.0, < 5)
       spreadsheet (= 1.1.7)
       test-unit
       virtus
@@ -151,10 +153,11 @@ DEPENDENCIES
   appium_capybara
   capybara
   cucumber
+  cuke_modeler (~> 3.0)
   parallel_tests
   pry
   require_all (= 1.5.0)
-  testcentricity_web (= 4.1.0)
+  testcentricity_web (= 4.1.1)
 
 BUNDLED WITH
    2.2.1
