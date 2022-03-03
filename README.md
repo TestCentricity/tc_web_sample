@@ -34,10 +34,10 @@ in the Cucumber command line at runtime. These conditions include `target_test_e
 
 Automated tests may be targeted at one of 2 test environments. Those test environments are:
 
-**Value** | **Description**
-----------|----------------
-`qa`      | QA environment
-`prod`    | PRODUCTION environment
+| **Value** | **Description**        |
+|-----------|------------------------|
+| `qa`      | QA environment         |
+| `prod`    | PRODUCTION environment |
 
 **NOTE:**  Both environments point to the same UAL Booking portal at http://www.united.com/ual/
 
@@ -46,26 +46,25 @@ Automated tests may be targeted at one of 2 test environments. Those test enviro
 
 Automated tests may be targeted at one of 4 test contexts. Those test contexts are:
 
-**Value** | **Description**
-----------|----------------
-`bat`     | Run only features/scenarios with `@bat` tag to execute a Build Acceptance Test suite
-`regress` | Run only features/scenarios with `@regression` tag to execute a comprehensive Regression test suite
-`dev`     | Run only features/scenarios with `@dev` tag. Used to run only those features/scenarios that are tagged with `@dev`, are actively under development or being debugged.
-`wip`     | Run only features/scenarios with `@wip` tag  (work in progress)
-
+| **Value** | **Description**                                                                                                                                                       |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `bat`     | Run only features/scenarios with `@bat` tag to execute a Build Acceptance Test suite                                                                                  |
+| `regress` | Run only features/scenarios with `@regression` tag to execute a comprehensive Regression test suite                                                                   |
+| `dev`     | Run only features/scenarios with `@dev` tag. Used to run only those features/scenarios that are tagged with `@dev`, are actively under development or being debugged. |
+| `wip`     | Run only features/scenarios with `@wip` tag  (work in progress)                                                                                                       |
 
 ### `target_browser`:
 
 Automated tests may be targeted at one of 5 supported desktop web browsers, which must already be locally installed on your test workstation.
 Supported desktop browsers are:
 
-**Value** | **Description**
-----------|----------------
-`chrome`  | OS X or Windows
-`firefox` | OS X or Windows
-`edge`    | OS X or Windows
-`safari`  | OS X only
-`ie`      | Windows only
+| **Value** | **Description** |
+|-----------|-----------------|
+| `chrome`  | OS X or Windows |
+| `firefox` | OS X or Windows |
+| `edge`    | OS X or Windows |
+| `safari`  | OS X only       |
+| `ie`      | Windows only    |
 
 Automated tests may also be executed on desktop browsers (Chrome or Firefox) hosted on Selenium Grid or Dockerized Selenium Grid environments. See
 instructions below.
@@ -107,7 +106,7 @@ and click the OK button to open the `tc_web_sample` project.
     
         `bundle exec cucumber -p qa -p firefox -p regress -p report`
     
-    To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid or Dockerized Selenium Grid
+    To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid 4 or Dockerized Selenium Grid 4
     environments, include `-p grid` in the command line, as in the following command:
     
         `bundle exec cucumber -p prod -p bat -p chrome -p grid`
@@ -141,20 +140,20 @@ click the OK button to open the `tc_web_sample` project.
 
 4. To run Cucumber tests in a specific test context, execute the following command in the Terminal:
 
-    `bundle exec parallel_cucumber features/ -o "-p parallel -p target_test_environment -p target_browser -p test_context" --group-by scenarios`
-    
+    `bundle exec parallel_cucumber features/ -o "-p parallel -p target_test_environment -p target_browser -p test_context"`
+
     **NOTE:** If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device by including
     `-p landscape` or `-p portrait` to the above command line argument.
-    
+
     For example, to execute the entire regression suite against the QA environment on multiple locally emulated iPad Pro Mobile Safari web
     browsers in Portrait orientation, execute the following command in the Terminal:
-    
-        `bundle exec parallel_cucumber features/ -o "-p parallel -p qa -p regress -p ipad_pro_12_9 -p portrait" --group-by scenarios`
-   
+
+        `bundle exec parallel_cucumber features/ -o "-p parallel -p qa -p regress -p ipad_pro_12_9 -p portrait"`
+
     To execute the regression suite against the QA environment on multiple locally hosted Firefox web browsers, execute the following command
     in the Terminal:
-    
-        `bundle exec parallel_cucumber features/ -o "-p parallel -p qa -p regress -p firefox" --group-by scenarios`
+
+        `bundle exec parallel_cucumber features/ -o "-p parallel -p qa -p regress -p firefox"`
 
 5. As your Cucumber tests are executing, the Terminal window will display the lines of each feature file and scenario as they run in real-time.
 
