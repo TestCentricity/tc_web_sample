@@ -91,6 +91,12 @@ portrait:  ORIENTATION=portrait
 
 
 #==============
+# profile to start Appium Server prior to running mobile browser tests on iOS or Android simulators or physical devices
+#==============
+run_appium: APPIUM_SERVER=run
+
+
+#==============
 # profiles for mobile Safari web browsers hosted within XCode iOS simulators
 # NOTE: Requires installation of XCode, iOS version specific target simulators, Appium, and the appium_capybara gem
 #==============
@@ -99,8 +105,6 @@ appium_ios: WEB_BROWSER=appium AUTOMATION_ENGINE=XCUITest APP_PLATFORM_NAME="ios
 app_ios_15: --profile appium_ios APP_VERSION="15.2"
 
 ipad_pro_12_9_15_sim:  --profile app_ios_15 DEVICE_TYPE=tablet APP_DEVICE="iPad Pro (12.9-inch) (5th generation)"
-
-run_appium: APPIUM_SERVER=run
 
 
 #==============

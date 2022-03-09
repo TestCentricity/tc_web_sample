@@ -1,7 +1,7 @@
 
 BeforeAll do
   # start Appium Server if command line option was specified and target browser is mobile simulator or device
-  if ENV['APPIUM_SERVER'] == 'run' && (Environ.driver == :appium || ENV['WEB_BROWSER'] == 'appium')
+  if ENV['APPIUM_SERVER'] == 'run' && Environ.driver == :appium
     $server = TestCentricity::AppiumServer.new
     $server.start
   end
@@ -10,7 +10,7 @@ end
 
 AfterAll do
   # terminate Appium Server if command line option was specified and target browser is mobile simulator or device
-  if ENV['APPIUM_SERVER'] == 'run' && (Environ.driver == :appium || ENV['WEB_BROWSER'] == 'appium')
+  if ENV['APPIUM_SERVER'] == 'run' && Environ.driver == :appium && $server.running?
     $server.stop
   end
   # close driver
