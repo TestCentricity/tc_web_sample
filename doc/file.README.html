@@ -63,12 +63,12 @@
 
       <div id="content"><div id='filecontents'><h1 id="tc_web_sample">tc_web_sample</h1>
 
-<p>This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture for desktop and
-responsive mobile web functional testing of the UAL Flight Booking web portal. This project includes examples of externally sourcing test data
-from an Excel <code>.xls</code>, a <code>.yml</code> or a <code>.json</code> data file.</p>
+<p>This is a Cucumber based sample test suite and framework utilizing the TestCentricity™ gem and a page-object model architecture
+for desktop and responsive mobile web functional testing of the UAL Flight Booking web portal. This project includes examples of
+externally sourcing test data from an Excel <code>.xls</code>, a <code>.yml</code> or a <code>.json</code> data file.</p>
 
-<p>Detailed HTML documentation for this project can be accessed by opening <code>/tc_web_sample/doc/index.html</code> in a web browser (after downloading or
-cloning from the Github <a href="https://github.com/TestCentricity/tc_web_sample.git">repository</a>).</p>
+<p>Detailed HTML documentation for this project can be accessed by opening <code>/tc_web_sample/doc/index.html</code> in a web browser (after
+downloading or cloning from the Github <a href="https://github.com/TestCentricity/tc_web_sample.git">repository</a>).</p>
 
 <h2 id="gem-dependencies">Gem Dependencies:</h2>
 
@@ -82,12 +82,13 @@ cloning from the Github <a href="https://github.com/TestCentricity/tc_web_sample
 
 <p><a href="https://rubygems.org/gems/testcentricity_web">TestCentricity Framework for Web - testcentricity_web gem</a></p>
 
-<p><a href="http://www.rubydoc.info/gems/testcentricity_web">TestCentricityWeb - documentation</a></p>
+<p><a href="http://www.rubydoc.info/gems/testcentricity_web/">TestCentricityWeb - documentation</a></p>
 
 <h2 id="prerequisites-to-running-tests">Prerequisites to running tests:</h2>
 
-<p>In order for Cucumber to execute features or scenarios from the tc_web_sample test automation project, a minimum of 3 conditions must be specified
-in the Cucumber command line at runtime. These conditions include <code>target_test_environment</code>, <code>target_browser</code>, and <code>test_context</code>.</p>
+<p>In order for Cucumber to execute features or scenarios from the <code>tc_web_sample</code> test automation project, a minimum of 3 conditions
+must be specified in the Cucumber command line at runtime. These conditions include <code>target_test_environment</code>, <code>target_browser</code>, and
+<code>test_context</code>.</p>
 
 <h3 id="target_test_environment"><code>target_test_environment</code>:</h3>
 
@@ -127,7 +128,7 @@ in the Cucumber command line at runtime. These conditions include <code>target_t
 </tr>
 <tr>
 <td><code>regress</code></td>
-<td>Run only features/scenarios with <code>@regression</code> tag to execute a comprehensive Regression test suite</td>
+<td>Run all features/scenarios with <code>@regression</code> tag to execute a comprehensive Regression test suite</td>
 </tr>
 <tr>
 <td><code>dev</code></td>
@@ -141,8 +142,8 @@ in the Cucumber command line at runtime. These conditions include <code>target_t
 
 <h3 id="target_browser"><code>target_browser</code>:</h3>
 
-<p>Automated tests may be targeted at one of 5 supported desktop web browsers, which must already be locally installed on your test workstation.
-Supported desktop browsers are:</p>
+<p>Automated tests may be targeted at one of 5 supported desktop web browsers, which must already be locally installed on your test
+workstation. Supported desktop browsers are:</p>
 
 <table><thead>
 <tr>
@@ -172,13 +173,19 @@ Supported desktop browsers are:</p>
 </tr>
 </tbody></table>
 
-<p>Automated tests may also be executed on desktop browsers (Chrome or Firefox) hosted on Selenium Grid or Dockerized Selenium Grid environments. See
-instructions below.</p>
+<p>Automated tests may also be executed on desktop browsers (Chrome, Edge, or Firefox) hosted on Selenium Grid 4 or Dockerized Selenium
+Grid 4 environments. See instructions below.</p>
 
-<p>Automated tests may also be targeted to run on cloud hosted desktop or mobile web browsers using the <a href="https://www.browserstack.com/list-of-browsers-and-platforms?product=automate">Browserstack</a>,
-<a href="https://saucelabs.com/open-source#automated-testing-platform">Sauce Labs</a>, <a href="https://crossbrowsertesting.com/selenium-testing">CrossBrowserTesting</a>, 
-<a href="https://testingbot.com/features">TestingBot</a>, or <a href="https://www.gridlastic.com/test-environments.html">Gridlastic</a> services. For instructions on
-using these cloud hosted services, refer to the <a href="https://www.rubydoc.info/gems/testcentricity_web/3.0.7#Remotely_hosted_desktop_and_mobile_web_browsers">Remotely hosted desktop and mobile web browsers</a> section
+<p>Automated tests may also be targeted to run on cloud hosted desktop or mobile web browsers using using the following service:</p>
+
+<ul>
+<li><a href="https://www.browserstack.com/list-of-browsers-and-platforms?product=automate">Browserstack</a></li>
+<li><a href="https://saucelabs.com/open-source#automated-testing-platform">Sauce Labs</a></li>
+<li><a href="https://testingbot.com/features">TestingBot</a></li>
+<li><a href="https://www.lambdatest.com/selenium-automation">LambdaTest</a></li>
+</ul>
+
+<p>Refer to the <a href="https://www.rubydoc.info/gems/testcentricity_web/#remote-cloud-hosted-desktop-and-mobile-web-browsers">Remote cloud hosted desktop and mobile web browsers</a> section
 of the TestCentricity gem documentation.</p>
 
 <h2 id="instructions-for-running-tests-sequentially">Instructions for running tests sequentially:</h2>
@@ -186,88 +193,104 @@ of the TestCentricity gem documentation.</p>
 <p>These instruction are for the sequential execution of features/scenarios. Tests will be executed within a single browser instance.</p>
 
 <ol>
-<li><p>Launch RubyMine, select the File/Open... menu item, navigate to the <code>tc_web_sample</code> folder on your drive&#39;s Home directory or your C: drive,
-and click the OK button to open the <code>tc_web_sample</code> project.</p></li>
+<li><p>Launch RubyMine, select the File/Open... menu item, navigate to the <code>tc_web_sample</code> folder on your computer, and click the OK
+button to open the <code>tc_web_sample</code> project.</p></li>
 <li><p>Open the Terminal window by selecting the View/Tool Windows/Terminal menu item.</p></li>
 <li><p>Select values from above for the <code>target_test_environment</code>, <code>target_browser</code>, and <code>test_context</code> command line parameters.</p></li>
 <li><p>To run Cucumber, execute the following command in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p target_test_environment -p target_browser -p test_context</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p target_test_environment -p target_browser -p test_context
 </code></pre>
 
-<p><strong>NOTE:</strong>  To have Cucumber generate HTML formatted test results, append <code>-p report</code> to the above command line arguments.</p>
+<p><strong>NOTE:</strong></p>
 
-<p><strong>NOTE:</strong>  If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device by appending
-<code>-p landscape</code> or <code>-p portrait</code> to the above command line arguments.</p>
+<ul>
+<li>To have Cucumber generate HTML formatted test results, append <code>-p report</code> to the above command line arguments.</li>
+<li>If you are running tests against mobile web browsers, you can override the default screen orientation of the mobile device
+by appending <code>-p landscape</code> or <code>-p portrait</code> to the above command line arguments.</li>
+</ul>
 
-<p>For example, to execute the entire regression suite against the QA environment on a locally hosted Chrome browser, with test results being logged
+<p>For example, to execute the entire regression suite against the QA environment on a locally hosted Chrome browser, with test
+results being logged to an HTML test results file, execute the following command in the Terminal:</p>
+
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p qa -p chrome -p regress -p report
+</code></pre>
+
+<p>To execute the regression suite against the QA environment on a locally hosted Firefox browser, with test results being logged
 to an HTML test results file, execute the following command in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p qa -p chrome -p regress -p report</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p qa -p firefox -p regress -p report
 </code></pre>
 
-<p>To execute the regression suite against the QA environment on a locally hosted Firefox browser, with test results being logged to an
-HTML test results file, execute the following command in the Terminal:</p>
+<p>To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid 4 or
+Dockerized Selenium Grid 4 environments, include <code>-p grid</code> in the command line, as in the following command:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p qa -p firefox -p regress -p report</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p prod -p bat -p chrome -p grid
 </code></pre>
 
-<p>To execute the Build Acceptance Test suite against the PROD environment on a Chrome browser hosted on Selenium Grid 4 or Dockerized Selenium Grid 4
-environments, include <code>-p grid</code> in the command line, as in the following command:</p>
+<p>To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro 12.9&quot; Mobile Safari web
+browser in Portrait orientation, execute the following command in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p prod -p bat -p chrome -p grid</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p prod -p ipad_pro_12_9 -p portrait -p bat
 </code></pre>
 
-<p>To execute the Build Acceptance Test suite against the PROD environment on a locally emulated iPad Pro 12.9&quot; Mobile Safari web browser in Portrait
-orientation, execute the following command in the Terminal:</p>
+<p>The following command specifies that Cucumber will run the Build Acceptance Test suite in the QA environment on an XCode
+Simulator against an iPad Pro (12.9-inch) (5th generation) with iOS version 15.4 in landscape orientation:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec cucumber -p prod -p ipad_pro_12_9 -p portrait -p bat</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p qa -p bat -p ipad_pro_12_15_sim -p landscape
+</code></pre>
+
+<p><strong>NOTE:</strong> Appium must be running prior to executing this command. You can ensure that Appium Server is running by including <code>-p run_appium</code>
+in your command line:</p>
+
+<pre class="code ruby"><code class="ruby">bundle exec cucumber -p qa -p bat -p ipad_pro_12_15_sim -p landscape -p run_appium
 </code></pre></li>
 <li><p>As the Cucumber tests are executing, the Terminal will display the lines of each feature file and scenario as they run in real-time.</p></li>
-<li><p>Upon completion of test execution, the Terminal will display the final results.</p></li>
-<li><p>If you specified in the command line that HTML formatted test results should be generated, you can view them by opening the <code>reports</code> folder in
-the <code>tc_web_sample</code> project directory, and selecting the <code>test_results.html</code> file. Right-clicking on the <code>test_results.html</code> file will display a popup
-menu. Select the <strong>Open in Browser</strong> menu item, and then select a web browser from the popup sub menu that appears. The formatted test results will open
-in the web browser that you selected.</p></li>
+<li><p>Upon completion of test execution, the Terminal will display the final test results.</p></li>
+<li><p>If you specified in the command line that HTML formatted test results should be generated (<code>-p report</code>), you can view them by
+opening the <code>reports</code> folder in the <code>tc_web_sample</code> project directory, and selecting the <code>test_results.html</code> file. Right-clicking
+on the <code>test_results.html</code> file will display a popup menu. Select the <strong>Open in Browser</strong> menu item, and then select a web browser
+from the popup sub menu that appears. The formatted test results will open in the web browser that you selected.</p></li>
 </ol>
 
 <h2 id="instructions-for-running-tests-concurrently-parallel-test-execution">Instructions for running tests concurrently (parallel test execution)</h2>
 
-<p>These instruction are for the concurrent execution of features/scenarios, which reduces total test execution time by executing feature/scenarios in
-parallel across multiple browser instances.</p>
+<p>These instruction are for the concurrent execution of features/scenarios, which reduces total test execution time by executing
+feature/scenarios in parallel across multiple browser instances.</p>
 
 <ol>
-<li><p>Launch RubyMine, select the File/Open... menu item, navigate to the <code>tc_web_sample</code> folder on your drive&#39;s Home directory or your C: drive, and
-click the OK button to open the <code>tc_web_sample</code> project.</p></li>
+<li><p>Launch RubyMine, select the File/Open... menu item, navigate to the <code>tc_web_sample</code> folder on your computer, and click the OK
+button to open the <code>tc_web_sample</code> project.</p></li>
 <li><p>Open the Terminal window by selecting the View/Tool Windows/Terminal menu item.</p></li>
 <li><p>Select values from above for the <code>target_test_environment</code>, <code>target_browser</code>, and <code>test_context</code> command line parameters.</p></li>
 <li><p>To run Cucumber tests in a specific test context, execute the following command in the Terminal:</p>
 
-<p><code>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p target_test_environment -p target_browser -p test_context&quot;</code></p>
-
-<p><strong>NOTE:</strong> If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device by including
-<code>-p landscape</code> or <code>-p portrait</code> to the above command line argument.</p>
-
-<p>For example, to execute the entire regression suite against the QA environment on multiple locally emulated iPad Pro Mobile Safari web
-browsers in Portrait orientation, execute the following command in the Terminal:</p>
-
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p ipad_pro_12_9 -p portrait&quot;</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec parallel_cucumber features/ -o &quot;-p parallel -p target_test_environment -p target_browser -p test_context&quot;
 </code></pre>
 
-<p>To execute the regression suite against the QA environment on multiple locally hosted Firefox web browsers, execute the following command
-in the Terminal:</p>
+<p><strong>NOTE:</strong> If you are running tests against mobile web browsers, you can specify the screen orientation of the mobile device
+by including <code>-p landscape</code> or <code>-p portrait</code> to the above command line argument. For example, to execute the entire regression
+suite against the QA environment on multiple locally emulated iPad Pro Mobile Safari web browsers in Portrait orientation,
+execute the following command in the Terminal:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='backtick'>`</span><span class='tstring_content'>bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p firefox&quot;</span><span class='tstring_end'>`</span></span>
+<pre class="code ruby"><code class="ruby">bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p ipad_pro_12_9 -p portrait&quot;
+</code></pre>
+
+<p>To execute the regression suite against the QA environment on multiple locally hosted Firefox web browsers, execute the
+following command in the Terminal:</p>
+
+<pre class="code ruby"><code class="ruby">bundle exec parallel_cucumber features/ -o &quot;-p parallel -p qa -p regress -p firefox&quot;
 </code></pre></li>
-<li><p>As your Cucumber tests are executing, the Terminal window will display the lines of each feature file and scenario as they run in real-time.</p></li>
-<li><p>Upon completion of test execution, multiple HTML formatted test results can be reviewed by opening the <code>reports</code> folder in the <code>tc_web_sample</code>
-project, and selecting and opening each of the <code>test_results.html</code> files individually.</p></li>
+<li><p>As your Cucumber tests are executing, the Terminal window will display the lines of each feature file and scenario as they
+run in real-time.</p></li>
+<li><p>Upon completion of test execution, multiple HTML formatted test results can be reviewed by opening the <code>reports</code> folder in
+the <code>tc_web_sample</code> project, and selecting and opening each of the <code>test_results.html</code> files individually.</p></li>
 </ol>
 
 <h2 id="detailed-documentation">Detailed Documentation</h2>
 
-<p>Detailed HTML documentation of the features, scenarios, step definitions, classes, and methods for the <code>tc_web_sample</code> project can be accessed from
-the <code>index.html</code> file within the <code>doc</code> folder in the <code>tc_web_sample</code> project folder:</p>
+<p>Detailed HTML documentation of the features, scenarios, step definitions, classes, and methods for the <code>tc_web_sample</code> project can
+be accessed from the <code>index.html</code> file within the <code>doc</code> folder in the <code>tc_web_sample</code> project folder:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_tc_web_sample'>tc_web_sample</span>
     <span class='id identifier rubyid_├──'>├──</span> <span class='id identifier rubyid_config'>config</span>
@@ -281,7 +304,7 @@ the <code>index.html</code> file within the <code>doc</code> folder in the <code
 </div></div>
 
       <div id="footer">
-  Generated on Thu Mar  3 15:48:08 2022 by
+  Generated on Tue Mar 15 15:44:06 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.27 (ruby-2.7.5).
 </div>

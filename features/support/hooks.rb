@@ -74,15 +74,6 @@ end
 #   mobile devices:            @!ipad, @!iphone
 #   remotely hosted browsers:  @!browserstack, @!saucelabs
 
-Around('@en-us_only') do |scenario, block|
-  if ENV['LOCALE'] == 'en-US'
-    block.call
-  else
-    log "Scenario '#{scenario.name}' can only be executed for English-US locale."
-    skip_this_scenario
-  end
-end
-
 # block feature/scenario execution if running against Safari browser
 Around('@!safari') do |scenario, block|
   qualify_browser(:safari, 'Safari', scenario, block)
@@ -153,17 +144,6 @@ Around('@!saucelabs') do |scenario, block|
     block.call
   else
     log "Scenario '#{scenario.name}' cannot be executed on the SauceLabs service."
-    skip_this_scenario
-  end
-end
-
-
-# block feature/scenario execution if running against Sauce Labs cloud-hosted service
-Around('@!gridlastic') do |scenario, block|
-  if Environ.grid != :gridlastic
-    block.call
-  else
-    log "Scenario '#{scenario.name}' cannot be executed on the Gridlastic service."
     skip_this_scenario
   end
 end
