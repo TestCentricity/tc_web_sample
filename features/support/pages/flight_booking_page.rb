@@ -12,8 +12,8 @@ class FlightBookingPage < GenericPortalPage
               destination_field: 'input#bookFlightDestinationInput',
               depart_date_field: 'input#DepartDate',
               return_date_field: 'input#ReturnDate'
-  selectlists month_select:      "div[class*='expandFlexMonth'] > div[class*='app-components-ListBox']",
-              duration_select:   "div[class*='expandFlexDay'] > div[class*='app-components-ListBox']",
+  selectlists month_select:      "div[class*='expandFlexMonth']",
+              duration_select:   "div[class*='expandFlexDay']",
               cabin_type_select: "div[class*='bookFlightForm__optionField'] > div[class*='app-components-ListBox']"
   buttons     open_travelers:    "button[class*='passengerButton']",
               search_button:     "button[class*='bookFlightForm__primaryButton']",
@@ -24,10 +24,10 @@ class FlightBookingPage < GenericPortalPage
   def initialize
     # define the custom list element components for the Month, Duration, and Cabin Type selectlist objects
     list_spec = {
-      selected_item: "li[class*='listBoxOptionSelected']",
-      list_item:     "li[class*='listBoxOption']",
-      list_trigger:  "button[class*='listBoxMainButton']",
-      options_list:  "ul[class*='ListBox']"
+      selected_item: "li[aria-selected=true]",
+      list_item:     "li[role='option']",
+      list_trigger:  "button[role='combobox']",
+      options_list:  "ul[role='listbox']"
     }
     month_select.define_list_elements(list_spec)
     duration_select.define_list_elements(list_spec)
