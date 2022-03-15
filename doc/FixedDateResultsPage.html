@@ -301,7 +301,9 @@
 45
 46
 47
-48</pre>
+48
+49
+50</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/pages/fixed_date_results_page.rb', line 22</span>
@@ -315,6 +317,8 @@
          <span class='comment'># wait for results to be displayed
 </span>         <span class='id identifier rubyid_flight_results_list'>flight_results_list</span><span class='period'>.</span><span class='id identifier rubyid_wait_until_visible'>wait_until_visible</span><span class='lparen'>(</span><span class='int'>45</span><span class='rparen'>)</span>
          <span class='comment'># verify that search results are correctly displayed
+</span>         <span class='comment'># verification is limited to determining that at least one row of data is returned in the flight results list,
+</span>         <span class='comment'># and that the origin and destination airport data is displayed in the first result
 </span>         <span class='lbrace'>{</span>
            <span class='id identifier rubyid_flight_results_list'>flight_results_list</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>visible:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>itemcount:</span> <span class='lbrace'>{</span> <span class='label'>greater_than_or_equal:</span> <span class='int'>1</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='comma'>,</span>
            <span class='id identifier rubyid_depart_value'>depart_value</span>        <span class='op'>=&gt;</span> <span class='lbrace'>{</span> <span class='label'>visible:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>caption:</span> <span class='id identifier rubyid_search_data'>search_data</span><span class='period'>.</span><span class='id identifier rubyid_origin'>origin</span> <span class='rbrace'>}</span><span class='comma'>,</span>
@@ -343,7 +347,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 28 10:33:13 2022 by
+  Generated on Tue Mar 15 15:44:07 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.27 (ruby-2.7.5).
 </div>

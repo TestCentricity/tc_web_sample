@@ -199,13 +199,25 @@
 12
 13
 14
-15</pre>
+15
+16
+17
+18
+19
+20
+21</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 5</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_find_search'>find_search</span><span class='lparen'>(</span><span class='id identifier rubyid_row_name'>row_name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_search_data'>search_data</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATA_SOURCE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='comment'># for demo purposes, users can select one of the three data sources - Excel .xls, .yml, or .json. In normal practice,
+</span>  <span class='comment'># you would design your tests to use only one data source and specify that source_type parameter as a symbol (:excel,
+</span>  <span class='comment'># :yaml, or :json) when calling environs.find_environ in your env.rb file.
+</span>  <span class='comment'>#
+</span>  <span class='comment'># instead of the case statement, you would either call read_excel_row_data (for Excel .xls file based data source) or
+</span>  <span class='comment'># environs.read (for .yml or .json based data source).
+</span>  <span class='id identifier rubyid_search_data'>search_data</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>DATA_SOURCE</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_downcase'>downcase</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
                 <span class='kw'>when</span> <span class='symbol'>:excel</span>
                   <span class='id identifier rubyid_read_excel_row_data'>read_excel_row_data</span><span class='lparen'>(</span><span class='const'>WKS_FLIGHT_SEARCHES</span><span class='comma'>,</span> <span class='id identifier rubyid_row_name'>row_name</span><span class='rparen'>)</span>
                 <span class='kw'>when</span> <span class='symbol'>:yaml</span><span class='comma'>,</span> <span class='symbol'>:json</span>
@@ -235,12 +247,12 @@
       <pre class="lines">
 
 
-17
-18
-19</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'features/support/data/flight_searches.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_map_search_data'>map_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="FlightSearch.html" title="FlightSearch (class)">FlightSearch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_current'>current</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="FlightSearch.html" title="FlightSearch (class)">FlightSearch</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="FlightSearch.html#initialize-instance_method" title="FlightSearch#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span>
@@ -255,7 +267,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Feb 28 10:33:13 2022 by
+  Generated on Tue Mar 15 15:44:06 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.27 (ruby-2.7.5).
 </div>
