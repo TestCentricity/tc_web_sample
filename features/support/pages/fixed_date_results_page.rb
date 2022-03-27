@@ -14,6 +14,7 @@ class FixedDateResultsPage < GenericPortalPage
 
   # define the custom list element components for the Fixed Date Search results list objects
   def initialize
+    super
     flight_results_list.define_list_elements(list_item: "div[class*='flightRow']")
   end
 

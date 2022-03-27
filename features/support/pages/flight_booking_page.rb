@@ -22,6 +22,7 @@ class FlightBookingPage < GenericPortalPage
 
   # define the custom element components for selectlist, radio button, and checkbox objects
   def initialize
+    super
     # define the custom list element components for the Month, Duration, and Cabin Type selectlist objects
     list_spec = {
       selected_item: "li[aria-selected=true]",
