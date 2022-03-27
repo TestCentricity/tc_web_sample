@@ -295,12 +295,14 @@
 41
 42
 43
-44</pre>
+44
+45</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='kw'>super</span>
   <span class='comment'># define the custom list element components for the Month, Duration, and Cabin Type selectlist objects
 </span>  <span class='id identifier rubyid_list_spec'>list_spec</span> <span class='op'>=</span> <span class='lbrace'>{</span>
     <span class='label'>selected_item:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>li[aria-selected=true]</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
@@ -359,16 +361,16 @@
       <pre class="lines">
 
 
-132
 133
 134
 135
 136
 137
-138</pre>
+138
+139</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_clear_field'>clear_field</span><span class='lparen'>(</span><span class='id identifier rubyid_field_object'>field_object</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>if</span> <span class='id identifier rubyid_field_object'>field_object</span><span class='period'>.</span><span class='id identifier rubyid_hidden?'>hidden?</span>
@@ -408,7 +410,6 @@
       <pre class="lines">
 
 
-62
 63
 64
 65
@@ -475,10 +476,11 @@
 126
 127
 128
-129</pre>
+129
+130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 62</span>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_enter_search_data'>enter_search_data</span><span class='lparen'>(</span><span class='id identifier rubyid_search_data'>search_data</span><span class='rparen'>)</span>
   <span class='comment'># clear existing data from text fields
@@ -579,7 +581,6 @@
       <pre class="lines">
 
 
-47
 48
 49
 50
@@ -589,10 +590,11 @@
 54
 55
 56
-57</pre>
+57
+58</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'features/support/pages/flight_booking_page.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_select_search_type'>select_search_type</span><span class='lparen'>(</span><span class='id identifier rubyid_search_type'>search_type</span><span class='rparen'>)</span>
   <span class='comment'># select type of search
@@ -615,7 +617,7 @@
 </div>
 
       <div id="footer">
-  Generated on Tue Mar 15 15:44:07 2022 by
+  Generated on Sun Mar 27 16:32:03 2022 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.27 (ruby-2.7.5).
 </div>
