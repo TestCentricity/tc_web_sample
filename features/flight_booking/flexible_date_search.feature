@@ -24,14 +24,10 @@ Feature: Search for Flights using Flexible Dates
       |Cabin       |<cabin type>  |
     Then I should see search results on the Flexible Date Search Results page
 
-@bat
-    Examples:
-      |type       |origin  |destination |month             |duration |travelers          |cabin type |
-      |Round trip |SEA     |SAN         |3 months from now |14 days  |2 adults, 1 infant |Economy    |
-      |One way    |DTW     |PHX         |6 weeks from now  |         |2 seniors          |Economy    |
-
     Examples:
       |type       |origin  |destination |month             |duration |travelers          |cabin type        |
+      |Round trip |SEA     |SAN         |3 months from now |14 days  |2 adults, 1 infant |Economy           |
+      |One way    |DTW     |PHX         |6 weeks from now  |         |2 seniors          |Economy           |
       |Round trip |PDX     |ORD         |this month        |6 days   |1 adult            |Business or First |
       |One way    |SEA     |SAN         |2 months from now |         |2 adults, 1 infant |Economy           |
 

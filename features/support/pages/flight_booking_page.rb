@@ -5,8 +5,8 @@ class FlightBookingPage < GenericPortalPage
   trait(:page_locator) { "div[class*='bookerContainer']" }
 
   # Flight Booking page UI elements
-  radios      roundtrip_radio:   'input#roundtrip',
-              one_way_radio:     'input#oneway'
+  radios      roundtrip_radio:   "label[for='roundtrip']",
+              one_way_radio:     "label[for='oneway']"
   checkbox    :flexible_check,   'input#flexibleDates'
   textfields  origin_field:      'input#bookFlightOriginInput',
               destination_field: 'input#bookFlightDestinationInput',
@@ -33,11 +33,9 @@ class FlightBookingPage < GenericPortalPage
     month_select.define_list_elements(list_spec)
     duration_select.define_list_elements(list_spec)
     cabin_type_select.define_list_elements(list_spec)
-    # define the custom element components for the Round Trip radio button
-    radio_spec = { proxy: "label[for='roundtrip']" }
+    # define the custom element components for the Round Trip and One Way radio buttons
+    radio_spec = { input: "input[type='radio']" }
     roundtrip_radio.define_custom_elements(radio_spec)
-    # define the custom element components for the One Way radio button
-    radio_spec = { proxy: "label[for='oneway']" }
     one_way_radio.define_custom_elements(radio_spec)
     # define the custom element components for the Flexible Date checkbox
     check_spec = { proxy: 'label#flexDatesLabel' }
